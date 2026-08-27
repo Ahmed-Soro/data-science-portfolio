@@ -1,61 +1,89 @@
-// ===============================
-// MOBILE MENU
-// ===============================
+/* =====================================================
+   AHMED SOROUR PORTFOLIO
+   PROFESSIONAL JAVASCRIPT
+===================================================== */
+
+
+/* ================= PRELOADER ================= */
+
+window.addEventListener("load", () => {
+
+    const preloader = document.querySelector(".preloader");
+
+    setTimeout(() => {
+
+        preloader.classList.add("hide");
+
+    }, 500);
+
+});
+
+
+/* ================= MOBILE MENU ================= */
 
 const menuBtn = document.getElementById("menuBtn");
 const navbar = document.getElementById("navbar");
 
-menuBtn.addEventListener("click", () => {
+if (menuBtn && navbar) {
 
-    navbar.classList.toggle("show");
+    menuBtn.addEventListener("click", () => {
 
-    const icon = menuBtn.querySelector("i");
+        navbar.classList.toggle("show");
 
-    if (navbar.classList.contains("show")) {
-
-        icon.classList.remove("fa-bars");
-
-        icon.classList.add("fa-xmark");
-
-    } else {
-
-        icon.classList.remove("fa-xmark");
-
-        icon.classList.add("fa-bars");
-
-    }
-
-});
-
-
-// Close menu after clicking a link
-
-document.querySelectorAll(".navbar a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        navbar.classList.remove("show");
+        document.body.classList.toggle(
+            "no-scroll",
+            navbar.classList.contains("show")
+        );
 
         const icon = menuBtn.querySelector("i");
 
-        icon.classList.remove("fa-xmark");
+        if (navbar.classList.contains("show")) {
 
-        icon.classList.add("fa-bars");
+            icon.classList.remove("fa-bars");
+
+            icon.classList.add("fa-xmark");
+
+        } else {
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        }
 
     });
 
-});
+
+    /* Close mobile menu */
+
+    document.querySelectorAll(".navbar a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navbar.classList.remove("show");
+
+            document.body.classList.remove("no-scroll");
+
+            const icon = menuBtn.querySelector("i");
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        });
+
+    });
+
+}
 
 
-// ===============================
-// DARK / LIGHT MODE
-// ===============================
+/* ================= DARK / LIGHT MODE ================= */
 
 const themeBtn = document.getElementById("themeBtn");
 
-themeBtn.addEventListener("click", () => {
+function updateThemeIcon() {
 
-    document.body.classList.toggle("light");
+    if (!themeBtn) return;
 
     const icon = themeBtn.querySelector("i");
 
@@ -65,41 +93,55 @@ themeBtn.addEventListener("click", () => {
 
         icon.classList.add("fa-sun");
 
-        localStorage.setItem("theme", "light");
-
     } else {
 
         icon.classList.remove("fa-sun");
 
         icon.classList.add("fa-moon");
 
-        localStorage.setItem("theme", "dark");
-
     }
 
-});
+}
 
 
-// Remember user's theme
+if (themeBtn) {
 
-const savedTheme = localStorage.getItem("theme");
+    themeBtn.addEventListener("click", () => {
+
+        document.body.classList.toggle("light");
+
+        const currentTheme =
+            document.body.classList.contains("light")
+                ? "light"
+                : "dark";
+
+        localStorage.setItem(
+            "portfolio-theme",
+            currentTheme
+        );
+
+        updateThemeIcon();
+
+    });
+
+}
+
+
+/* Remember theme */
+
+const savedTheme =
+    localStorage.getItem("portfolio-theme");
 
 if (savedTheme === "light") {
 
     document.body.classList.add("light");
 
-    const icon = themeBtn.querySelector("i");
-
-    icon.classList.remove("fa-moon");
-
-    icon.classList.add("fa-sun");
-
 }
 
+updateThemeIcon();
 
-// ===============================
-// TYPING ANIMATION
-// ===============================
+
+/* ================= TYPING ANIMATION ================= */
 
 const words = [
     "Data Scientist",
@@ -108,7 +150,8 @@ const words = [
     "Data Analyst"
 ];
 
-const typingElement = document.getElementById("typing");
+const typingElement =
+    document.getElementById("typing");
 
 let wordIndex = 0;
 let charIndex = 0;
@@ -117,20 +160,31 @@ let deleting = false;
 
 function typeEffect() {
 
-    const currentWord = words[wordIndex];
+    if (!typingElement) return;
+
+    const currentWord =
+        words[wordIndex];
+
 
     if (!deleting) {
 
         typingElement.textContent =
-            currentWord.substring(0, charIndex + 1);
+            currentWord.substring(
+                0,
+                charIndex + 1
+            );
 
         charIndex++;
+
 
         if (charIndex === currentWord.length) {
 
             deleting = true;
 
-            setTimeout(typeEffect, 1800);
+            setTimeout(
+                typeEffect,
+                1700
+            );
 
             return;
         }
@@ -138,9 +192,13 @@ function typeEffect() {
     } else {
 
         typingElement.textContent =
-            currentWord.substring(0, charIndex - 1);
+            currentWord.substring(
+                0,
+                charIndex - 1
+            );
 
         charIndex--;
+
 
         if (charIndex === 0) {
 
@@ -148,7 +206,7 @@ function typeEffect() {
 
             wordIndex++;
 
-            if (wordIndex === words.length) {
+            if (wordIndex >= words.length) {
 
                 wordIndex = 0;
 
@@ -158,9 +216,10 @@ function typeEffect() {
 
     }
 
+
     setTimeout(
         typeEffect,
-        deleting ? 50 : 100
+        deleting ? 45 : 90
     );
 
 }
@@ -168,29 +227,35 @@ function typeEffect() {
 typeEffect();
 
 
-// ===============================
-// ACTIVE NAVIGATION
-// ===============================
+/* ================= ACTIVE NAVIGATION ================= */
 
 const sections =
-    document.querySelectorAll("section");
+    document.querySelectorAll("section[id]");
 
 const navLinks =
     document.querySelectorAll(".navbar a");
 
 
-window.addEventListener("scroll", () => {
+function updateActiveNav() {
 
     let current = "";
 
     sections.forEach(section => {
 
         const sectionTop =
-            section.offsetTop - 120;
+            section.offsetTop - 180;
 
-        if (scrollY >= sectionTop) {
+        const sectionHeight =
+            section.offsetHeight;
 
-            current = section.getAttribute("id");
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY <
+            sectionTop + sectionHeight
+        ) {
+
+            current =
+                section.getAttribute("id");
 
         }
 
@@ -212,71 +277,212 @@ window.addEventListener("scroll", () => {
 
     });
 
-});
+}
+
+window.addEventListener(
+    "scroll",
+    updateActiveNav,
+    { passive: true }
+);
+
+updateActiveNav();
 
 
-// ===============================
-// SCROLL REVEAL
-// ===============================
+/* ================= SCROLL REVEAL ================= */
 
 const revealElements =
-    document.querySelectorAll(
-        ".skill-card, .project-card, .about-box, .timeline-item, .contact-card"
+    document.querySelectorAll(".reveal");
+
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
     );
 
 
-const observer = new IntersectionObserver(
-    (entries) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("visible");
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.15
-    }
-);
-
-
 revealElements.forEach(element => {
-
-    element.style.opacity = "0";
-
-    element.style.transform = "translateY(30px)";
-
-    element.style.transition =
-        "opacity 0.6s ease, transform 0.6s ease";
 
     observer.observe(element);
 
 });
 
 
-// Add visible class behavior
+/* ================= STAGGER ANIMATIONS ================= */
 
-const style = document.createElement("style");
+const skillCards =
+    document.querySelectorAll(".skill-card");
 
-style.textContent = `
+skillCards.forEach((card, index) => {
 
-    .skill-card.visible,
-    .project-card.visible,
-    .about-box.visible,
-    .timeline-item.visible,
-    .contact-card.visible {
+    card.style.transitionDelay =
+        `${index * 60}ms`;
 
-        opacity: 1 !important;
+});
 
-        transform: translateY(0) !important;
+
+const projectCards =
+    document.querySelectorAll(".project-card");
+
+projectCards.forEach((card, index) => {
+
+    card.style.transitionDelay =
+        `${index * 100}ms`;
+
+});
+
+
+const contactCards =
+    document.querySelectorAll(".contact-card");
+
+contactCards.forEach((card, index) => {
+
+    card.style.transitionDelay =
+        `${index * 80}ms`;
+
+});
+
+
+/* ================= HEADER ON SCROLL ================= */
+
+const header =
+    document.querySelector(".header");
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (window.scrollY > 50) {
+
+            header.style.boxShadow =
+                "0 10px 35px rgba(0,0,0,.15)";
+
+        } else {
+
+            header.style.boxShadow =
+                "none";
+
+        }
+
+    },
+    { passive: true }
+);
+
+
+/* ================= BACK TO TOP ================= */
+
+const backToTop =
+    document.getElementById("backToTop");
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (window.scrollY > 500) {
+
+            backToTop.classList.add("show");
+
+        } else {
+
+            backToTop.classList.remove("show");
+
+        }
+
+    },
+    { passive: true }
+);
+
+
+if (backToTop) {
+
+    backToTop.addEventListener(
+        "click",
+        () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+    );
+
+}
+
+
+/* ================= PROJECT LINK FEEDBACK ================= */
+
+document.querySelectorAll(".project-link")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                link.classList.add("clicked");
+
+                setTimeout(() => {
+
+                    link.classList.remove("clicked");
+
+                }, 500);
+
+            }
+        );
+
+    });
+
+
+/* ================= ESC KEY ================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "Escape" &&
+            navbar.classList.contains("show")
+        ) {
+
+            navbar.classList.remove("show");
+
+            document.body.classList.remove(
+                "no-scroll"
+            );
+
+            const icon =
+                menuBtn.querySelector("i");
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        }
 
     }
-
-`;
-
-document.head.appendChild(style);
+);
