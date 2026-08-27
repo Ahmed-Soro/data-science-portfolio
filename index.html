@@ -3,24 +3,31 @@
 
 <head>
 
+    <!-- =====================================================
+         BASIC SEO & DOCUMENT SETTINGS
+    ====================================================== -->
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Ahmed Sorour - Data Science and Artificial Intelligence student portfolio. Explore my projects, skills, education, and career journey.">
+          content="Ahmed Sorour - Computer Science and Artificial Intelligence student at Capital University, majoring in AI. Explore my Data Science, Machine Learning, AI projects, skills, and career journey.">
 
     <meta name="author"
           content="Ahmed Sorour">
 
     <meta name="keywords"
-          content="Ahmed Sorour, Data Science, Artificial Intelligence, AI, Python, Machine Learning, SQL, Portfolio">
+          content="Ahmed Sorour, Capital University, Computer Science, Artificial Intelligence, AI Student, Data Science, Machine Learning, Python, SQL, Pandas, NumPy, Portfolio">
 
     <meta name="theme-color"
           content="#0f172a">
 
-    <title>Ahmed Sorour | Data Science & AI</title>
+    <meta name="robots"
+          content="index, follow">
+
+    <title>Ahmed Sorour | AI Student | Data Science & AI</title>
 
 
     <!-- =====================================================
@@ -98,10 +105,11 @@
 
 <!-- =====================================================
      PRELOADER
-===================================================== -->
+====================================================== -->
 
 <div class="preloader"
-     id="preloader">
+     id="preloader"
+     aria-label="Loading website">
 
     <div class="loader"></div>
 
@@ -112,7 +120,7 @@
 
 <!-- =====================================================
      HEADER
-===================================================== -->
+====================================================== -->
 
 <header class="header">
 
@@ -120,7 +128,8 @@
     <!-- LOGO -->
 
     <a href="#home"
-       class="logo">
+       class="logo"
+       aria-label="Ahmed Sorour Home">
 
         <span>&lt;</span>
 
@@ -135,7 +144,8 @@
     <!-- NAVIGATION -->
 
     <nav class="navbar"
-         id="navbar">
+         id="navbar"
+         aria-label="Main navigation">
 
         <a href="#home"
            class="nav-link active">
@@ -180,10 +190,11 @@
     <div class="nav-buttons">
 
 
-        <!-- THEME -->
+        <!-- THEME BUTTON -->
 
         <button class="icon-btn"
                 id="themeToggle"
+                type="button"
                 aria-label="Toggle dark and light mode"
                 title="Toggle theme">
 
@@ -192,14 +203,20 @@
         </button>
 
 
-        <!-- CV -->
+        <!-- CV BUTTON -->
+
+        <!--
+            IMPORTANT:
+            Put Ahmed_Sorour_CV.pdf in the same folder
+            as this index.html file.
+        -->
 
         <a href="https://drive.google.com/file/d/1Zh5S9UYCkl76ocU7FDKOUdL-wp8meHQg/view?usp=drivesdk"
            class="cv-btn"
-           target="_blank"
-           rel="noopener noreferrer"
+           download="Ahmed_Sorour_CV.pdf"
            id="cvButton"
-           data-analytics="cv_download">
+           data-analytics="cv_download"
+           aria-label="Download CV">
 
             <i class="fa-solid fa-file-pdf"></i>
 
@@ -212,6 +229,7 @@
 
         <button class="icon-btn menu-btn"
                 id="menuBtn"
+                type="button"
                 aria-label="Open navigation menu"
                 aria-expanded="false"
                 aria-controls="navbar">
@@ -226,18 +244,19 @@
 
 
 <!-- =====================================================
-     MAIN
-===================================================== -->
+     MAIN CONTENT
+====================================================== -->
 
 <main>
 
 
 <!-- =====================================================
-     HERO
-===================================================== -->
+     HERO SECTION
+====================================================== -->
 
 <section class="hero"
-         id="home">
+         id="home"
+         aria-labelledby="hero-title">
 
 
     <div class="hero-grid">
@@ -248,21 +267,27 @@
         <div class="hero-content">
 
 
+            <!-- STATUS -->
+
             <div class="status">
 
                 <span class="status-dot"></span>
 
-                Available for opportunities
+                Open to internships & opportunities
 
             </div>
 
+
+            <!-- GREETING -->
 
             <div class="hello">
                 Hello, I'm
             </div>
 
 
-            <h1>
+            <!-- NAME -->
+
+            <h1 id="hero-title">
 
                 Ahmed
                 <span>Sorour</span>
@@ -270,9 +295,11 @@
             </h1>
 
 
+            <!-- TYPING TITLE -->
+
             <h2>
 
-                I'm a
+                I'm an
                 <span id="typingText"></span>
 
                 <span class="cursor">|</span>
@@ -280,13 +307,16 @@
             </h2>
 
 
+            <!-- DESCRIPTION -->
+
             <p class="hero-description">
 
                 I am a Computer Science and Artificial Intelligence
-                student passionate about Data Science, Machine Learning,
-                and Artificial Intelligence. I am continuously developing
-                my technical skills by building practical projects and
-                solving real-world problems with data.
+                student at Capital University, majoring in Artificial
+                Intelligence. I am passionate about Data Science,
+                Machine Learning, and AI, and I am developing my skills
+                by building practical projects and solving real-world
+                problems with data.
 
             </p>
 
@@ -328,7 +358,7 @@
                 <a href="https://github.com/Ahmed-Soro"
                    target="_blank"
                    rel="noopener noreferrer"
-                   aria-label="GitHub"
+                   aria-label="Visit my GitHub profile"
                    data-analytics="github_click">
 
                     <i class="fa-brands fa-github"></i>
@@ -341,7 +371,7 @@
                 <a href="https://www.linkedin.com/in/ahmed-sorour-d"
                    target="_blank"
                    rel="noopener noreferrer"
-                   aria-label="LinkedIn"
+                   aria-label="Visit my LinkedIn profile"
                    data-analytics="linkedin_click">
 
                     <i class="fa-brands fa-linkedin-in"></i>
@@ -354,7 +384,7 @@
                 <a href="https://wa.me/201154929027"
                    target="_blank"
                    rel="noopener noreferrer"
-                   aria-label="WhatsApp"
+                   aria-label="Contact me on WhatsApp"
                    data-analytics="whatsapp_click">
 
                     <i class="fa-brands fa-whatsapp"></i>
@@ -365,7 +395,7 @@
                 <!-- EMAIL -->
 
                 <a href="mailto:sorour802@gmail.com"
-                   aria-label="Email"
+                   aria-label="Send me an email"
                    data-analytics="email_click">
 
                     <i class="fa-solid fa-envelope"></i>
@@ -392,8 +422,9 @@
             <div class="image-wrapper">
 
                 <img src="images/sorour1.jpg"
-                     alt="Ahmed Sorour - Data Science and Artificial Intelligence"
-                     loading="eager">
+                     alt="Ahmed Sorour - Computer Science and Artificial Intelligence student"
+                     loading="eager"
+                     decoding="async">
 
             </div>
 
@@ -440,7 +471,7 @@
 
                 <div>
 
-                    <strong>AI</strong>
+                    <strong>Artificial Intelligence</strong>
 
                     <small>Machine Learning</small>
 
@@ -453,9 +484,10 @@
     </div>
 
 
-    <!-- SCROLL -->
+    <!-- SCROLL INDICATOR -->
 
-    <div class="scroll-indicator">
+    <div class="scroll-indicator"
+         aria-hidden="true">
 
         <i class="fa-solid fa-computer-mouse"></i>
 
@@ -468,18 +500,30 @@
 
 <!-- =====================================================
      STATS
-===================================================== -->
+====================================================== -->
 
-<section class="stats">
+<section class="stats"
+         aria-label="Portfolio highlights">
 
 
     <div class="stat-card">
 
-        <i class="fa-solid fa-code"></i>
+        <i class="fa-solid fa-graduation-cap"></i>
 
-        <strong>Projects</strong>
+        <strong>AI Student</strong>
 
-        <span>Practical Projects</span>
+        <span>Capital University</span>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-brain"></i>
+
+        <strong>AI Major</strong>
+
+        <span>Artificial Intelligence</span>
 
     </div>
 
@@ -497,22 +541,11 @@
 
     <div class="stat-card">
 
-        <i class="fa-solid fa-brain"></i>
+        <i class="fa-solid fa-code"></i>
 
-        <strong>AI</strong>
+        <strong>Projects</strong>
 
-        <span>Artificial Intelligence</span>
-
-    </div>
-
-
-    <div class="stat-card">
-
-        <i class="fa-solid fa-graduation-cap"></i>
-
-        <strong>Student</strong>
-
-        <span>Computer Science</span>
+        <span>Practical Experience</span>
 
     </div>
 
@@ -520,8 +553,8 @@
 
 
 <!-- =====================================================
-     ABOUT
-===================================================== -->
+     ABOUT SECTION
+====================================================== -->
 
 <section class="section about"
          id="about">
@@ -536,8 +569,8 @@
 
             <h2>
 
-                Turning Data Into
-                <strong>Insights</strong>
+                Learning, Building &
+                <strong>Growing</strong>
 
             </h2>
 
@@ -547,27 +580,27 @@
         <p>
 
             I am Ahmed Sorour, a Computer Science and Artificial
-            Intelligence student with a strong interest in Data Science,
-            Machine Learning, and AI.
+            Intelligence student at Capital University, majoring in
+            Artificial Intelligence.
 
         </p>
 
 
         <p>
 
-            My goal is to transform raw data into meaningful insights
-            and intelligent solutions. I enjoy learning new technologies,
-            analyzing datasets, and building projects that solve
-            practical problems.
+            I am passionate about Artificial Intelligence, Data Science,
+            Machine Learning, programming, mathematics, and statistics.
+            I enjoy learning new technologies and applying what I learn
+            through practical projects.
 
         </p>
 
 
         <p>
 
-            I am currently strengthening my skills in Python, NumPy,
-            Pandas, SQL, Statistics, Machine Learning, and Data
-            Visualization.
+            I am currently developing my skills in Python, NumPy,
+            Pandas, SQL, Statistics, Data Visualization, Exploratory
+            Data Analysis, and Machine Learning.
 
         </p>
 
@@ -586,16 +619,16 @@
 
             <div>
 
-                <strong>Python</strong>
+                <strong>Capital University</strong>
 
-                <span>Main Language</span>
+                <span>University</span>
 
             </div>
 
 
             <div>
 
-                <strong>Data</strong>
+                <strong>Data Science</strong>
 
                 <span>Career Focus</span>
 
@@ -611,6 +644,8 @@
     <div class="about-image reveal">
 
 
+        <!-- BOX 1 -->
+
         <div class="about-box">
 
             <span>01</span>
@@ -620,11 +655,14 @@
             <h3>Data Science</h3>
 
             <p>
-                Exploring data and extracting useful insights.
+                Learning how to explore data and extract
+                meaningful insights.
             </p>
 
         </div>
 
+
+        <!-- BOX 2 -->
 
         <div class="about-box">
 
@@ -635,11 +673,14 @@
             <h3>Artificial Intelligence</h3>
 
             <p>
-                Learning intelligent systems and machine learning.
+                Studying AI and machine learning as my
+                university major.
             </p>
 
         </div>
 
+
+        <!-- BOX 3 -->
 
         <div class="about-box">
 
@@ -650,11 +691,14 @@
             <h3>Programming</h3>
 
             <p>
-                Building solutions using Python and Java.
+                Developing programming skills with Python
+                and Java.
             </p>
 
         </div>
 
+
+        <!-- BOX 4 -->
 
         <div class="about-box">
 
@@ -665,11 +709,14 @@
             <h3>Problem Solving</h3>
 
             <p>
-                Turning real-world problems into technical solutions.
+                Applying logical thinking to solve technical
+                and real-world problems.
             </p>
 
         </div>
 
+
+        <!-- BOX 5 -->
 
         <div class="about-box wide">
 
@@ -680,7 +727,8 @@
             <h3>Continuous Learning</h3>
 
             <p>
-                Always improving my technical and professional skills.
+                Continuously improving my technical,
+                analytical, and professional skills.
             </p>
 
         </div>
@@ -691,8 +739,8 @@
 
 
 <!-- =====================================================
-     SKILLS
-===================================================== -->
+     SKILLS SECTION
+====================================================== -->
 
 <section class="section skills-section"
          id="skills">
@@ -704,15 +752,15 @@
 
         <h2>
 
-            Technologies I
-            <strong>Work With</strong>
+            Technologies &
+            <strong>Knowledge Areas</strong>
 
         </h2>
 
         <p>
 
-            Technologies and tools I am learning and using
-            to build Data Science and AI projects.
+            Skills and technologies I am currently learning
+            and using to build Data Science and AI projects.
 
         </p>
 
@@ -721,6 +769,8 @@
 
     <div class="skills-container">
 
+
+        <!-- PYTHON -->
 
         <div class="skill-card reveal">
 
@@ -739,6 +789,8 @@
         </div>
 
 
+        <!-- PANDAS -->
+
         <div class="skill-card reveal">
 
             <div class="skill-icon">
@@ -755,6 +807,8 @@
 
         </div>
 
+
+        <!-- NUMPY -->
 
         <div class="skill-card reveal">
 
@@ -773,6 +827,8 @@
         </div>
 
 
+        <!-- SQL -->
+
         <div class="skill-card reveal">
 
             <div class="skill-icon">
@@ -781,7 +837,7 @@
 
             <h3>SQL</h3>
 
-            <p>Database</p>
+            <p>Database & Queries</p>
 
             <div class="skill-line">
                 <span></span>
@@ -789,6 +845,8 @@
 
         </div>
 
+
+        <!-- MACHINE LEARNING -->
 
         <div class="skill-card reveal">
 
@@ -807,6 +865,8 @@
         </div>
 
 
+        <!-- STATISTICS -->
+
         <div class="skill-card reveal">
 
             <div class="skill-icon">
@@ -823,6 +883,8 @@
 
         </div>
 
+
+        <!-- MATHEMATICS -->
 
         <div class="skill-card reveal">
 
@@ -841,6 +903,8 @@
         </div>
 
 
+        <!-- DATA VISUALIZATION -->
+
         <div class="skill-card reveal">
 
             <div class="skill-icon">
@@ -858,6 +922,8 @@
         </div>
 
 
+        <!-- GIT -->
+
         <div class="skill-card reveal">
 
             <div class="skill-icon">
@@ -874,6 +940,8 @@
 
         </div>
 
+
+        <!-- GITHUB -->
 
         <div class="skill-card reveal">
 
@@ -897,8 +965,8 @@
 
 
 <!-- =====================================================
-     PROJECTS
-===================================================== -->
+     PROJECTS SECTION
+====================================================== -->
 
 <section class="section projects"
          id="projects">
@@ -917,8 +985,8 @@
 
         <p>
 
-            Practical projects demonstrating my skills in
-            programming, data analysis, and AI.
+            Practical projects demonstrating my development
+            in programming, data analysis, and artificial intelligence.
 
         </p>
 
@@ -928,7 +996,9 @@
     <div class="projects-container">
 
 
-        <!-- PROJECT 1 -->
+        <!-- =================================================
+             PROJECT 1
+        ================================================== -->
 
         <article class="project-card reveal">
 
@@ -963,8 +1033,9 @@
                 <p>
 
                     Analyzing employee productivity data,
-                    identifying possible causes of productivity
-                    decreases, and suggesting business actions.
+                    exploring possible causes of decreased
+                    productivity, and suggesting data-driven
+                    business actions.
 
                 </p>
 
@@ -979,13 +1050,18 @@
                 </div>
 
 
+                <!--
+                    Replace this GitHub URL later with the
+                    actual repository URL when you create it.
+                -->
+
                 <a href="https://github.com/Ahmed-Soro"
                    target="_blank"
                    rel="noopener noreferrer"
                    class="project-link"
                    data-analytics="project_employee">
 
-                    View Project
+                    View on GitHub
 
                     <i class="fa-solid fa-arrow-right"></i>
 
@@ -996,7 +1072,9 @@
         </article>
 
 
-        <!-- PROJECT 2 -->
+        <!-- =================================================
+             PROJECT 2
+        ================================================== -->
 
         <article class="project-card reveal">
 
@@ -1031,8 +1109,9 @@
                 <p>
 
                     Exploring datasets, cleaning data,
-                    performing analysis, and generating
-                    useful insights.
+                    performing exploratory analysis, and
+                    generating useful insights through
+                    data-driven techniques.
 
                 </p>
 
@@ -1053,7 +1132,7 @@
                    class="project-link"
                    data-analytics="project_data_analysis">
 
-                    View Project
+                    View on GitHub
 
                     <i class="fa-solid fa-arrow-right"></i>
 
@@ -1064,7 +1143,9 @@
         </article>
 
 
-        <!-- PROJECT 3 -->
+        <!-- =================================================
+             PROJECT 3
+        ================================================== -->
 
         <article class="project-card reveal">
 
@@ -1099,7 +1180,8 @@
                 <p>
 
                     Building and evaluating machine learning
-                    models to solve predictive problems.
+                    models to explore predictive problems and
+                    develop practical AI solutions.
 
                 </p>
 
@@ -1108,7 +1190,7 @@
 
                     <span>Python</span>
                     <span>Scikit-learn</span>
-                    <span>ML</span>
+                    <span>Machine Learning</span>
                     <span>AI</span>
 
                 </div>
@@ -1120,7 +1202,7 @@
                    class="project-link"
                    data-analytics="project_machine_learning">
 
-                    View Project
+                    View on GitHub
 
                     <i class="fa-solid fa-arrow-right"></i>
 
@@ -1136,8 +1218,8 @@
 
 
 <!-- =====================================================
-     EDUCATION
-===================================================== -->
+     EDUCATION SECTION
+====================================================== -->
 
 <section class="section education"
          id="education">
@@ -1149,13 +1231,16 @@
 
         <h2>
 
-            My Learning
-            <strong>Journey</strong>
+            My Academic &
+            <strong>Learning Journey</strong>
 
         </h2>
 
         <p>
-            My academic and technical learning journey.
+
+            My academic background and continuous technical
+            learning journey.
+
         </p>
 
     </div>
@@ -1163,6 +1248,8 @@
 
     <div class="timeline">
 
+
+        <!-- UNIVERSITY -->
 
         <div class="timeline-item reveal">
 
@@ -1177,15 +1264,16 @@
                 </h3>
 
                 <h4>
-                    University Student
+                    Capital University — Major: Artificial Intelligence
                 </h4>
 
                 <p>
 
-                    Studying Computer Science with a focus on
-                    Artificial Intelligence and developing a strong
-                    foundation in programming, algorithms,
-                    mathematics, and AI.
+                    I am studying Computer Science and Artificial
+                    Intelligence at Capital University, majoring in
+                    Artificial Intelligence. I am developing a strong
+                    foundation in programming, algorithms, mathematics,
+                    statistics, and AI.
 
                 </p>
 
@@ -1193,6 +1281,8 @@
 
         </div>
 
+
+        <!-- DATA SCIENCE -->
 
         <div class="timeline-item reveal">
 
@@ -1212,9 +1302,9 @@
 
                 <p>
 
-                    Learning Python, NumPy, Pandas, SQL,
-                    statistics, data visualization, EDA,
-                    and machine learning.
+                    I am developing practical skills in Python,
+                    NumPy, Pandas, SQL, statistics, data visualization,
+                    exploratory data analysis, and machine learning.
 
                 </p>
 
@@ -1223,27 +1313,30 @@
         </div>
 
 
+        <!-- FUTURE -->
+
         <div class="timeline-item reveal">
 
             <div class="timeline-dot"></div>
 
             <div class="timeline-content">
 
-                <span>FUTURE</span>
+                <span>CAREER GOAL</span>
 
                 <h3>
-                    Data Scientist / AI Engineer
+                    Future Data Scientist / AI Engineer
                 </h3>
 
                 <h4>
-                    Career Goal
+                    Long-Term Career Goal
                 </h4>
 
                 <p>
 
                     My long-term goal is to become a professional
-                    Data Scientist and AI Engineer who builds
-                    intelligent and data-driven solutions.
+                    Data Scientist and AI Engineer who uses data,
+                    machine learning, and artificial intelligence
+                    to build useful solutions for real-world problems.
 
                 </p>
 
@@ -1257,8 +1350,8 @@
 
 
 <!-- =====================================================
-     GOAL
-===================================================== -->
+     CAREER GOAL SECTION
+====================================================== -->
 
 <section class="goal"
          id="goal">
@@ -1274,8 +1367,8 @@
 
         <h2>
 
-            From Student To
-            <strong>Data Scientist</strong>
+            From AI Student To
+            <strong>Data Scientist & AI Engineer</strong>
 
         </h2>
 
@@ -1283,8 +1376,9 @@
         <p>
 
             My goal is to build strong foundations in programming,
-            mathematics, statistics, data analysis, and machine learning
-            and use these skills to create real-world AI solutions.
+            mathematics, statistics, data analysis, machine learning,
+            and artificial intelligence, then use these skills to
+            create practical solutions for real-world problems.
 
         </p>
 
@@ -1317,8 +1411,8 @@
 
 
 <!-- =====================================================
-     CONTACT
-===================================================== -->
+     CONTACT SECTION
+====================================================== -->
 
 <section class="section contact"
          id="contact">
@@ -1337,8 +1431,9 @@
 
         <p>
 
-            If you have an opportunity, project, or simply want
-            to connect, feel free to contact me.
+            If you have an internship, opportunity, project,
+            collaboration, or simply want to connect, feel free
+            to contact me.
 
         </p>
 
@@ -1394,7 +1489,7 @@
                 <span>WhatsApp</span>
 
                 <strong>
-                    Contact
+                    Contact Me
                 </strong>
 
             </div>
@@ -1452,7 +1547,7 @@
                 <span>LinkedIn</span>
 
                 <strong>
-                    Contact with me 
+                    Connect With Me
                 </strong>
 
             </div>
@@ -1471,7 +1566,7 @@
 
 <!-- =====================================================
      FOOTER
-===================================================== -->
+====================================================== -->
 
 <footer>
 
@@ -1488,7 +1583,8 @@
 
 
     <p>
-        Data Science & Artificial Intelligence
+        Computer Science & Artificial Intelligence Student
+        | AI Major | Capital University
     </p>
 
 
@@ -1558,10 +1654,11 @@
 
 <!-- =====================================================
      BACK TO TOP
-===================================================== -->
+====================================================== -->
 
 <button class="back-to-top"
         id="backToTop"
+        type="button"
         aria-label="Back to top"
         title="Back to top">
 
@@ -1572,7 +1669,7 @@
 
 <!-- =====================================================
      JAVASCRIPT
-===================================================== -->
+====================================================== -->
 
 <script>
 
@@ -1598,6 +1695,92 @@ document.addEventListener("DOMContentLoaded", function () {
     const backToTop =
         document.getElementById("backToTop");
 
+    const typingText =
+        document.getElementById("typingText");
+
+
+    /* =================================================
+       TYPING EFFECT
+    ================================================= */
+
+    if (typingText) {
+
+        const words = [
+            "AI Student",
+            "Data Science Learner",
+            "Machine Learning Enthusiast",
+            "AI Enthusiast",
+            "Python Developer"
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        function typeEffect() {
+
+            const currentWord =
+                words[wordIndex];
+
+            if (!deleting) {
+
+                typingText.textContent =
+                    currentWord.substring(
+                        0,
+                        charIndex + 1
+                    );
+
+                charIndex++;
+
+                if (
+                    charIndex ===
+                    currentWord.length
+                ) {
+
+                    deleting = true;
+
+                    setTimeout(
+                        typeEffect,
+                        1800
+                    );
+
+                    return;
+
+                }
+
+            } else {
+
+                typingText.textContent =
+                    currentWord.substring(
+                        0,
+                        charIndex - 1
+                    );
+
+                charIndex--;
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    wordIndex =
+                        (wordIndex + 1) %
+                        words.length;
+
+                }
+
+            }
+
+            setTimeout(
+                typeEffect,
+                deleting ? 60 : 100
+            );
+
+        }
+
+        typeEffect();
+
+    }
+
 
     /* =================================================
        MOBILE MENU
@@ -1605,41 +1788,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (menuBtn && navbar) {
 
-        menuBtn.addEventListener("click", function () {
+        menuBtn.addEventListener(
+            "click",
+            function () {
 
-            navbar.classList.toggle("show");
-
-            const isOpen =
-                navbar.classList.contains("show");
-
-            menuBtn.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
-
-            const icon =
-                menuBtn.querySelector("i");
-
-            if (icon) {
-
-                icon.classList.toggle(
-                    "fa-bars",
-                    !isOpen
+                navbar.classList.toggle(
+                    "show"
                 );
 
-                icon.classList.toggle(
-                    "fa-xmark",
+                const isOpen =
+                    navbar.classList.contains(
+                        "show"
+                    );
+
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+                const icon =
+                    menuBtn.querySelector("i");
+
+                if (icon) {
+
+                    icon.classList.toggle(
+                        "fa-bars",
+                        !isOpen
+                    );
+
+                    icon.classList.toggle(
+                        "fa-xmark",
+                        isOpen
+                    );
+
+                }
+
+                document.body.classList.toggle(
+                    "no-scroll",
                     isOpen
                 );
 
             }
-
-            document.body.classList.toggle(
-                "no-scroll",
-                isOpen
-            );
-
-        });
+        );
 
 
         /* CLOSE MOBILE MENU */
@@ -1694,6 +1884,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (themeToggle) {
 
+        function updateThemeIcon() {
+
+            const icon =
+                themeToggle.querySelector("i");
+
+            if (!icon) return;
+
+            const isLight =
+                document.body.classList.contains(
+                    "light"
+                );
+
+            icon.classList.toggle(
+                "fa-moon",
+                !isLight
+            );
+
+            icon.classList.toggle(
+                "fa-sun",
+                isLight
+            );
+
+        }
+
+
         themeToggle.addEventListener(
             "click",
             function () {
@@ -1714,22 +1929,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         : "dark"
                 );
 
-                const icon =
-                    themeToggle.querySelector("i");
-
-                if (icon) {
-
-                    icon.classList.toggle(
-                        "fa-moon",
-                        !isLight
-                    );
-
-                    icon.classList.toggle(
-                        "fa-sun",
-                        isLight
-                    );
-
-                }
+                updateThemeIcon();
 
             }
         );
@@ -1748,22 +1948,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 "light"
             );
 
-            const icon =
-                themeToggle.querySelector("i");
-
-            if (icon) {
-
-                icon.classList.remove(
-                    "fa-moon"
-                );
-
-                icon.classList.add(
-                    "fa-sun"
-                );
-
-            }
-
         }
+
+        updateThemeIcon();
 
     }
 
@@ -1776,17 +1963,20 @@ document.addEventListener("DOMContentLoaded", function () {
         "load",
         function () {
 
-            setTimeout(function () {
+            setTimeout(
+                function () {
 
-                if (preloader) {
+                    if (preloader) {
 
-                    preloader.classList.add(
-                        "hide"
-                    );
+                        preloader.classList.add(
+                            "hide"
+                        );
 
-                }
+                    }
 
-            }, 500);
+                },
+                500
+            );
 
         }
     );
@@ -1796,27 +1986,31 @@ document.addEventListener("DOMContentLoaded", function () {
        BACK TO TOP
     ================================================= */
 
-    window.addEventListener(
-        "scroll",
-        function () {
+    function handleBackToTop() {
 
-            if (!backToTop) return;
+        if (!backToTop) return;
 
-            if (window.scrollY > 500) {
+        if (window.scrollY > 500) {
 
-                backToTop.classList.add(
-                    "show"
-                );
+            backToTop.classList.add(
+                "show"
+            );
 
-            } else {
+        } else {
 
-                backToTop.classList.remove(
-                    "show"
-                );
-
-            }
+            backToTop.classList.remove(
+                "show"
+            );
 
         }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        handleBackToTop,
+        { passive: true }
     );
 
 
@@ -1850,7 +2044,9 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    if ("IntersectionObserver" in window) {
+    if (
+        "IntersectionObserver" in window
+    ) {
 
         const revealObserver =
             new IntersectionObserver(
@@ -1918,7 +2114,9 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    if ("IntersectionObserver" in window) {
+    if (
+        "IntersectionObserver" in window
+    ) {
 
         const skillObserver =
             new IntersectionObserver(
@@ -1954,7 +2152,9 @@ document.addEventListener("DOMContentLoaded", function () {
         skillCards.forEach(
             function (card) {
 
-                skillObserver.observe(card);
+                skillObserver.observe(
+                    card
+                );
 
             }
         );
@@ -2003,8 +2203,14 @@ document.addEventListener("DOMContentLoaded", function () {
                                     "engagement",
 
                                 event_label:
-                                    element.href ||
-                                    element.textContent.trim()
+                                    element.getAttribute(
+                                        "href"
+                                    ) ||
+                                    element.textContent
+                                        .trim(),
+
+                                transport_type:
+                                    "beacon"
 
                             }
                         );
@@ -2032,61 +2238,75 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    window.addEventListener(
-        "scroll",
-        function () {
+    function updateActiveNavigation() {
 
-            let current = "";
+        let current = "";
 
-
-            sections.forEach(
-                function (section) {
-
-                    const sectionTop =
-                        section.offsetTop - 120;
+        const scrollPosition =
+            window.scrollY + 180;
 
 
-                    if (
-                        window.scrollY >=
-                        sectionTop
-                    ) {
+        sections.forEach(
+            function (section) {
 
-                        current =
-                            section.getAttribute(
-                                "id"
-                            );
+                const sectionTop =
+                    section.offsetTop;
 
-                    }
+                const sectionBottom =
+                    sectionTop +
+                    section.offsetHeight;
+
+
+                if (
+                    scrollPosition >= sectionTop &&
+                    scrollPosition < sectionBottom
+                ) {
+
+                    current =
+                        section.getAttribute(
+                            "id"
+                        );
 
                 }
-            );
+
+            }
+        );
 
 
-            navLinks.forEach(
-                function (link) {
+        navLinks.forEach(
+            function (link) {
 
-                    link.classList.remove(
+                link.classList.remove(
+                    "active"
+                );
+
+
+                if (
+                    link.getAttribute(
+                        "href"
+                    ) === "#" + current
+                ) {
+
+                    link.classList.add(
                         "active"
                     );
 
-
-                    if (
-                        link.getAttribute(
-                            "href"
-                        ) === "#" + current
-                    ) {
-
-                        link.classList.add(
-                            "active"
-                        );
-
-                    }
-
                 }
-            );
 
-        }
+            }
+        );
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNavigation,
+        { passive: true }
     );
+
+
+    updateActiveNavigation();
 
 
     /* =================================================
@@ -2113,14 +2333,20 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
-                    menuBtn.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
+                    if (menuBtn) {
+
+                        menuBtn.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
 
 
                     const icon =
-                        menuBtn.querySelector("i");
+                        menuBtn
+                            ? menuBtn.querySelector("i")
+                            : null;
 
 
                     if (icon) {
@@ -2147,6 +2373,56 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
+
+    /* =================================================
+       PREVENT EMPTY / BROKEN INTERNAL LINKS
+    ================================================= */
+
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function (event) {
+
+                    const targetId =
+                        link.getAttribute(
+                            "href"
+                        );
+
+                    if (
+                        targetId === "#"
+                    ) {
+
+                        event.preventDefault();
+
+                        return;
+
+                    }
+
+
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
+
+
+                    if (target) {
+
+                        event.preventDefault();
+
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+
+                    }
+
+                }
+            );
+
+        });
 
 });
 
