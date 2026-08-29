@@ -1,188 +1,78 @@
+```javascript
 /* =====================================================
-AHMED SOROUR PORTFOLIO
-PROFESSIONAL JAVASCRIPT
+   AHMED SOROUR PORTFOLIO
+   PROFESSIONAL JAVASCRIPT
 ===================================================== */
+
+"use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
 
-```
-/* ================= ELEMENTS ================= */
+    /* =================================================
+       ELEMENTS
+    ================================================= */
 
-const menuBtn =
-    document.getElementById("menuBtn");
+    const preloader = document.getElementById("preloader");
 
-const navbar =
-    document.getElementById("navbar");
+    const menuBtn = document.getElementById("menuBtn");
 
-const themeToggle =
-    document.getElementById("themeToggle");
+    const navbar = document.getElementById("navbar");
 
-const preloader =
-    document.getElementById("preloader");
+    const themeToggle =
+        document.getElementById("themeToggle");
 
-const backToTop =
-    document.getElementById("backToTop");
+    const backToTop =
+        document.getElementById("backToTop");
 
-const typingText =
-    document.getElementById("typingText");
+    const typingText =
+        document.getElementById("typingText");
 
-const header =
-    document.querySelector(".header");
+    const header =
+        document.querySelector(".header");
 
 
-/* ================= TYPING EFFECT ================= */
+    /* =================================================
+       PRELOADER
+    ================================================= */
 
-if (typingText) {
+    window.addEventListener("load", () => {
 
-    const words = [
+        setTimeout(() => {
 
-        "AI Student",
-        "Data Science Learner",
-        "Machine Learning Enthusiast",
-        "AI Enthusiast",
-        "Python Developer"
+            if (preloader) {
 
-    ];
-
-    let wordIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-
-    function typeEffect() {
-
-        const currentWord =
-            words[wordIndex];
-
-
-        if (!deleting) {
-
-            typingText.textContent =
-                currentWord.substring(
-                    0,
-                    charIndex + 1
-                );
-
-            charIndex++;
-
-
-            if (
-                charIndex ===
-                currentWord.length
-            ) {
-
-                deleting = true;
-
-                setTimeout(
-                    typeEffect,
-                    1800
-                );
-
-                return;
+                preloader.classList.add("hide");
 
             }
 
-        } else {
+        }, 500);
 
-            typingText.textContent =
-                currentWord.substring(
-                    0,
-                    charIndex - 1
-                );
-
-            charIndex--;
+    });
 
 
-            if (charIndex === 0) {
+    /* =================================================
+       MOBILE MENU
+    ================================================= */
 
-                deleting = false;
+    if (menuBtn && navbar) {
 
-                wordIndex =
-                    (wordIndex + 1) %
-                    words.length;
-
-            }
-
-        }
-
-
-        setTimeout(
-            typeEffect,
-            deleting ? 55 : 95
-        );
-
-    }
-
-
-    typeEffect();
-
-}
-
-
-/* ================= MOBILE MENU ================= */
-
-function closeMenu() {
-
-    if (!navbar || !menuBtn) return;
-
-    navbar.classList.remove("show");
-
-    document.body.classList.remove(
-        "no-scroll"
-    );
-
-    menuBtn.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-
-    const icon =
-        menuBtn.querySelector("i");
-
-
-    if (icon) {
-
-        icon.classList.remove(
-            "fa-xmark"
-        );
-
-        icon.classList.add(
-            "fa-bars"
-        );
-
-    }
-
-}
-
-
-if (menuBtn && navbar) {
-
-    menuBtn.addEventListener(
-        "click",
-        () => {
+        menuBtn.addEventListener("click", () => {
 
             const isOpen =
-                navbar.classList.toggle(
-                    "show"
-                );
-
+                navbar.classList.toggle("show");
 
             document.body.classList.toggle(
                 "no-scroll",
                 isOpen
             );
 
-
             menuBtn.setAttribute(
                 "aria-expanded",
                 String(isOpen)
             );
 
-
             const icon =
                 menuBtn.querySelector("i");
-
 
             if (icon) {
 
@@ -198,474 +88,232 @@ if (menuBtn && navbar) {
 
             }
 
-        }
-    );
-
-
-    navbar
-        .querySelectorAll("a")
-        .forEach(link => {
-
-            link.addEventListener(
-                "click",
-                closeMenu
-            );
-
         });
 
-}
 
+        navbar
+            .querySelectorAll("a")
+            .forEach(link => {
 
-/* ================= THEME ================= */
+                link.addEventListener("click", () => {
 
-function updateThemeIcon() {
+                    navbar.classList.remove("show");
 
-    if (!themeToggle) return;
-
-
-    const icon =
-        themeToggle.querySelector("i");
-
-
-    if (!icon) return;
-
-
-    const isLight =
-        document.body.classList.contains(
-            "light"
-        );
-
-
-    icon.classList.toggle(
-        "fa-moon",
-        !isLight
-    );
-
-
-    icon.classList.toggle(
-        "fa-sun",
-        isLight
-    );
-
-}
-
-
-const savedTheme =
-    localStorage.getItem(
-        "portfolio-theme"
-    );
-
-
-if (savedTheme === "light") {
-
-    document.body.classList.add(
-        "light"
-    );
-
-}
-
-
-updateThemeIcon();
-
-
-if (themeToggle) {
-
-    themeToggle.addEventListener(
-        "click",
-        () => {
-
-            document.body.classList.toggle(
-                "light"
-            );
-
-
-            const currentTheme =
-                document.body.classList.contains(
-                    "light"
-                )
-                    ? "light"
-                    : "dark";
-
-
-            localStorage.setItem(
-                "portfolio-theme",
-                currentTheme
-            );
-
-
-            updateThemeIcon();
-
-        }
-    );
-
-}
-
-
-/* ================= PRELOADER ================= */
-
-window.addEventListener(
-    "load",
-    () => {
-
-        setTimeout(
-            () => {
-
-                if (preloader) {
-
-                    preloader.classList.add(
-                        "hide"
+                    document.body.classList.remove(
+                        "no-scroll"
                     );
 
-                }
+                    menuBtn.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
-            },
-            500
-        );
+                    const icon =
+                        menuBtn.querySelector("i");
 
-    }
-);
+                    if (icon) {
 
+                        icon.classList.remove(
+                            "fa-xmark"
+                        );
 
-/* ================= BACK TO TOP ================= */
+                        icon.classList.add(
+                            "fa-bars"
+                        );
 
-function handleBackToTop() {
+                    }
 
-    if (!backToTop) return;
-
-
-    if (window.scrollY > 500) {
-
-        backToTop.classList.add(
-            "show"
-        );
-
-    } else {
-
-        backToTop.classList.remove(
-            "show"
-        );
-
-    }
-
-}
-
-
-window.addEventListener(
-    "scroll",
-    handleBackToTop,
-    { passive: true }
-);
-
-
-if (backToTop) {
-
-    backToTop.addEventListener(
-        "click",
-        () => {
-
-            window.scrollTo({
-
-                top: 0,
-
-                behavior: "smooth"
+                });
 
             });
 
-        }
-    );
-
-}
-
-
-/* ================= HEADER SCROLL ================= */
-
-function handleHeader() {
-
-    if (!header) return;
-
-
-    if (window.scrollY > 50) {
-
-        header.style.boxShadow =
-            "0 10px 35px rgba(0,0,0,.15)";
-
-    } else {
-
-        header.style.boxShadow =
-            "none";
-
     }
 
-}
 
+    /* =================================================
+       DARK / LIGHT MODE
+    ================================================= */
 
-window.addEventListener(
-    "scroll",
-    handleHeader,
-    { passive: true }
-);
+    function updateThemeIcon() {
 
+        if (!themeToggle) return;
 
-/* ================= SCROLL REVEAL ================= */
+        const icon =
+            themeToggle.querySelector("i");
 
-const revealElements =
-    document.querySelectorAll(
-        ".reveal"
-    );
+        if (!icon) return;
 
+        const isLight =
+            document.body.classList.contains("light");
 
-if (
-    "IntersectionObserver" in window
-) {
-
-    const revealObserver =
-        new IntersectionObserver(
-            entries => {
-
-                entries.forEach(
-                    entry => {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            entry.target.classList.add(
-                                "visible"
-                            );
-
-
-                            revealObserver.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    }
-                );
-
-            },
-            {
-                threshold: 0.12
-            }
+        icon.classList.toggle(
+            "fa-moon",
+            !isLight
         );
 
-
-    revealElements.forEach(
-        element => {
-
-            revealObserver.observe(
-                element
-            );
-
-        }
-    );
-
-} else {
-
-    revealElements.forEach(
-        element => {
-
-            element.classList.add(
-                "visible"
-            );
-
-        }
-    );
-
-}
-
-
-/* ================= STAGGER ANIMATIONS ================= */
-
-const skillCards =
-    document.querySelectorAll(
-        ".skill-card"
-    );
-
-
-skillCards.forEach(
-    (card, index) => {
-
-        card.style.transitionDelay =
-            `${index * 60}ms`;
-
-    }
-);
-
-
-const projectCards =
-    document.querySelectorAll(
-        ".project-card"
-    );
-
-
-projectCards.forEach(
-    (card, index) => {
-
-        card.style.transitionDelay =
-            `${index * 100}ms`;
-
-    }
-);
-
-
-const contactCards =
-    document.querySelectorAll(
-        ".contact-card"
-    );
-
-
-contactCards.forEach(
-    (card, index) => {
-
-        card.style.transitionDelay =
-            `${index * 80}ms`;
-
-    }
-);
-
-
-/* ================= SKILL OBSERVER ================= */
-
-if (
-    "IntersectionObserver" in window
-) {
-
-    const skillObserver =
-        new IntersectionObserver(
-            entries => {
-
-                entries.forEach(
-                    entry => {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            entry.target.classList.add(
-                                "visible"
-                            );
-
-
-                            skillObserver.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    }
-                );
-
-            },
-            {
-                threshold: 0.15
-            }
+        icon.classList.toggle(
+            "fa-sun",
+            isLight
         );
 
-
-    skillCards.forEach(
-        card => {
-
-            skillObserver.observe(
-                card
-            );
-
-        }
-    );
-
-} else {
-
-    skillCards.forEach(
-        card => {
-
-            card.classList.add(
-                "visible"
-            );
-
-        }
-    );
-
-}
+    }
 
 
-/* ================= GOOGLE ANALYTICS ================= */
+    const savedTheme =
+        localStorage.getItem("portfolio-theme");
 
-document
-    .querySelectorAll(
-        "[data-analytics]"
-    )
-    .forEach(element => {
+    if (savedTheme === "light") {
 
-        element.addEventListener(
+        document.body.classList.add("light");
+
+    }
+
+
+    updateThemeIcon();
+
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener(
             "click",
             () => {
 
-                const eventName =
-                    element.dataset.analytics;
+                document.body.classList.toggle(
+                    "light"
+                );
+
+                const currentTheme =
+                    document.body.classList.contains("light")
+                        ? "light"
+                        : "dark";
+
+                localStorage.setItem(
+                    "portfolio-theme",
+                    currentTheme
+                );
+
+                updateThemeIcon();
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       TYPING ANIMATION
+    ================================================= */
+
+    if (typingText) {
+
+        const words = [
+            "AI Student",
+            "Data Science Learner",
+            "Machine Learning Enthusiast",
+            "AI Enthusiast",
+            "Python Developer"
+        ];
+
+        let wordIndex = 0;
+
+        let charIndex = 0;
+
+        let deleting = false;
+
+
+        function typeEffect() {
+
+            const currentWord =
+                words[wordIndex];
+
+
+            if (!deleting) {
+
+                typingText.textContent =
+                    currentWord.substring(
+                        0,
+                        charIndex + 1
+                    );
+
+                charIndex++;
 
 
                 if (
-                    typeof window.gtag ===
-                    "function"
+                    charIndex ===
+                    currentWord.length
                 ) {
 
-                    window.gtag(
-                        "event",
-                        eventName,
-                        {
+                    deleting = true;
 
-                            event_category:
-                                "engagement",
-
-                            event_label:
-                                element.getAttribute(
-                                    "href"
-                                ) ||
-                                element.textContent
-                                    .trim(),
-
-                            transport_type:
-                                "beacon"
-
-                        }
+                    setTimeout(
+                        typeEffect,
+                        1800
                     );
+
+                    return;
+
+                }
+
+            } else {
+
+                typingText.textContent =
+                    currentWord.substring(
+                        0,
+                        charIndex - 1
+                    );
+
+                charIndex--;
+
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    wordIndex =
+                        (wordIndex + 1) %
+                        words.length;
 
                 }
 
             }
-        );
-
-    });
 
 
-/* ================= ACTIVE NAVIGATION ================= */
+            setTimeout(
+                typeEffect,
+                deleting ? 55 : 90
+            );
 
-const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
-
-
-const navLinks =
-    document.querySelectorAll(
-        ".nav-link"
-    );
+        }
 
 
-function updateActiveNavigation() {
+        typeEffect();
 
-    let current = "";
-
-    const scrollPosition =
-        window.scrollY + 180;
+    }
 
 
-    sections.forEach(
-        section => {
+    /* =================================================
+       ACTIVE NAVIGATION
+    ================================================= */
+
+    const sections =
+        document.querySelectorAll("section[id]");
+
+    const navLinks =
+        document.querySelectorAll(".nav-link");
+
+
+    function updateActiveNav() {
+
+        let current = "";
+
+        const scrollPosition =
+            window.scrollY + 180;
+
+
+        sections.forEach(section => {
 
             const sectionTop =
                 section.offsetTop;
-
 
             const sectionBottom =
                 sectionTop +
@@ -673,166 +321,389 @@ function updateActiveNavigation() {
 
 
             if (
-                scrollPosition >=
-                    sectionTop &&
-                scrollPosition <
-                    sectionBottom
+                scrollPosition >= sectionTop &&
+                scrollPosition < sectionBottom
             ) {
 
                 current =
-                    section.getAttribute(
-                        "id"
-                    );
+                    section.getAttribute("id");
 
             }
 
-        }
-    );
+        });
 
 
-    navLinks.forEach(
-        link => {
+        navLinks.forEach(link => {
 
-            link.classList.remove(
-                "active"
-            );
+            link.classList.remove("active");
 
 
             if (
-                link.getAttribute(
-                    "href"
-                ) ===
+                link.getAttribute("href") ===
                 "#" + current
             ) {
 
-                link.classList.add(
-                    "active"
-                );
+                link.classList.add("active");
 
             }
 
-        }
+        });
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNav,
+        { passive: true }
     );
 
-}
+    updateActiveNav();
 
 
-window.addEventListener(
-    "scroll",
-    updateActiveNavigation,
-    { passive: true }
-);
+    /* =================================================
+       SCROLL REVEAL
+    ================================================= */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
 
 
-updateActiveNavigation();
+    if (
+        "IntersectionObserver" in window
+    ) {
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
 
 
-/* ================= PROJECT FEEDBACK ================= */
+        revealElements.forEach(element => {
 
-document
-    .querySelectorAll(
-        ".project-link"
-    )
-    .forEach(link => {
+            observer.observe(element);
 
-        link.addEventListener(
+        });
+
+    } else {
+
+        revealElements.forEach(element => {
+
+            element.classList.add("visible");
+
+        });
+
+    }
+
+
+    /* =================================================
+       STAGGER ANIMATIONS
+    ================================================= */
+
+    const skillCards =
+        document.querySelectorAll(".skill-card");
+
+    skillCards.forEach((card, index) => {
+
+        card.style.transitionDelay =
+            `${index * 60}ms`;
+
+    });
+
+
+    const projectCards =
+        document.querySelectorAll(".project-card");
+
+    projectCards.forEach((card, index) => {
+
+        card.style.transitionDelay =
+            `${index * 100}ms`;
+
+    });
+
+
+    /* =================================================
+       HEADER SHADOW
+    ================================================= */
+
+    function updateHeader() {
+
+        if (!header) return;
+
+        if (window.scrollY > 50) {
+
+            header.style.boxShadow =
+                "0 10px 35px rgba(0,0,0,.15)";
+
+        } else {
+
+            header.style.boxShadow =
+                "none";
+
+        }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        { passive: true }
+    );
+
+    updateHeader();
+
+
+    /* =================================================
+       BACK TO TOP
+    ================================================= */
+
+    function updateBackToTop() {
+
+        if (!backToTop) return;
+
+        if (window.scrollY > 500) {
+
+            backToTop.classList.add("show");
+
+        } else {
+
+            backToTop.classList.remove("show");
+
+        }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateBackToTop,
+        { passive: true }
+    );
+
+    updateBackToTop();
+
+
+    if (backToTop) {
+
+        backToTop.addEventListener(
             "click",
             () => {
 
-                link.classList.add(
-                    "clicked"
-                );
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    }
 
 
-                setTimeout(
-                    () => {
+    /* =================================================
+       GOOGLE ANALYTICS EVENTS
+    ================================================= */
+
+    document
+        .querySelectorAll("[data-analytics]")
+        .forEach(element => {
+
+            element.addEventListener(
+                "click",
+                () => {
+
+                    const eventName =
+                        element.dataset.analytics;
+
+
+                    if (
+                        typeof window.gtag ===
+                        "function"
+                    ) {
+
+                        window.gtag(
+                            "event",
+                            eventName,
+                            {
+
+                                event_category:
+                                    "engagement",
+
+                                event_label:
+                                    element.getAttribute(
+                                        "href"
+                                    ) ||
+                                    element.textContent
+                                        .trim(),
+
+                                transport_type:
+                                    "beacon"
+
+                            }
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =================================================
+       PROJECT LINK FEEDBACK
+    ================================================= */
+
+    document
+        .querySelectorAll(".project-link")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    link.classList.add(
+                        "clicked"
+                    );
+
+                    setTimeout(() => {
 
                         link.classList.remove(
                             "clicked"
                         );
 
-                    },
-                    500
+                    }, 500);
+
+                }
+            );
+
+        });
+
+
+    /* =================================================
+       ESCAPE KEY
+    ================================================= */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key === "Escape" &&
+                navbar &&
+                navbar.classList.contains("show")
+            ) {
+
+                navbar.classList.remove(
+                    "show"
                 );
 
+                document.body.classList.remove(
+                    "no-scroll"
+                );
+
+
+                if (menuBtn) {
+
+                    menuBtn.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    const icon =
+                        menuBtn.querySelector("i");
+
+                    if (icon) {
+
+                        icon.classList.remove(
+                            "fa-xmark"
+                        );
+
+                        icon.classList.add(
+                            "fa-bars"
+                        );
+
+                    }
+
+                }
+
             }
-        );
-
-    });
-
-
-/* ================= ESCAPE KEY ================= */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            closeMenu();
 
         }
-
-    }
-);
+    );
 
 
-/* ================= INTERNAL LINKS ================= */
+    /* =================================================
+       INTERNAL SMOOTH LINKS
+    ================================================= */
 
-document
-    .querySelectorAll(
-        'a[href^="#"]'
-    )
-    .forEach(link => {
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(link => {
 
-        link.addEventListener(
-            "click",
-            event => {
+            link.addEventListener(
+                "click",
+                event => {
 
-                const targetId =
-                    link.getAttribute(
-                        "href"
-                    );
+                    const targetId =
+                        link.getAttribute("href");
 
 
-                if (
-                    targetId === "#"
-                ) {
+                    if (
+                        !targetId ||
+                        targetId === "#"
+                    ) {
 
-                    event.preventDefault();
+                        return;
 
-                    return;
-
-                }
-
-
-                const target =
-                    document.querySelector(
-                        targetId
-                    );
+                    }
 
 
-                if (target) {
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
 
-                    event.preventDefault();
 
+                    if (target) {
 
-                    target.scrollIntoView({
+                        event.preventDefault();
 
-                        behavior: "smooth",
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
 
-                        block: "start"
-
-                    });
+                    }
 
                 }
+            );
 
-            }
-        );
-
-    });
-```
+        });
 
 });
+```
