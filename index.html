@@ -1,1148 +1,1073 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+```
+<meta name="description"
+    content="Ahmed Sorour - Computer Science and Artificial Intelligence student specializing in AI, Data Science and Machine Learning.">
 
-    <meta name="description"
-          content="Ahmed Sorour - Computer Science and Artificial Intelligence student at Capital University, majoring in AI. Explore my Data Science, Machine Learning, AI projects, skills, and career journey.">
+<meta name="author" content="Ahmed Sorour">
 
-    <meta name="author"
-          content="Ahmed Sorour">
+<title>Ahmed Sorour | AI & Data Science Portfolio</title>
 
-    <meta name="keywords"
-          content="Ahmed Sorour, Capital University, Computer Science, Artificial Intelligence, AI Student, Data Science, Machine Learning, Python, SQL, Pandas, NumPy">
+<link rel="icon" type="image/png" href="images/best.png">
 
-    <meta name="theme-color"
-          content="#0f172a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <meta name="robots"
-          content="index, follow">
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-    <title>Ahmed Sorour | AI Student | Data Science & AI</title>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Favicon -->
-    <link rel="icon"
-          type="image/png"
-          href="images/best.png">
+<link rel="stylesheet" href="style.css">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP20Q9C99S"></script>
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+<script>
+    window.dataLayer = window.dataLayer || [];
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet">
+    function gtag() {
+        dataLayer.push(arguments);
+    }
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    gtag("js", new Date());
+    gtag("config", "G-YP20Q9C99S");
+</script>
+```
 
-    <!-- CSS -->
-    <link rel="stylesheet"
-          href="style.css">
-
-    <!-- Google Analytics -->
-    <script async
-            src="https://www.googletagmanager.com/gtag/js?id=G-YP20Q9C99S">
-    </script>
-
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        gtag('config', 'G-YP20Q9C99S');
-    </script>
 </head>
 
 <body>
 
-    <!-- PRELOADER -->
-    <div class="preloader"
-         id="preloader"
-         aria-label="Loading website">
-
-        <div class="loader"></div>
-
-        <p>Loading portfolio...</p>
-
-    </div>
+```
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+    <div class="loader"></div>
+    <p>Loading portfolio...</p>
+</div>
 
 
-    <!-- HEADER -->
-    <header class="header">
+<!-- HEADER -->
+<header class="header">
 
-        <a href="#home"
-           class="logo"
-           aria-label="Ahmed Sorour Home">
+    <a href="#home" class="logo">
+        <span>&lt;</span>
+        Ahmed <b>Sorour</b>
+        <span>/&gt;</span>
+    </a>
 
-            <span>&lt;</span>
-            Ahmed <b>Sorour</b>
-            <span>/&gt;</span>
+    <nav class="navbar" id="navbar">
+
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#data-analysis" class="nav-link">Data Analysis</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#goal" class="nav-link">Goal</a>
+        <a href="#contact" class="nav-link">Contact</a>
+
+    </nav>
+
+    <div class="nav-buttons">
+
+        <button
+            class="icon-btn"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme">
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+        <a
+            href="https://drive.google.com/file/d/1Zh5S9UYCkl76ocU7FDKOUdL-wp8meHQg/view?usp=drivesdk"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cv-btn"
+            id="cvButton"
+            data-analytics="cv_download">
+
+            <i class="fa-solid fa-file-pdf"></i>
+            CV
 
         </a>
 
+        <button
+            class="icon-btn menu-btn"
+            id="menuBtn"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false">
 
-        <nav class="navbar"
-             id="navbar"
-             aria-label="Main navigation">
+            <i class="fa-solid fa-bars"></i>
 
-            <a href="#home"
-               class="nav-link active">
-                Home
-            </a>
+        </button>
 
-            <a href="#about"
-               class="nav-link">
-                About
-            </a>
+    </div>
 
-            <a href="#skills"
-               class="nav-link">
-                Skills
-            </a>
-
-            <a href="#projects"
-               class="nav-link">
-                Projects
-            </a>
-
-            <a href="#education"
-               class="nav-link">
-                Education
-            </a>
-
-            <a href="#goal"
-               class="nav-link">
-                Goal
-            </a>
-
-            <a href="#contact"
-               class="nav-link">
-                Contact
-            </a>
-
-        </nav>
+</header>
 
 
-        <div class="nav-buttons">
+<main>
 
-            <!-- THEME -->
-            <button class="icon-btn"
-                    id="themeToggle"
-                    type="button"
-                    aria-label="Toggle dark and light mode"
-                    title="Toggle theme">
+    <!-- HERO -->
+    <section class="hero" id="home">
 
-                <i class="fa-solid fa-moon"></i>
+        <div class="hero-grid">
 
-            </button>
+            <div class="hero-content">
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Open to internships & opportunities
+                </div>
+
+                <p class="hello">Hello, I'm</p>
+
+                <h1>
+                    Ahmed <span>Sorour</span>
+                </h1>
+
+                <h2>
+                    I'm an
+                    <span id="typingText"></span>
+                    <span class="cursor">|</span>
+                </h2>
+
+                <p class="hero-description">
+                    I am a Computer Science and Artificial Intelligence
+                    student at Capital University, majoring in Artificial
+                    Intelligence. I am passionate about Data Science,
+                    Machine Learning and AI. I enjoy building practical
+                    projects and solving real-world problems with data.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="primary-btn">
+                        <i class="fa-solid fa-code"></i>
+                        View Projects
+                    </a>
+
+                    <a href="#contact" class="secondary-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Contact Me
+                    </a>
+
+                </div>
+
+                <div class="social-links">
+
+                    <a
+                        href="https://github.com/Ahmed-Soro"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-analytics="github_click"
+                        aria-label="GitHub">
+
+                        <i class="fa-brands fa-github"></i>
+
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/ahmed-sorour-d"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-analytics="linkedin_click"
+                        aria-label="LinkedIn">
+
+                        <i class="fa-brands fa-linkedin-in"></i>
+
+                    </a>
+
+                    <a
+                        href="https://wa.me/201154929027"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-analytics="whatsapp_click"
+                        aria-label="WhatsApp">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </a>
+
+                    <a
+                        href="mailto:sorour802@gmail.com"
+                        data-analytics="email_click"
+                        aria-label="Email">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
 
 
-            <!-- CV -->
-            <a href="https://drive.google.com/file/d/1Zh5S9UYCkl76ocU7FDKOUdL-wp8meHQg/view?usp=drivesdk"
-               class="cv-btn"
-               id="cvButton"
-               target="_blank"
-               rel="noopener noreferrer"
-               data-analytics="cv_download"
-               aria-label="Open CV">
+            <div class="hero-image">
 
-                <i class="fa-solid fa-file-pdf"></i>
-                CV
+                <div class="image-glow"></div>
 
-            </a>
+                <div class="image-wrapper">
 
+                    <img
+                        src="images/sorour1.jpg"
+                        alt="Ahmed Sorour">
 
-            <!-- MOBILE MENU -->
-            <button class="icon-btn menu-btn"
-                    id="menuBtn"
-                    type="button"
-                    aria-label="Open navigation menu"
-                    aria-expanded="false"
-                    aria-controls="navbar">
+                </div>
 
-                <i class="fa-solid fa-bars"></i>
+                <div class="floating-card card-one">
+                    <i class="fa-brands fa-python"></i>
+                    <div>
+                        <strong>Python</strong>
+                        <small>Programming</small>
+                    </div>
+                </div>
 
-            </button>
+                <div class="floating-card card-two">
+                    <i class="fa-solid fa-database"></i>
+                    <div>
+                        <strong>Data Science</strong>
+                        <small>Analytics</small>
+                    </div>
+                </div>
+
+                <div class="floating-card card-three">
+                    <i class="fa-solid fa-brain"></i>
+                    <div>
+                        <strong>Artificial Intelligence</strong>
+                        <small>Machine Learning</small>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
 
-    </header>
+    </section>
 
 
-    <main>
+    <!-- STATS -->
+    <section class="stats">
 
-        <!-- HERO -->
-        <section class="hero"
-                 id="home"
-                 aria-labelledby="hero-title">
+        <div class="stat-card">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <strong>AI Student</strong>
+            <span>Capital University</span>
+        </div>
 
-            <div class="hero-grid">
+        <div class="stat-card">
+            <i class="fa-solid fa-brain"></i>
+            <strong>AI Major</strong>
+            <span>Artificial Intelligence</span>
+        </div>
 
-                <div class="hero-content">
+        <div class="stat-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <strong>Data Science</strong>
+            <span>Learning & Building</span>
+        </div>
 
-                    <div class="status">
-                        <span class="status-dot"></span>
-                        Open to internships & opportunities
-                    </div>
+        <div class="stat-card">
+            <i class="fa-solid fa-code"></i>
+            <strong>Projects</strong>
+            <span>Practical Experience</span>
+        </div>
 
-                    <div class="hello">
-                        Hello, I'm
-                    </div>
+    </section>
 
-                    <h1 id="hero-title">
-                        Ahmed
-                        <span>Sorour</span>
-                    </h1>
 
-                    <h2>
-                        I'm an
-                        <span id="typingText"></span>
-                        <span class="cursor">|</span>
-                    </h2>
+    <!-- ABOUT -->
+    <section class="section" id="about">
 
-                    <p class="hero-description">
-                        I am a Computer Science and Artificial Intelligence
-                        student at Capital University, majoring in Artificial
-                        Intelligence. I am passionate about Data Science,
-                        Machine Learning, and AI, and I am developing my skills
-                        by building practical projects and solving real-world
-                        problems with data.
-                    </p>
+        <div class="section-title reveal">
+            <span>ABOUT ME</span>
 
-                    <div class="hero-buttons">
+            <h2>
+                Learning, Building &
+                <strong>Growing</strong>
+            </h2>
+        </div>
 
-                        <a href="#projects"
-                           class="primary-btn">
-                            <i class="fa-solid fa-code"></i>
-                            View My Projects
-                        </a>
-
-                        <a href="#contact"
-                           class="secondary-btn">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            Contact Me
-                        </a>
-
-                    </div>
-
-
-                    <div class="social-links">
-
-                        <a href="https://github.com/Ahmed-Soro"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           aria-label="GitHub"
-                           data-analytics="github_click">
-
-                            <i class="fa-brands fa-github"></i>
-
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/ahmed-sorour-d"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           aria-label="LinkedIn"
-                           data-analytics="linkedin_click">
-
-                            <i class="fa-brands fa-linkedin-in"></i>
-
-                        </a>
-
-                        <a href="https://wa.me/201154929027"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           aria-label="WhatsApp"
-                           data-analytics="whatsapp_click">
-
-                            <i class="fa-brands fa-whatsapp"></i>
-
-                        </a>
-
-                        <a href="mailto:sorour802@gmail.com"
-                           aria-label="Email"
-                           data-analytics="email_click">
-
-                            <i class="fa-solid fa-envelope"></i>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="hero-image">
-
-                    <div class="image-glow"></div>
-
-                    <div class="image-orbit orbit-one"></div>
-
-                    <div class="image-orbit orbit-two"></div>
-
-                    <div class="image-wrapper">
-
-                        <img src="images/sorour1.jpg"
-                             alt="Ahmed Sorour - Computer Science and Artificial Intelligence student"
-                             loading="eager">
-
-                    </div>
-
-
-                    <div class="floating-card card-one">
-
-                        <i class="fa-brands fa-python"></i>
-
-                        <div>
-                            <strong>Python</strong>
-                            <small>Programming</small>
-                        </div>
-
-                    </div>
-
-
-                    <div class="floating-card card-two">
-
-                        <i class="fa-solid fa-database"></i>
-
-                        <div>
-                            <strong>Data Science</strong>
-                            <small>Analytics</small>
-                        </div>
-
-                    </div>
-
-
-                    <div class="floating-card card-three">
-
-                        <i class="fa-solid fa-brain"></i>
-
-                        <div>
-                            <strong>Artificial Intelligence</strong>
-                            <small>Machine Learning</small>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="scroll-indicator"
-                 aria-hidden="true">
-
-                <i class="fa-solid fa-computer-mouse"></i>
-                Scroll to explore
-
-            </div>
-
-        </section>
-
-
-        <!-- STATS -->
-        <section class="stats"
-                 aria-label="Portfolio highlights">
-
-            <div class="stat-card">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <strong>AI Student</strong>
-                <span>Capital University</span>
-            </div>
-
-            <div class="stat-card">
-                <i class="fa-solid fa-brain"></i>
-                <strong>AI Major</strong>
-                <span>Artificial Intelligence</span>
-            </div>
-
-            <div class="stat-card">
-                <i class="fa-solid fa-chart-line"></i>
-                <strong>Data Science</strong>
-                <span>Learning & Building</span>
-            </div>
-
-            <div class="stat-card">
-                <i class="fa-solid fa-code"></i>
-                <strong>Projects</strong>
-                <span>Practical Experience</span>
-            </div>
-
-        </section>
-
-
-        <!-- ABOUT -->
-        <section class="section about"
-                 id="about">
+        <div class="about-grid">
 
             <div class="about-content reveal">
 
-                <div class="section-heading">
-
-                    <span>ABOUT ME</span>
-
-                    <h2>
-                        Learning, Building &
-                        <strong>Growing</strong>
-                    </h2>
-
-                </div>
-
                 <p>
-                    I am Ahmed Sorour, a Computer Science and Artificial
-                    Intelligence student at Capital University, majoring in
-                    Artificial Intelligence.
+                    I am Ahmed Sorour, a Computer Science and
+                    Artificial Intelligence student at Capital University,
+                    majoring in Artificial Intelligence.
                 </p>
 
                 <p>
-                    I am passionate about Artificial Intelligence, Data Science,
-                    Machine Learning, programming, mathematics, and statistics.
-                    I enjoy learning new technologies and applying what I learn
-                    through practical projects.
+                    I am passionate about Artificial Intelligence,
+                    Data Science, Machine Learning, programming,
+                    mathematics and statistics.
                 </p>
 
                 <p>
-                    I am currently developing my skills in Python, NumPy,
-                    Pandas, SQL, Statistics, Data Visualization, Exploratory
-                    Data Analysis, and Machine Learning.
+                    I am currently developing my skills in Python,
+                    NumPy, Pandas, SQL, Statistics, Data Visualization,
+                    Exploratory Data Analysis and Machine Learning.
                 </p>
-
-                <div class="about-stats">
-
-                    <div>
-                        <strong>AI</strong>
-                        <span>Major</span>
-                    </div>
-
-                    <div>
-                        <strong>Capital University</strong>
-                        <span>University</span>
-                    </div>
-
-                    <div>
-                        <strong>Data Science</strong>
-                        <span>Career Focus</span>
-                    </div>
-
-                </div>
 
             </div>
 
+            <div class="about-boxes">
 
-            <div class="about-image reveal">
-
-                <div class="about-box">
-                    <span>01</span>
+                <div class="about-box reveal">
                     <i class="fa-solid fa-chart-simple"></i>
                     <h3>Data Science</h3>
-                    <p>
-                        Learning how to explore data and extract
-                        meaningful insights.
-                    </p>
+                    <p>Exploring data and extracting meaningful insights.</p>
                 </div>
 
-                <div class="about-box">
-                    <span>02</span>
+                <div class="about-box reveal">
                     <i class="fa-solid fa-brain"></i>
                     <h3>Artificial Intelligence</h3>
-                    <p>
-                        Studying AI and machine learning as my
-                        university major.
-                    </p>
+                    <p>Studying AI and machine learning.</p>
                 </div>
 
-                <div class="about-box">
-                    <span>03</span>
+                <div class="about-box reveal">
                     <i class="fa-solid fa-code"></i>
                     <h3>Programming</h3>
-                    <p>
-                        Developing programming skills with Python
-                        and Java.
-                    </p>
+                    <p>Developing Python and Java programming skills.</p>
                 </div>
 
-                <div class="about-box">
-                    <span>04</span>
+                <div class="about-box reveal">
                     <i class="fa-solid fa-lightbulb"></i>
                     <h3>Problem Solving</h3>
-                    <p>
-                        Applying logical thinking to solve technical
-                        and real-world problems.
-                    </p>
-                </div>
-
-                <div class="about-box wide">
-                    <span>05</span>
-                    <i class="fa-solid fa-rocket"></i>
-                    <h3>Continuous Learning</h3>
-                    <p>
-                        Continuously improving my technical,
-                        analytical, and professional skills.
-                    </p>
+                    <p>Using logical thinking to solve technical problems.</p>
                 </div>
 
             </div>
 
-        </section>
-
-
-        <!-- SKILLS -->
-        <section class="section skills-section"
-                 id="skills">
-
-            <div class="section-title reveal">
-
-                <span>MY SKILLS</span>
-
-                <h2>
-                    Technologies &
-                    <strong>Knowledge Areas</strong>
-                </h2>
-
-                <p>
-                    Skills and technologies I am currently learning
-                    and using to build Data Science and AI projects.
-                </p>
-
-            </div>
-
-
-            <div class="skills-container">
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon">
-                        <i class="fa-brands fa-python"></i>
-                    </div>
-                    <h3>Python</h3>
-                    <p>Programming & Data</p>
-                    <div class="skill-line"><span></span></div>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-table"></i>
-                    </div>
-                    <h3>Pandas</h3>
-                    <p>Data Analysis</p>
-                    <div class="skill-line"><span></span></div>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-calculator"></i>
-                    </div>
-                    <h3>NumPy</h3>
-                    <p>Numerical Computing</p>
-                    <div class="skill-line"><span></span></div>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-                    <h3>SQL</h3>
-                    <p>Database & Queries</p>
-                    <div class="skill-line"><span></span></div>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-                    <h3>Machine Learning</h3>
-                    <p>AI Models</p>
-                    <div class="skill-line"><span></span></div>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-chart-pie"></i>
-                    </div>
-                    <h3>Statistics</h3>
-                    <p>Data Analysis</p>
-                    <div class="skill-line"><span></span></div>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-square-root-variable"></i>
-                    </div>
-                    <h3>Mathematics</h3>
-                    <p>AI Foundation</p>
-                    <div class="skill-line"><span></span></div>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-chart-column"></i>
-                    </div>
-                    <h3>Data Visualization</h3>
-                    <p>Charts & Insights</p>
-                    <div class="skill-line"><span></span></div>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon">
-                        <i class="fa-brands fa-git-alt"></i>
-                    </div>
-                    <h3>Git</h3>
-                    <p>Version Control</p>
-                    <div class="skill-line"><span></span></div>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon">
-                        <i class="fa-brands fa-github"></i>
-                    </div>
-                    <h3>GitHub</h3>
-                    <p>Projects & Portfolio</p>
-                    <div class="skill-line"><span></span></div>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PROJECTS -->
-        <section class="section projects"
-                 id="projects">
-
-            <div class="section-title reveal">
-
-                <span>MY PROJECTS</span>
-
-                <h2>
-                    Featured
-                    <strong>Projects</strong>
-                </h2>
-
-                <p>
-                    Practical projects demonstrating my development
-                    in programming, data analysis, and artificial intelligence.
-                </p>
-
-            </div>
-
-
-            <div class="projects-container">
-
-                <article class="project-card reveal">
-
-                    <div class="project-image">
-
-                        <span class="project-number">01</span>
-
-                        <div class="project-icon">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-
-                    </div>
-
-                    <div class="project-content">
-
-                        <span class="project-type">
-                            DATA SCIENCE
-                        </span>
-
-                        <h3>
-                            Employee Productivity Analysis
-                        </h3>
-
-                        <p>
-                            Analyzing employee productivity data,
-                            exploring possible causes of decreased
-                            productivity, and suggesting data-driven
-                            business actions.
-                        </p>
-
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>Pandas</span>
-                            <span>EDA</span>
-                            <span>Statistics</span>
-                        </div>
-
-                        <a href="https://github.com/Ahmed-Soro"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="project-link"
-                           data-analytics="project_employee">
-
-                            View on GitHub
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article class="project-card reveal">
-
-                    <div class="project-image">
-
-                        <span class="project-number">02</span>
-
-                        <div class="project-icon">
-                            <i class="fa-solid fa-database"></i>
-                        </div>
-
-                    </div>
-
-                    <div class="project-content">
-
-                        <span class="project-type">
-                            DATA ANALYSIS
-                        </span>
-
-                        <h3>
-                            Data Analysis Project
-                        </h3>
-
-                        <p>
-                            Exploring datasets, cleaning data,
-                            performing exploratory analysis, and
-                            generating useful insights through
-                            data-driven techniques.
-                        </p>
-
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>NumPy</span>
-                            <span>Pandas</span>
-                            <span>Matplotlib</span>
-                        </div>
-
-                        <a href="https://github.com/Ahmed-Soro"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="project-link"
-                           data-analytics="project_data_analysis">
-
-                            View on GitHub
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article class="project-card reveal">
-
-                    <div class="project-image">
-
-                        <span class="project-number">03</span>
-
-                        <div class="project-icon">
-                            <i class="fa-solid fa-robot"></i>
-                        </div>
-
-                    </div>
-
-                    <div class="project-content">
-
-                        <span class="project-type">
-                            ARTIFICIAL INTELLIGENCE
-                        </span>
-
-                        <h3>
-                            Machine Learning Project
-                        </h3>
-
-                        <p>
-                            Building and evaluating machine learning
-                            models to explore predictive problems and
-                            develop practical AI solutions.
-                        </p>
-
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>Scikit-learn</span>
-                            <span>Machine Learning</span>
-                            <span>AI</span>
-                        </div>
-
-                        <a href="https://github.com/Ahmed-Soro"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="project-link"
-                           data-analytics="project_machine_learning">
-
-                            View on GitHub
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- EDUCATION -->
-        <section class="section education"
-                 id="education">
-
-            <div class="section-title reveal">
-
-                <span>EDUCATION</span>
-
-                <h2>
-                    My Academic &
-                    <strong>Learning Journey</strong>
-                </h2>
-
-                <p>
-                    My academic background and continuous technical
-                    learning journey.
-                </p>
-
-            </div>
-
-
-            <div class="timeline">
-
-                <div class="timeline-item reveal">
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-content">
-
-                        <span>UNIVERSITY</span>
-
-                        <h3>
-                            Computer Science & Artificial Intelligence
-                        </h3>
-
-                        <h4>
-                            Capital University — Major: Artificial Intelligence
-                        </h4>
-
-                        <p>
-                            I am studying Computer Science and Artificial
-                            Intelligence at Capital University, majoring in
-                            Artificial Intelligence. I am developing a strong
-                            foundation in programming, algorithms, mathematics,
-                            statistics, and AI.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item reveal">
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-content">
-
-                        <span>DATA SCIENCE</span>
-
-                        <h3>
-                            Data Science Learning
-                        </h3>
-
-                        <h4>
-                            Self-Directed Learning
-                        </h4>
-
-                        <p>
-                            I am developing practical skills in Python,
-                            NumPy, Pandas, SQL, statistics, data visualization,
-                            exploratory data analysis, and machine learning.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item reveal">
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-content">
-
-                        <span>CAREER GOAL</span>
-
-                        <h3>
-                            Future Data Scientist / AI Engineer
-                        </h3>
-
-                        <h4>
-                            Long-Term Career Goal
-                        </h4>
-
-                        <p>
-                            My long-term goal is to become a professional
-                            Data Scientist and AI Engineer who uses data,
-                            machine learning, and artificial intelligence
-                            to build useful solutions for real-world problems.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- GOAL -->
-        <section class="goal"
-                 id="goal">
-
-            <div class="goal-content reveal">
-
-                <span>
-                    MY CAREER VISION
-                </span>
-
-                <h2>
-                    From AI Student To
-                    <strong>Data Scientist & AI Engineer</strong>
-                </h2>
-
-                <p>
-                    My goal is to build strong foundations in programming,
-                    mathematics, statistics, data analysis, machine learning,
-                    and artificial intelligence, then use these skills to
-                    create practical solutions for real-world problems.
-                </p>
-
-                <div class="goal-path">
-
-                    <span>Python</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                    <span>Statistics</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                    <span>Data Analysis</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                    <span>Machine Learning</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                    <span>AI</span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- CONTACT -->
-        <section class="section contact"
-                 id="contact">
-
-            <div class="section-title reveal">
-
-                <span>CONTACT ME</span>
-
-                <h2>
-                    Let's
-                    <strong>Connect</strong>
-                </h2>
-
-                <p>
-                    If you have an internship, opportunity, project,
-                    collaboration, or simply want to connect, feel free
-                    to contact me.
-                </p>
-
-            </div>
-
-
-            <div class="contact-container">
-
-                <a href="mailto:sorour802@gmail.com"
-                   class="contact-card"
-                   data-analytics="email_click">
-
-                    <div class="contact-icon">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-
-                    <div>
-                        <span>Email</span>
-                        <strong>sorour802@gmail.com</strong>
-                    </div>
-
-                    <i class="fa-solid fa-arrow-right arrow"></i>
-
-                </a>
-
-
-                <a href="https://wa.me/201154929027"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="contact-card"
-                   data-analytics="whatsapp_click">
-
-                    <div class="contact-icon">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-
-                    <div>
-                        <span>WhatsApp</span>
-                        <strong>Contact Me</strong>
-                    </div>
-
-                    <i class="fa-solid fa-arrow-right arrow"></i>
-
-                </a>
-
-
-                <a href="https://github.com/Ahmed-Soro"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="contact-card"
-                   data-analytics="github_click">
-
-                    <div class="contact-icon">
-                        <i class="fa-brands fa-github"></i>
-                    </div>
-
-                    <div>
-                        <span>GitHub</span>
-                        <strong>My Profile</strong>
-                    </div>
-
-                    <i class="fa-solid fa-arrow-right arrow"></i>
-
-                </a>
-
-
-                <a href="https://www.linkedin.com/in/ahmed-sorour-d"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="contact-card"
-                   data-analytics="linkedin_click">
-
-                    <div class="contact-icon">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </div>
-
-                    <div>
-                        <span>LinkedIn</span>
-                        <strong>Connect With Me</strong>
-                    </div>
-
-                    <i class="fa-solid fa-arrow-right arrow"></i>
-
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <div class="footer-logo">
-            <span>&lt;</span>
-            Ahmed Sorour
-            <span>/&gt;</span>
         </div>
 
-        <p>
-            Computer Science & Artificial Intelligence Student
-            | AI Major | Capital University
-        </p>
+    </section>
 
 
-        <div class="footer-social">
+    <!-- SKILLS -->
+    <section class="section" id="skills">
 
-            <a href="https://github.com/Ahmed-Soro"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="GitHub"
-               data-analytics="github_click">
+        <div class="section-title reveal">
 
+            <span>MY SKILLS</span>
+
+            <h2>
+                Technologies &
+                <strong>Knowledge</strong>
+            </h2>
+
+            <p>
+                Technologies I am learning and using in AI and Data Science.
+            </p>
+
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card reveal">
+                <i class="fa-brands fa-python"></i>
+                <h3>Python</h3>
+                <p>Programming & Data</p>
+            </div>
+
+            <div class="skill-card reveal">
+                <i class="fa-solid fa-table"></i>
+                <h3>Pandas</h3>
+                <p>Data Analysis</p>
+            </div>
+
+            <div class="skill-card reveal">
+                <i class="fa-solid fa-calculator"></i>
+                <h3>NumPy</h3>
+                <p>Numerical Computing</p>
+            </div>
+
+            <div class="skill-card reveal">
+                <i class="fa-solid fa-database"></i>
+                <h3>SQL</h3>
+                <p>Database & Queries</p>
+            </div>
+
+            <div class="skill-card reveal">
+                <i class="fa-solid fa-brain"></i>
+                <h3>Machine Learning</h3>
+                <p>AI Models</p>
+            </div>
+
+            <div class="skill-card reveal">
+                <i class="fa-solid fa-chart-pie"></i>
+                <h3>Statistics</h3>
+                <p>Data Analysis</p>
+            </div>
+
+            <div class="skill-card reveal">
+                <i class="fa-solid fa-square-root-variable"></i>
+                <h3>Mathematics</h3>
+                <p>AI Foundation</p>
+            </div>
+
+            <div class="skill-card reveal">
+                <i class="fa-solid fa-chart-column"></i>
+                <h3>Data Visualization</h3>
+                <p>Charts & Insights</p>
+            </div>
+
+            <div class="skill-card reveal">
+                <i class="fa-brands fa-git-alt"></i>
+                <h3>Git</h3>
+                <p>Version Control</p>
+            </div>
+
+            <div class="skill-card reveal">
                 <i class="fa-brands fa-github"></i>
+                <h3>GitHub</h3>
+                <p>Projects & Portfolio</p>
+            </div>
 
-            </a>
+        </div>
 
-            <a href="https://www.linkedin.com/in/ahmed-sorour-d"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="LinkedIn"
-               data-analytics="linkedin_click">
+    </section>
 
-                <i class="fa-brands fa-linkedin-in"></i>
 
-            </a>
+    <!-- DATA ANALYSIS -->
+    <section class="section data-analysis" id="data-analysis">
 
-            <a href="https://wa.me/201154929027"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="WhatsApp"
-               data-analytics="whatsapp_click">
+        <div class="section-title reveal">
 
-                <i class="fa-brands fa-whatsapp"></i>
+            <span>DATA SCIENCE</span>
 
-            </a>
+            <h2>
+                Data Analysis &
+                <strong>EDA</strong>
+            </h2>
 
-            <a href="mailto:sorour802@gmail.com"
-               aria-label="Email"
-               data-analytics="email_click">
+            <p>
+                My data analysis workflow for turning raw data
+                into useful insights.
+            </p>
+
+        </div>
+
+
+        <div class="analysis-grid">
+
+            <div class="analysis-card reveal">
+
+                <div class="analysis-icon">
+                    <i class="fa-solid fa-file-csv"></i>
+                </div>
+
+                <span>01</span>
+
+                <h3>Data Collection</h3>
+
+                <p>
+                    Working with datasets and understanding
+                    the available variables and data structure.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card reveal">
+
+                <div class="analysis-icon">
+                    <i class="fa-solid fa-broom"></i>
+                </div>
+
+                <span>02</span>
+
+                <h3>Data Cleaning</h3>
+
+                <p>
+                    Handling missing values, duplicates,
+                    incorrect data and inconsistent formats.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card reveal">
+
+                <div class="analysis-icon">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                </div>
+
+                <span>03</span>
+
+                <h3>EDA</h3>
+
+                <p>
+                    Exploring distributions, relationships,
+                    patterns and important variables.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card reveal">
+
+                <div class="analysis-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <span>04</span>
+
+                <h3>Visualization</h3>
+
+                <p>
+                    Creating charts using Matplotlib and
+                    other visualization tools.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card reveal">
+
+                <div class="analysis-icon">
+                    <i class="fa-solid fa-square-root-variable"></i>
+                </div>
+
+                <span>05</span>
+
+                <h3>Statistics</h3>
+
+                <p>
+                    Using mean, median, standard deviation,
+                    correlation and statistical analysis.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card reveal">
+
+                <div class="analysis-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+
+                <span>06</span>
+
+                <h3>Insights</h3>
+
+                <p>
+                    Converting analysis results into clear,
+                    useful and data-driven conclusions.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="analysis-tools reveal">
+
+            <h3>My Data Science Toolkit</h3>
+
+            <div class="tool-list">
+
+                <span>Python</span>
+                <span>NumPy</span>
+                <span>Pandas</span>
+                <span>Matplotlib</span>
+                <span>Seaborn</span>
+                <span>SQL</span>
+                <span>Scikit-learn</span>
+                <span>Jupyter Notebook</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+
+        <div class="section-title reveal">
+
+            <span>MY PROJECTS</span>
+
+            <h2>
+                Featured
+                <strong>Projects</strong>
+            </h2>
+
+            <p>
+                Practical projects demonstrating my programming,
+                data analysis and AI learning.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <article class="project-card reveal">
+
+                <div class="project-top">
+                    <span>01</span>
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div class="project-content">
+
+                    <small>DATA SCIENCE</small>
+
+                    <h3>
+                        Employee Productivity Analysis
+                    </h3>
+
+                    <p>
+                        Analyzing employee productivity data,
+                        cleaning the dataset, performing EDA,
+                        finding patterns and generating
+                        data-driven insights.
+                    </p>
+
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>EDA</span>
+                        <span>Statistics</span>
+                    </div>
+
+                    <a
+                        href="https://github.com/Ahmed-Soro"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                        data-analytics="project_employee">
+
+                        View on GitHub
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card reveal">
+
+                <div class="project-top">
+                    <span>02</span>
+                    <i class="fa-solid fa-database"></i>
+                </div>
+
+                <div class="project-content">
+
+                    <small>DATA ANALYSIS</small>
+
+                    <h3>
+                        Exploratory Data Analysis
+                    </h3>
+
+                    <p>
+                        Cleaning and exploring datasets using
+                        Python, NumPy, Pandas and visualization
+                        techniques to discover useful patterns.
+                    </p>
+
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>NumPy</span>
+                        <span>Pandas</span>
+                        <span>Matplotlib</span>
+                    </div>
+
+                    <a
+                        href="https://github.com/Ahmed-Soro"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                        data-analytics="project_data_analysis">
+
+                        View on GitHub
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card reveal">
+
+                <div class="project-top">
+                    <span>03</span>
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <div class="project-content">
+
+                    <small>ARTIFICIAL INTELLIGENCE</small>
+
+                    <h3>
+                        Machine Learning Project
+                    </h3>
+
+                    <p>
+                        Building and evaluating machine learning
+                        models to understand predictive problems
+                        and develop practical AI solutions.
+                    </p>
+
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Scikit-learn</span>
+                        <span>ML</span>
+                        <span>AI</span>
+                    </div>
+
+                    <a
+                        href="https://github.com/Ahmed-Soro"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                        data-analytics="project_machine_learning">
+
+                        View on GitHub
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+
+        <div class="section-title reveal">
+
+            <span>EDUCATION</span>
+
+            <h2>
+                Academic &
+                <strong>Learning Journey</strong>
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>UNIVERSITY</span>
+
+                    <h3>
+                        Computer Science & Artificial Intelligence
+                    </h3>
+
+                    <h4>
+                        Capital University — AI Major
+                    </h4>
+
+                    <p>
+                        Studying Computer Science and Artificial
+                        Intelligence with a focus on programming,
+                        algorithms, mathematics, statistics and AI.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>DATA SCIENCE</span>
+
+                    <h3>
+                        Data Science Learning
+                    </h3>
+
+                    <h4>
+                        Self-Directed Learning
+                    </h4>
+
+                    <p>
+                        Developing practical skills in Python,
+                        NumPy, Pandas, SQL, statistics,
+                        visualization, EDA and machine learning.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>CAREER GOAL</span>
+
+                    <h3>
+                        Data Scientist / AI Engineer
+                    </h3>
+
+                    <h4>
+                        Long-Term Goal
+                    </h4>
+
+                    <p>
+                        Building the technical and analytical
+                        skills required to create useful AI
+                        and data-driven solutions.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GOAL -->
+    <section class="goal" id="goal">
+
+        <div class="goal-content reveal">
+
+            <span>MY CAREER VISION</span>
+
+            <h2>
+                From AI Student To
+                <strong>Data Scientist & AI Engineer</strong>
+            </h2>
+
+            <p>
+                My goal is to build strong foundations in programming,
+                mathematics, statistics, data analysis, machine learning
+                and artificial intelligence, then use these skills to
+                solve real-world problems.
+            </p>
+
+            <div class="goal-path">
+
+                <span>Python</span>
+                <i class="fa-solid fa-arrow-right"></i>
+
+                <span>Statistics</span>
+                <i class="fa-solid fa-arrow-right"></i>
+
+                <span>Data Analysis</span>
+                <i class="fa-solid fa-arrow-right"></i>
+
+                <span>Machine Learning</span>
+                <i class="fa-solid fa-arrow-right"></i>
+
+                <span>AI</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+
+        <div class="section-title reveal">
+
+            <span>CONTACT ME</span>
+
+            <h2>
+                Let's
+                <strong>Connect</strong>
+            </h2>
+
+            <p>
+                Feel free to contact me about internships,
+                opportunities, projects or collaborations.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <a
+                href="mailto:sorour802@gmail.com"
+                class="contact-card reveal"
+                data-analytics="email_click">
 
                 <i class="fa-solid fa-envelope"></i>
 
+                <div>
+                    <span>Email</span>
+                    <strong>sorour802@gmail.com</strong>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="https://wa.me/201154929027"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card reveal"
+                data-analytics="whatsapp_click">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                <div>
+                    <span>WhatsApp</span>
+                    <strong>Contact Me</strong>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="https://github.com/Ahmed-Soro"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card reveal"
+                data-analytics="github_click">
+
+                <i class="fa-brands fa-github"></i>
+
+                <div>
+                    <span>GitHub</span>
+                    <strong>Ahmed-Soro</strong>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/ahmed-sorour-d"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card reveal"
+                data-analytics="linkedin_click">
+
+                <i class="fa-brands fa-linkedin"></i>
+
+                <div>
+                    <span>LinkedIn</span>
+                    <strong>Connect With Me</strong>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
             </a>
 
         </div>
 
+    </section>
 
-        <div class="copyright">
-            © 2026 Ahmed Sorour. All Rights Reserved.
-        </div>
-
-    </footer>
+</main>
 
 
-    <!-- BACK TO TOP -->
-    <button class="back-to-top"
-            id="backToTop"
-            type="button"
-            aria-label="Back to top"
-            title="Back to top">
+<!-- FOOTER -->
+<footer>
 
-        <i class="fa-solid fa-arrow-up"></i>
+    <div class="footer-logo">
+        <span>&lt;</span>
+        Ahmed Sorour
+        <span>/&gt;</span>
+    </div>
 
-    </button>
+    <p>
+        Computer Science & Artificial Intelligence Student
+        | AI Major | Capital University
+    </p>
+
+    <div class="footer-social">
+
+        <a href="https://github.com/Ahmed-Soro"
+            target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/ahmed-sorour-d"
+            target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+        <a href="https://wa.me/201154929027"
+            target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="mailto:sorour802@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Ahmed Sorour. All Rights Reserved.
+    </div>
+
+</footer>
 
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+<!-- BACK TO TOP -->
+<button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
+```
 
 </body>
-
 </html>
-```
