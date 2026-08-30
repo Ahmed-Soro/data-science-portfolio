@@ -1,647 +1,1117 @@
-/* =====================================================
-AHMED SOROUR PORTFOLIO
-JAVASCRIPT
-===================================================== */
+```javascript
+/* =========================================================
+   AHMED SOROUR — DATA SCIENCE & AI PORTFOLIO
+   Main JavaScript
+========================================================= */
 
-"use strict";
+document.addEventListener("DOMContentLoaded", () => {
 
-/* ================= PRELOADER ================= */
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
 
-window.addEventListener("load", function () {
+    const body = document.body;
 
-```
-const preloader =
-    document.getElementById("preloader");
+    const menuBtn = document.getElementById("menuBtn");
+    const navbar = document.getElementById("navbar");
+    const themeToggle = document.getElementById("themeToggle");
+    const preloader = document.getElementById("preloader");
+    const backToTop = document.getElementById("backToTop");
+    const typingText = document.getElementById("typingText");
 
-if (!preloader) return;
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section[id]");
 
-setTimeout(function () {
+    /* =====================================================
+       GOOGLE ANALYTICS HELPER
+    ===================================================== */
 
-    preloader.classList.add("hide");
+    function trackEvent(eventName, parameters = {}) {
 
-}, 500);
-```
+        if (typeof window.gtag === "function") {
 
-});
-
-/* ================= ELEMENTS ================= */
-
-const body =
-document.body;
-
-const menuBtn =
-document.getElementById("menuBtn");
-
-const navbar =
-document.getElementById("navbar");
-
-const themeToggle =
-document.getElementById("themeToggle");
-
-const typingText =
-document.getElementById("typingText");
-
-const backToTop =
-document.getElementById("backToTop");
-
-const header =
-document.querySelector(".header");
-
-/* ================= MOBILE MENU ================= */
-
-function closeMenu() {
-
-```
-if (!navbar || !menuBtn) return;
-
-navbar.classList.remove("show");
-
-body.classList.remove("no-scroll");
-
-menuBtn.setAttribute(
-    "aria-expanded",
-    "false"
-);
-
-const icon =
-    menuBtn.querySelector("i");
-
-if (icon) {
-
-    icon.classList.remove("fa-xmark");
-    icon.classList.add("fa-bars");
-
-}
-```
-
-}
-
-if (menuBtn && navbar) {
-
-```
-menuBtn.addEventListener(
-    "click",
-    function () {
-
-        const isOpen =
-            navbar.classList.toggle("show");
-
-        body.classList.toggle(
-            "no-scroll",
-            isOpen
-        );
-
-        menuBtn.setAttribute(
-            "aria-expanded",
-            String(isOpen)
-        );
-
-        const icon =
-            menuBtn.querySelector("i");
-
-        if (icon) {
-
-            icon.classList.toggle(
-                "fa-bars",
-                !isOpen
-            );
-
-            icon.classList.toggle(
-                "fa-xmark",
-                isOpen
-            );
-
-        }
-
-    }
-);
-
-
-navbar
-    .querySelectorAll("a")
-    .forEach(function (link) {
-
-        link.addEventListener(
-            "click",
-            closeMenu
-        );
-
-    });
-```
-
-}
-
-/* ================= THEME ================= */
-
-function updateThemeIcon() {
-
-```
-if (!themeToggle) return;
-
-const icon =
-    themeToggle.querySelector("i");
-
-if (!icon) return;
-
-const light =
-    body.classList.contains("light");
-
-icon.classList.toggle(
-    "fa-moon",
-    !light
-);
-
-icon.classList.toggle(
-    "fa-sun",
-    light
-);
-```
-
-}
-
-const savedTheme =
-localStorage.getItem(
-"portfolio-theme"
-);
-
-if (savedTheme === "light") {
-
-```
-body.classList.add("light");
-```
-
-}
-
-updateThemeIcon();
-
-if (themeToggle) {
-
-```
-themeToggle.addEventListener(
-    "click",
-    function () {
-
-        body.classList.toggle(
-            "light"
-        );
-
-        const theme =
-            body.classList.contains("light")
-                ? "light"
-                : "dark";
-
-        localStorage.setItem(
-            "portfolio-theme",
-            theme
-        );
-
-        updateThemeIcon();
-
-    }
-);
-```
-
-}
-
-/* ================= TYPING EFFECT ================= */
-
-if (typingText) {
-
-```
-const words = [
-
-    "AI Student",
-    "Data Science Learner",
-    "Machine Learning Enthusiast",
-    "AI Enthusiast",
-    "Python Developer"
-
-];
-
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-
-function typeEffect() {
-
-    const word =
-        words[wordIndex];
-
-
-    if (!deleting) {
-
-        typingText.textContent =
-            word.substring(
-                0,
-                charIndex + 1
-            );
-
-        charIndex++;
-
-
-        if (
-            charIndex ===
-            word.length
-        ) {
-
-            deleting = true;
-
-            setTimeout(
-                typeEffect,
-                1800
-            );
-
-            return;
-
-        }
-
-    } else {
-
-        typingText.textContent =
-            word.substring(
-                0,
-                charIndex - 1
-            );
-
-        charIndex--;
-
-
-        if (charIndex === 0) {
-
-            deleting = false;
-
-            wordIndex =
-                (wordIndex + 1) %
-                words.length;
-
-        }
-
-    }
-
-
-    setTimeout(
-        typeEffect,
-        deleting ? 50 : 90
-    );
-
-}
-
-
-typeEffect();
-```
-
-}
-
-/* ================= SMOOTH SCROLL ================= */
-
-document
-.querySelectorAll('a[href^="#"]')
-.forEach(function (link) {
-
-```
-    link.addEventListener(
-        "click",
-        function (event) {
-
-            const id =
-                link.getAttribute("href");
-
-            if (
-                !id ||
-                id === "#"
-            ) return;
-
-            const target =
-                document.querySelector(id);
-
-            if (!target) return;
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
+            window.gtag("event", eventName, {
+                ...parameters
             });
 
         }
-    );
 
-});
-```
-
-/* ================= ACTIVE NAV ================= */
-
-const sections =
-document.querySelectorAll(
-"section[id]"
-);
-
-const navLinks =
-document.querySelectorAll(
-".nav-link"
-);
-
-function updateActiveNav() {
-
-```
-let current = "";
-
-const position =
-    window.scrollY + 200;
+    }
 
 
-sections.forEach(
-    function (section) {
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
 
-        const top =
-            section.offsetTop;
+    function closeMobileMenu() {
 
-        const bottom =
-            top + section.offsetHeight;
+        if (!navbar || !menuBtn) return;
 
+        navbar.classList.remove("show");
 
-        if (
-            position >= top &&
-            position < bottom
-        ) {
+        menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+        );
 
-            current =
-                section.id;
+        const icon = menuBtn.querySelector("i");
+
+        if (icon) {
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
 
         }
 
+        body.classList.remove("no-scroll");
+
     }
-);
 
 
-navLinks.forEach(
-    function (link) {
+    function openMobileMenu() {
 
-        link.classList.remove(
-            "active"
+        if (!navbar || !menuBtn) return;
+
+        navbar.classList.add("show");
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            "true"
         );
 
+        const icon = menuBtn.querySelector("i");
 
-        if (
-            link.getAttribute("href") ===
-            "#" + current
-        ) {
+        if (icon) {
 
-            link.classList.add(
-                "active"
-            );
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
 
         }
 
-    }
-);
-```
-
-}
-
-window.addEventListener(
-"scroll",
-updateActiveNav,
-{
-passive: true
-}
-);
-
-updateActiveNav();
-
-/* ================= SCROLL REVEAL ================= */
-
-const revealElements =
-document.querySelectorAll(
-".reveal"
-);
-
-if (
-"IntersectionObserver" in window
-) {
-
-```
-const revealObserver =
-    new IntersectionObserver(
-        function (entries) {
-
-            entries.forEach(
-                function (entry) {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-                        revealObserver.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-
-revealElements.forEach(
-    function (element) {
-
-        revealObserver.observe(
-            element
-        );
+        body.classList.add("no-scroll");
 
     }
-);
-```
 
-} else {
 
-```
-revealElements.forEach(
-    function (element) {
+    if (menuBtn && navbar) {
 
-        element.classList.add(
-            "visible"
-        );
+        menuBtn.addEventListener("click", () => {
 
-    }
-);
-```
+            const isOpen =
+                navbar.classList.contains("show");
 
-}
+            if (isOpen) {
 
-/* ================= HEADER ================= */
+                closeMobileMenu();
 
-function updateHeader() {
+            } else {
 
-```
-if (!header) return;
+                openMobileMenu();
 
-header.classList.toggle(
-    "scrolled",
-    window.scrollY > 50
-);
-```
+            }
 
-}
+        });
 
-window.addEventListener(
-"scroll",
-updateHeader,
-{
-passive: true
-}
-);
 
-updateHeader();
+        navLinks.forEach(link => {
 
-/* ================= BACK TO TOP ================= */
+            link.addEventListener("click", () => {
 
-function updateBackToTop() {
+                closeMobileMenu();
 
-```
-if (!backToTop) return;
+            });
 
-backToTop.classList.toggle(
-    "show",
-    window.scrollY > 500
-);
-```
-
-}
-
-window.addEventListener(
-"scroll",
-updateBackToTop,
-{
-passive: true
-}
-);
-
-updateBackToTop();
-
-if (backToTop) {
-
-```
-backToTop.addEventListener(
-    "click",
-    function () {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
         });
 
     }
-);
-```
 
-}
 
-/* ================= GOOGLE ANALYTICS ================= */
+    /* =====================================================
+       ESCAPE KEY
+    ===================================================== */
 
-document
-.querySelectorAll("[data-analytics]")
-.forEach(function (element) {
+    document.addEventListener("keydown", event => {
 
-```
-    element.addEventListener(
-        "click",
-        function () {
+        if (event.key === "Escape") {
 
-            const eventName =
-                element.dataset.analytics;
+            closeMobileMenu();
+
+        }
+
+    });
+
+
+    /* =====================================================
+       THEME SYSTEM
+    ===================================================== */
+
+    function updateThemeIcon(isLight) {
+
+        if (!themeToggle) return;
+
+        const icon =
+            themeToggle.querySelector("i");
+
+        if (!icon) return;
+
+        if (isLight) {
+
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+
+        } else {
+
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+
+        }
+
+    }
+
+
+    function applyTheme(theme) {
+
+        const isLight = theme === "light";
+
+        body.classList.toggle(
+            "light",
+            isLight
+        );
+
+        updateThemeIcon(isLight);
+
+        localStorage.setItem(
+            "portfolio-theme",
+            isLight ? "light" : "dark"
+        );
+
+    }
+
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener("click", () => {
+
+            const isCurrentlyLight =
+                body.classList.contains("light");
+
+            const newTheme =
+                isCurrentlyLight
+                    ? "dark"
+                    : "light";
+
+            applyTheme(newTheme);
+
+            trackEvent(
+                "theme_toggle",
+                {
+                    event_category: "engagement",
+                    event_label: newTheme
+                }
+            );
+
+        });
+
+    }
+
+
+    /* =====================================================
+       LOAD SAVED THEME
+    ===================================================== */
+
+    const savedTheme =
+        localStorage.getItem(
+            "portfolio-theme"
+        );
+
+
+    if (savedTheme === "light") {
+
+        applyTheme("light");
+
+    } else {
+
+        applyTheme("dark");
+
+    }
+
+
+    /* =====================================================
+       PRELOADER
+    ===================================================== */
+
+    window.addEventListener("load", () => {
+
+        setTimeout(() => {
+
+            if (preloader) {
+
+                preloader.classList.add("hide");
+
+            }
+
+        }, 500);
+
+    });
+
+
+    /* =====================================================
+       TYPING ANIMATION
+    ===================================================== */
+
+    if (typingText) {
+
+        const typingWords = [
+            "Data Scientist",
+            "AI Engineer",
+            "Machine Learning Student",
+            "Data Analyst",
+            "Python Developer"
+        ];
+
+        let wordIndex = 0;
+        let characterIndex = 0;
+
+        let isDeleting = false;
+
+        const typingSpeed = 100;
+        const deletingSpeed = 60;
+        const pauseAfterWord = 1500;
+
+
+        function typeEffect() {
+
+            const currentWord =
+                typingWords[wordIndex];
+
+
+            if (!isDeleting) {
+
+                characterIndex++;
+
+            } else {
+
+                characterIndex--;
+
+            }
+
+
+            typingText.textContent =
+                currentWord.substring(
+                    0,
+                    characterIndex
+                );
+
+
+            let speed =
+                isDeleting
+                    ? deletingSpeed
+                    : typingSpeed;
 
 
             if (
-                typeof window.gtag ===
-                "function"
+                !isDeleting &&
+                characterIndex === currentWord.length
             ) {
 
-                window.gtag(
-                    "event",
-                    eventName,
+                speed = pauseAfterWord;
+
+                isDeleting = true;
+
+            }
+
+
+            else if (
+                isDeleting &&
+                characterIndex === 0
+            ) {
+
+                isDeleting = false;
+
+                wordIndex =
+                    (wordIndex + 1) %
+                    typingWords.length;
+
+                speed = 400;
+
+            }
+
+
+            setTimeout(
+                typeEffect,
+                speed
+            );
+
+        }
+
+
+        typeEffect();
+
+    }
+
+
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
+
+    function handleBackToTop() {
+
+        if (!backToTop) return;
+
+        if (window.scrollY > 500) {
+
+            backToTop.classList.add("show");
+
+        } else {
+
+            backToTop.classList.remove("show");
+
+        }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        handleBackToTop,
+        { passive: true }
+    );
+
+
+    if (backToTop) {
+
+        backToTop.addEventListener("click", () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+            trackEvent(
+                "back_to_top",
+                {
+                    event_category: "navigation"
+                }
+            );
+
+        });
+
+    }
+
+
+    /* =====================================================
+       SMOOTH SCROLLING
+    ===================================================== */
+
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(link => {
+
+            link.addEventListener("click", event => {
+
+                const targetId =
+                    link.getAttribute("href");
+
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+
+                    return;
+
+                }
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (!target) return;
+
+
+                event.preventDefault();
+
+
+                const header =
+                    document.querySelector(
+                        ".header"
+                    );
+
+
+                const headerHeight =
+                    header
+                        ? header.offsetHeight
+                        : 0;
+
+
+                const targetPosition =
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    headerHeight;
+
+
+                window.scrollTo({
+
+                    top: targetPosition,
+
+                    behavior: "smooth"
+
+                });
+
+
+                trackEvent(
+                    "navigation_click",
                     {
-                        event_category:
-                            "engagement",
-
-                        event_label:
-                            element.getAttribute(
-                                "href"
-                            ) ||
-                            element.textContent.trim(),
-
-                        transport_type:
-                            "beacon"
+                        event_category: "navigation",
+                        event_label: targetId
                     }
+                );
+
+            });
+
+        });
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".reveal"
+        );
+
+
+    if (
+        "IntersectionObserver" in window &&
+        revealElements.length > 0
+    ) {
+
+        const revealObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(element => {
+
+            revealObserver.observe(
+                element
+            );
+
+        });
+
+    } else {
+
+        revealElements.forEach(element => {
+
+            element.classList.add(
+                "visible"
+            );
+
+        });
+
+    }
+
+
+    /* =====================================================
+       SKILL ANIMATION
+    ===================================================== */
+
+    const skillCards =
+        document.querySelectorAll(
+            ".skill-card"
+        );
+
+
+    if (
+        "IntersectionObserver" in window &&
+        skillCards.length > 0
+    ) {
+
+        const skillObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            skillObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.2
+                }
+            );
+
+
+        skillCards.forEach(card => {
+
+            skillObserver.observe(card);
+
+        });
+
+    } else {
+
+        skillCards.forEach(card => {
+
+            card.classList.add(
+                "visible"
+            );
+
+        });
+
+    }
+
+
+    /* =====================================================
+       ACTIVE NAVIGATION
+    ===================================================== */
+
+    function updateActiveNavigation() {
+
+        let currentSection = "";
+
+        const scrollPosition =
+            window.scrollY + 180;
+
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.offsetTop;
+
+            const sectionHeight =
+                section.offsetHeight;
+
+
+            if (
+                scrollPosition >= sectionTop &&
+                scrollPosition <
+                sectionTop + sectionHeight
+            ) {
+
+                currentSection =
+                    section.getAttribute(
+                        "id"
+                    );
+
+            }
+
+        });
+
+
+        navLinks.forEach(link => {
+
+            link.classList.remove(
+                "active"
+            );
+
+
+            const linkTarget =
+                link.getAttribute(
+                    "href"
+                );
+
+
+            if (
+                linkTarget ===
+                "#" + currentSection
+            ) {
+
+                link.classList.add(
+                    "active"
                 );
 
             }
 
+        });
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNavigation,
+        { passive: true }
+    );
+
+
+    updateActiveNavigation();
+
+
+    /* =====================================================
+       ANALYTICS TRACKING
+    ===================================================== */
+
+    const analyticsElements =
+        document.querySelectorAll(
+            "[data-analytics]"
+        );
+
+
+    analyticsElements.forEach(element => {
+
+        element.addEventListener(
+            "click",
+            () => {
+
+                const eventName =
+                    element.dataset.analytics;
+
+
+                const href =
+                    element.getAttribute(
+                        "href"
+                    );
+
+
+                const label =
+                    element.textContent
+                        .trim()
+                        .replace(/\s+/g, " ");
+
+
+                trackEvent(
+                    eventName,
+                    {
+
+                        event_category:
+                            "engagement",
+
+                        event_label:
+                            href || label,
+
+                        link_url:
+                            href || "",
+
+                        transport_type:
+                            "beacon"
+
+                    }
+                );
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       SPECIFIC TRACKING
+    ===================================================== */
+
+
+    /* CV */
+
+    const cvButton =
+        document.getElementById(
+            "cvButton"
+        );
+
+
+    if (cvButton) {
+
+        cvButton.addEventListener(
+            "click",
+            () => {
+
+                trackEvent(
+                    "cv_download",
+                    {
+
+                        event_category:
+                            "conversion",
+
+                        event_label:
+                            "CV Download",
+
+                        link_url:
+                            cvButton.href
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       GITHUB TRACKING
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            '[data-analytics="github_click"]'
+        )
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    trackEvent(
+                        "github_click",
+                        {
+
+                            event_category:
+                                "social",
+
+                            event_label:
+                                "GitHub Profile",
+
+                            link_url:
+                                link.href
+
+                        }
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       LINKEDIN TRACKING
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            '[data-analytics="linkedin_click"]'
+        )
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    trackEvent(
+                        "linkedin_click",
+                        {
+
+                            event_category:
+                                "social",
+
+                            event_label:
+                                "LinkedIn Profile",
+
+                            link_url:
+                                link.href
+
+                        }
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       WHATSAPP TRACKING
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            '[data-analytics="whatsapp_click"]'
+        )
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    trackEvent(
+                        "whatsapp_click",
+                        {
+
+                            event_category:
+                                "contact",
+
+                            event_label:
+                                "WhatsApp Contact",
+
+                            link_url:
+                                link.href
+
+                        }
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       EMAIL TRACKING
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            '[data-analytics="email_click"]'
+        )
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    trackEvent(
+                        "email_click",
+                        {
+
+                            event_category:
+                                "contact",
+
+                            event_label:
+                                "Email Contact",
+
+                            link_url:
+                                link.href
+
+                        }
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       PROJECT TRACKING
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            ".project-link"
+        )
+        .forEach(projectLink => {
+
+            projectLink.addEventListener(
+                "click",
+                () => {
+
+                    const projectCard =
+                        projectLink.closest(
+                            ".project-card"
+                        );
+
+
+                    const projectTitle =
+                        projectCard
+                            ? projectCard
+                                .querySelector("h3")
+                                ?.textContent
+                                .trim()
+                            : "Unknown Project";
+
+
+                    trackEvent(
+                        "project_click",
+                        {
+
+                            event_category:
+                                "projects",
+
+                            event_label:
+                                projectTitle,
+
+                            link_url:
+                                projectLink.href
+
+                        }
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       EXTERNAL LINK TRACKING
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            'a[target="_blank"]'
+        )
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    const href =
+                        link.getAttribute(
+                            "href"
+                        );
+
+
+                    if (!href) return;
+
+
+                    let destination =
+                        "external_link";
+
+
+                    if (
+                        href.includes(
+                            "github.com"
+                        )
+                    ) {
+
+                        destination =
+                            "github";
+
+                    }
+
+                    else if (
+                        href.includes(
+                            "linkedin.com"
+                        )
+                    ) {
+
+                        destination =
+                            "linkedin";
+
+                    }
+
+                    else if (
+                        href.includes(
+                            "wa.me"
+                        )
+                    ) {
+
+                        destination =
+                            "whatsapp";
+
+                    }
+
+                    else if (
+                        href.includes(
+                            "drive.google.com"
+                        )
+                    ) {
+
+                        destination =
+                            "google_drive";
+
+                    }
+
+
+                    trackEvent(
+                        "external_link_click",
+                        {
+
+                            event_category:
+                                "external",
+
+                            event_label:
+                                destination,
+
+                            link_url:
+                                href
+
+                        }
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       PAGE VIEW / PORTFOLIO VISIT
+    ===================================================== */
+
+    trackEvent(
+        "portfolio_visit",
+        {
+
+            event_category:
+                "engagement",
+
+            event_label:
+                "Ahmed Sorour Portfolio"
+
         }
     );
 
+
+    /* =====================================================
+       CONSOLE INFORMATION
+    ===================================================== */
+
+    console.log(
+        "%cAhmed Sorour Portfolio",
+        "font-size: 20px; font-weight: bold;"
+    );
+
+    console.log(
+        "Data Science & Artificial Intelligence"
+    );
+
+    console.log(
+        "Capital University — Faculty of Computer Science"
+    );
+
+    console.log(
+        "Major: Artificial Intelligence"
+    );
+
+
+    /* =====================================================
+       INITIALIZATION
+    ===================================================== */
+
+    handleBackToTop();
+    updateActiveNavigation();
+
 });
 ```
-
-/* ================= ESC KEY ================= */
-
-document.addEventListener(
-"keydown",
-function (event) {
-
-```
-    if (
-        event.key === "Escape"
-    ) {
-
-        closeMenu();
-
-    }
-
-}
-```
-
-);
-
-/* ================= RESIZE ================= */
-
-window.addEventListener(
-"resize",
-function () {
-
-```
-    if (
-        window.innerWidth > 900
-    ) {
-
-        closeMenu();
-
-    }
-
-    updateActiveNav();
-
-}
-```
-
-);
-
-/* ================= PAGE READY ================= */
-
-document.documentElement.classList.add(
-"js-ready"
-);
-
-console.log(
-"Ahmed Sorour Portfolio loaded successfully."
-);
