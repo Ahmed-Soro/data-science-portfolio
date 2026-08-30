@@ -1,114 +1,238 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
+
+    <!-- =====================================================
+         BASIC SEO & DOCUMENT SETTINGS
+    ====================================================== -->
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<meta name="description"
-    content="Ahmed Sorour - Computer Science and Artificial Intelligence student specializing in AI, Data Science and Machine Learning.">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<meta name="author" content="Ahmed Sorour">
+    <meta name="description"
+          content="Ahmed Sorour - Computer Science and Artificial Intelligence student at Capital University, majoring in AI. Explore my Data Science, Machine Learning, AI projects, skills, and career journey.">
 
-<title>Ahmed Sorour | AI & Data Science Portfolio</title>
+    <meta name="author"
+          content="Ahmed Sorour">
 
-<link rel="icon" type="image/png" href="images/best.png">
+    <meta name="keywords"
+          content="Ahmed Sorour, Capital University, Computer Science, Artificial Intelligence, AI Student, Data Science, Machine Learning, Python, SQL, Pandas, NumPy, Portfolio">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="theme-color"
+          content="#0f172a">
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+    <meta name="robots"
+          content="index, follow">
 
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Ahmed Sorour | AI Student | Data Science & AI</title>
 
-<link rel="stylesheet" href="style.css">
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP20Q9C99S"></script>
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
 
-<script>
-    window.dataLayer = window.dataLayer || [];
+    <link rel="icon"
+          type="image/png"
+          href="images/best.png">
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
+    <link rel="shortcut icon"
+          type="image/png"
+          href="images/best.png">
 
-    gtag("js", new Date());
-    gtag("config", "G-YP20Q9C99S");
-</script>
-```
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+
+    <!-- =====================================================
+         GOOGLE ANALYTICS
+         Measurement ID: G-YP20Q9C99S
+    ====================================================== -->
+
+    <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-YP20Q9C99S">
+    </script>
+
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-YP20Q9C99S');
+
+    </script>
 
 </head>
 
+
 <body>
 
-```
-<!-- PRELOADER -->
-<div class="preloader" id="preloader">
+
+<!-- =====================================================
+     PRELOADER
+====================================================== -->
+
+<div class="preloader"
+     id="preloader"
+     aria-label="Loading website">
+
     <div class="loader"></div>
+
     <p>Loading portfolio...</p>
+
 </div>
 
 
-<!-- HEADER -->
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
 <header class="header">
 
-    <a href="#home" class="logo">
+
+    <!-- LOGO -->
+
+    <a href="#home"
+       class="logo"
+       aria-label="Ahmed Sorour Home">
+
         <span>&lt;</span>
-        Ahmed <b>Sorour</b>
+
+        Ahmed
+        <b>Sorour</b>
+
         <span>/&gt;</span>
+
     </a>
 
-    <nav class="navbar" id="navbar">
 
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#data-analysis" class="nav-link">Data Analysis</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#education" class="nav-link">Education</a>
-        <a href="#goal" class="nav-link">Goal</a>
-        <a href="#contact" class="nav-link">Contact</a>
+    <!-- NAVIGATION -->
+
+    <nav class="navbar"
+         id="navbar"
+         aria-label="Main navigation">
+
+        <a href="#home"
+           class="nav-link active">
+            Home
+        </a>
+
+        <a href="#about"
+           class="nav-link">
+            About
+        </a>
+
+        <a href="#skills"
+           class="nav-link">
+            Skills
+        </a>
+
+        <a href="#projects"
+           class="nav-link">
+            Projects
+        </a>
+
+        <a href="#education"
+           class="nav-link">
+            Education
+        </a>
+
+        <a href="#goal"
+           class="nav-link">
+            Goal
+        </a>
+
+        <a href="#contact"
+           class="nav-link">
+            Contact
+        </a>
 
     </nav>
 
+
+    <!-- HEADER BUTTONS -->
+
     <div class="nav-buttons">
 
-        <button
-            class="icon-btn"
-            id="themeToggle"
-            type="button"
-            aria-label="Toggle theme">
+
+        <!-- THEME BUTTON -->
+
+        <button class="icon-btn"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle dark and light mode"
+                title="Toggle theme">
 
             <i class="fa-solid fa-moon"></i>
 
         </button>
 
-        <a
-            href="https://drive.google.com/file/d/1Zh5S9UYCkl76ocU7FDKOUdL-wp8meHQg/view?usp=drivesdk"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cv-btn"
-            id="cvButton"
-            data-analytics="cv_download">
+
+        <!-- CV BUTTON -->
+
+        <!--
+            IMPORTANT:
+            Put Ahmed_Sorour_CV.pdf in the same folder
+            as this index.html file.
+        -->
+
+        <a href="Ahmed_Sorour_CV.pdf"
+           class="cv-btn"
+           download="Ahmed_Sorour_CV.pdf"
+           id="cvButton"
+           data-analytics="cv_download"
+           aria-label="Download Ahmed Sorour CV">
 
             <i class="fa-solid fa-file-pdf"></i>
+
             CV
 
         </a>
 
-        <button
-            class="icon-btn menu-btn"
-            id="menuBtn"
-            type="button"
-            aria-label="Open menu"
-            aria-expanded="false">
+
+        <!-- MOBILE MENU -->
+
+        <button class="icon-btn menu-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navbar">
 
             <i class="fa-solid fa-bars"></i>
 
@@ -119,955 +243,2192 @@
 </header>
 
 
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
 <main>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
 
-        <div class="hero-grid">
+<!-- =====================================================
+     HERO SECTION
+====================================================== -->
 
-            <div class="hero-content">
+<section class="hero"
+         id="home"
+         aria-labelledby="hero-title">
 
-                <div class="status">
-                    <span class="status-dot"></span>
-                    Open to internships & opportunities
-                </div>
 
-                <p class="hello">Hello, I'm</p>
+    <div class="hero-grid">
 
-                <h1>
-                    Ahmed <span>Sorour</span>
-                </h1>
 
-                <h2>
-                    I'm an
-                    <span id="typingText"></span>
-                    <span class="cursor">|</span>
-                </h2>
+        <!-- HERO CONTENT -->
 
-                <p class="hero-description">
-                    I am a Computer Science and Artificial Intelligence
-                    student at Capital University, majoring in Artificial
-                    Intelligence. I am passionate about Data Science,
-                    Machine Learning and AI. I enjoy building practical
-                    projects and solving real-world problems with data.
-                </p>
+        <div class="hero-content">
 
-                <div class="hero-buttons">
 
-                    <a href="#projects" class="primary-btn">
-                        <i class="fa-solid fa-code"></i>
-                        View Projects
-                    </a>
+            <!-- STATUS -->
 
-                    <a href="#contact" class="secondary-btn">
-                        <i class="fa-solid fa-paper-plane"></i>
-                        Contact Me
-                    </a>
+            <div class="status">
 
-                </div>
+                <span class="status-dot"></span>
 
-                <div class="social-links">
+                Open to internships & opportunities
 
-                    <a
-                        href="https://github.com/Ahmed-Soro"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-analytics="github_click"
-                        aria-label="GitHub">
+            </div>
 
-                        <i class="fa-brands fa-github"></i>
 
-                    </a>
+            <!-- GREETING -->
 
-                    <a
-                        href="https://www.linkedin.com/in/ahmed-sorour-d"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-analytics="linkedin_click"
-                        aria-label="LinkedIn">
+            <div class="hello">
+                Hello, I'm
+            </div>
 
-                        <i class="fa-brands fa-linkedin-in"></i>
 
-                    </a>
+            <!-- NAME -->
 
-                    <a
-                        href="https://wa.me/201154929027"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-analytics="whatsapp_click"
-                        aria-label="WhatsApp">
+            <h1 id="hero-title">
 
-                        <i class="fa-brands fa-whatsapp"></i>
+                Ahmed
+                <span>Sorour</span>
 
-                    </a>
+            </h1>
 
-                    <a
-                        href="mailto:sorour802@gmail.com"
-                        data-analytics="email_click"
-                        aria-label="Email">
 
-                        <i class="fa-solid fa-envelope"></i>
+            <!-- TYPING TITLE -->
 
-                    </a>
+            <h2>
+
+                I'm an
+                <span id="typingText"></span>
+
+                <span class="cursor">|</span>
+
+            </h2>
+
+
+            <!-- DESCRIPTION -->
+
+            <p class="hero-description">
+
+                I am a Computer Science and Artificial Intelligence
+                student at Capital University, majoring in Artificial
+                Intelligence. I am passionate about Data Science,
+                Machine Learning, and AI, and I am developing my skills
+                by building practical projects and solving real-world
+                problems with data.
+
+            </p>
+
+
+            <!-- HERO BUTTONS -->
+
+            <div class="hero-buttons">
+
+
+                <a href="#projects"
+                   class="primary-btn">
+
+                    <i class="fa-solid fa-code"></i>
+
+                    View My Projects
+
+                </a>
+
+
+                <a href="#contact"
+                   class="secondary-btn">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Contact Me
+
+                </a>
+
+            </div>
+
+
+            <!-- SOCIAL LINKS -->
+
+            <div class="social-links">
+
+
+                <!-- GITHUB -->
+
+                <a href="https://github.com/Ahmed-Soro"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Visit my GitHub profile"
+                   data-analytics="github_click">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+
+                <!-- LINKEDIN -->
+
+                <a href="https://www.linkedin.com/in/ahmed-sorour-d"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Visit my LinkedIn profile"
+                   data-analytics="linkedin_click">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </a>
+
+
+                <!-- WHATSAPP -->
+
+                <a href="https://wa.me/201154929027"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Contact me on WhatsApp"
+                   data-analytics="whatsapp_click">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                </a>
+
+
+                <!-- EMAIL -->
+
+                <a href="mailto:sorour802@gmail.com"
+                   aria-label="Send me an email"
+                   data-analytics="email_click">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO IMAGE -->
+
+        <div class="hero-image">
+
+
+            <div class="image-glow"></div>
+
+            <div class="image-orbit orbit-one"></div>
+
+            <div class="image-orbit orbit-two"></div>
+
+
+            <div class="image-wrapper">
+
+                <img src="images/sorour1.jpg"
+                     alt="Ahmed Sorour - Computer Science and Artificial Intelligence student"
+                     loading="eager"
+                     decoding="async">
+
+            </div>
+
+
+            <!-- FLOATING CARD 1 -->
+
+            <div class="floating-card card-one">
+
+                <i class="fa-brands fa-python"></i>
+
+                <div>
+
+                    <strong>Python</strong>
+
+                    <small>Programming</small>
 
                 </div>
 
             </div>
 
 
-            <div class="hero-image">
+            <!-- FLOATING CARD 2 -->
 
-                <div class="image-glow"></div>
+            <div class="floating-card card-two">
 
-                <div class="image-wrapper">
+                <i class="fa-solid fa-database"></i>
 
-                    <img
-                        src="images/sorour1.jpg"
-                        alt="Ahmed Sorour">
+                <div>
+
+                    <strong>Data Science</strong>
+
+                    <small>Analytics</small>
 
                 </div>
 
-                <div class="floating-card card-one">
-                    <i class="fa-brands fa-python"></i>
-                    <div>
-                        <strong>Python</strong>
-                        <small>Programming</small>
-                    </div>
-                </div>
+            </div>
 
-                <div class="floating-card card-two">
-                    <i class="fa-solid fa-database"></i>
-                    <div>
-                        <strong>Data Science</strong>
-                        <small>Analytics</small>
-                    </div>
-                </div>
 
-                <div class="floating-card card-three">
-                    <i class="fa-solid fa-brain"></i>
-                    <div>
-                        <strong>Artificial Intelligence</strong>
-                        <small>Machine Learning</small>
-                    </div>
+            <!-- FLOATING CARD 3 -->
+
+            <div class="floating-card card-three">
+
+                <i class="fa-solid fa-brain"></i>
+
+                <div>
+
+                    <strong>Artificial Intelligence</strong>
+
+                    <small>Machine Learning</small>
+
                 </div>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- STATS -->
-    <section class="stats">
+    <!-- SCROLL INDICATOR -->
 
-        <div class="stat-card">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <strong>AI Student</strong>
-            <span>Capital University</span>
-        </div>
+    <div class="scroll-indicator"
+         aria-hidden="true">
 
-        <div class="stat-card">
-            <i class="fa-solid fa-brain"></i>
-            <strong>AI Major</strong>
-            <span>Artificial Intelligence</span>
-        </div>
+        <i class="fa-solid fa-computer-mouse"></i>
 
-        <div class="stat-card">
-            <i class="fa-solid fa-chart-line"></i>
-            <strong>Data Science</strong>
-            <span>Learning & Building</span>
-        </div>
+        Scroll to explore
 
-        <div class="stat-card">
-            <i class="fa-solid fa-code"></i>
-            <strong>Projects</strong>
-            <span>Practical Experience</span>
-        </div>
+    </div>
 
-    </section>
+</section>
 
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
+<!-- =====================================================
+     STATS
+====================================================== -->
 
-        <div class="section-title reveal">
+<section class="stats"
+         aria-label="Portfolio highlights">
+
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-graduation-cap"></i>
+
+        <strong>AI Student</strong>
+
+        <span>Capital University</span>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-brain"></i>
+
+        <strong>AI Major</strong>
+
+        <span>Artificial Intelligence</span>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <strong>Data Science</strong>
+
+        <span>Learning & Building</span>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-code"></i>
+
+        <strong>Projects</strong>
+
+        <span>Practical Experience</span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT SECTION
+====================================================== -->
+
+<section class="section about"
+         id="about">
+
+
+    <div class="about-content reveal">
+
+
+        <div class="section-heading">
+
             <span>ABOUT ME</span>
 
             <h2>
+
                 Learning, Building &
                 <strong>Growing</strong>
+
             </h2>
-        </div>
-
-        <div class="about-grid">
-
-            <div class="about-content reveal">
-
-                <p>
-                    I am Ahmed Sorour, a Computer Science and
-                    Artificial Intelligence student at Capital University,
-                    majoring in Artificial Intelligence.
-                </p>
-
-                <p>
-                    I am passionate about Artificial Intelligence,
-                    Data Science, Machine Learning, programming,
-                    mathematics and statistics.
-                </p>
-
-                <p>
-                    I am currently developing my skills in Python,
-                    NumPy, Pandas, SQL, Statistics, Data Visualization,
-                    Exploratory Data Analysis and Machine Learning.
-                </p>
-
-            </div>
-
-            <div class="about-boxes">
-
-                <div class="about-box reveal">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <h3>Data Science</h3>
-                    <p>Exploring data and extracting meaningful insights.</p>
-                </div>
-
-                <div class="about-box reveal">
-                    <i class="fa-solid fa-brain"></i>
-                    <h3>Artificial Intelligence</h3>
-                    <p>Studying AI and machine learning.</p>
-                </div>
-
-                <div class="about-box reveal">
-                    <i class="fa-solid fa-code"></i>
-                    <h3>Programming</h3>
-                    <p>Developing Python and Java programming skills.</p>
-                </div>
-
-                <div class="about-box reveal">
-                    <i class="fa-solid fa-lightbulb"></i>
-                    <h3>Problem Solving</h3>
-                    <p>Using logical thinking to solve technical problems.</p>
-                </div>
-
-            </div>
 
         </div>
 
-    </section>
+
+        <p>
+
+            I am Ahmed Sorour, a Computer Science and Artificial
+            Intelligence student at Capital University, majoring in
+            Artificial Intelligence.
+
+        </p>
 
 
-    <!-- SKILLS -->
-    <section class="section" id="skills">
+        <p>
 
-        <div class="section-title reveal">
+            I am passionate about Artificial Intelligence, Data Science,
+            Machine Learning, programming, mathematics, and statistics.
+            I enjoy learning new technologies and applying what I learn
+            through practical projects.
 
-            <span>MY SKILLS</span>
+        </p>
 
-            <h2>
-                Technologies &
-                <strong>Knowledge</strong>
-            </h2>
+
+        <p>
+
+            I am currently developing my skills in Python, NumPy,
+            Pandas, SQL, Statistics, Data Visualization, Exploratory
+            Data Analysis, and Machine Learning.
+
+        </p>
+
+
+        <div class="about-stats">
+
+
+            <div>
+
+                <strong>AI</strong>
+
+                <span>Major</span>
+
+            </div>
+
+
+            <div>
+
+                <strong>Capital University</strong>
+
+                <span>University</span>
+
+            </div>
+
+
+            <div>
+
+                <strong>Data Science</strong>
+
+                <span>Career Focus</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ABOUT BOXES -->
+
+    <div class="about-image reveal">
+
+
+        <!-- BOX 1 -->
+
+        <div class="about-box">
+
+            <span>01</span>
+
+            <i class="fa-solid fa-chart-simple"></i>
+
+            <h3>Data Science</h3>
 
             <p>
-                Technologies I am learning and using in AI and Data Science.
+                Learning how to explore data and extract
+                meaningful insights.
             </p>
 
         </div>
 
-        <div class="skills-grid">
 
-            <div class="skill-card reveal">
+        <!-- BOX 2 -->
+
+        <div class="about-box">
+
+            <span>02</span>
+
+            <i class="fa-solid fa-brain"></i>
+
+            <h3>Artificial Intelligence</h3>
+
+            <p>
+                Studying AI and machine learning as my
+                university major.
+            </p>
+
+        </div>
+
+
+        <!-- BOX 3 -->
+
+        <div class="about-box">
+
+            <span>03</span>
+
+            <i class="fa-solid fa-code"></i>
+
+            <h3>Programming</h3>
+
+            <p>
+                Developing programming skills with Python
+                and Java.
+            </p>
+
+        </div>
+
+
+        <!-- BOX 4 -->
+
+        <div class="about-box">
+
+            <span>04</span>
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <h3>Problem Solving</h3>
+
+            <p>
+                Applying logical thinking to solve technical
+                and real-world problems.
+            </p>
+
+        </div>
+
+
+        <!-- BOX 5 -->
+
+        <div class="about-box wide">
+
+            <span>05</span>
+
+            <i class="fa-solid fa-rocket"></i>
+
+            <h3>Continuous Learning</h3>
+
+            <p>
+                Continuously improving my technical,
+                analytical, and professional skills.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS SECTION
+====================================================== -->
+
+<section class="section skills-section"
+         id="skills">
+
+
+    <div class="section-title reveal">
+
+        <span>MY SKILLS</span>
+
+        <h2>
+
+            Technologies &
+            <strong>Knowledge Areas</strong>
+
+        </h2>
+
+        <p>
+
+            Skills and technologies I am currently learning
+            and using to build Data Science and AI projects.
+
+        </p>
+
+    </div>
+
+
+    <div class="skills-container">
+
+
+        <!-- PYTHON -->
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
                 <i class="fa-brands fa-python"></i>
-                <h3>Python</h3>
-                <p>Programming & Data</p>
             </div>
 
-            <div class="skill-card reveal">
+            <h3>Python</h3>
+
+            <p>Programming & Data</p>
+
+            <div class="skill-line">
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- PANDAS -->
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
                 <i class="fa-solid fa-table"></i>
-                <h3>Pandas</h3>
-                <p>Data Analysis</p>
             </div>
 
-            <div class="skill-card reveal">
+            <h3>Pandas</h3>
+
+            <p>Data Analysis</p>
+
+            <div class="skill-line">
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- NUMPY -->
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
                 <i class="fa-solid fa-calculator"></i>
-                <h3>NumPy</h3>
-                <p>Numerical Computing</p>
             </div>
 
-            <div class="skill-card reveal">
+            <h3>NumPy</h3>
+
+            <p>Numerical Computing</p>
+
+            <div class="skill-line">
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- SQL -->
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
                 <i class="fa-solid fa-database"></i>
-                <h3>SQL</h3>
-                <p>Database & Queries</p>
             </div>
 
-            <div class="skill-card reveal">
+            <h3>SQL</h3>
+
+            <p>Database & Queries</p>
+
+            <div class="skill-line">
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- MACHINE LEARNING -->
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
                 <i class="fa-solid fa-brain"></i>
-                <h3>Machine Learning</h3>
-                <p>AI Models</p>
             </div>
 
-            <div class="skill-card reveal">
+            <h3>Machine Learning</h3>
+
+            <p>AI Models</p>
+
+            <div class="skill-line">
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
                 <i class="fa-solid fa-chart-pie"></i>
-                <h3>Statistics</h3>
-                <p>Data Analysis</p>
             </div>
 
-            <div class="skill-card reveal">
+            <h3>Statistics</h3>
+
+            <p>Data Analysis</p>
+
+            <div class="skill-line">
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- MATHEMATICS -->
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
                 <i class="fa-solid fa-square-root-variable"></i>
-                <h3>Mathematics</h3>
-                <p>AI Foundation</p>
             </div>
 
-            <div class="skill-card reveal">
+            <h3>Mathematics</h3>
+
+            <p>AI Foundation</p>
+
+            <div class="skill-line">
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- DATA VISUALIZATION -->
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
                 <i class="fa-solid fa-chart-column"></i>
-                <h3>Data Visualization</h3>
-                <p>Charts & Insights</p>
             </div>
 
-            <div class="skill-card reveal">
+            <h3>Data Visualization</h3>
+
+            <p>Charts & Insights</p>
+
+            <div class="skill-line">
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- GIT -->
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
                 <i class="fa-brands fa-git-alt"></i>
-                <h3>Git</h3>
-                <p>Version Control</p>
             </div>
 
-            <div class="skill-card reveal">
+            <h3>Git</h3>
+
+            <p>Version Control</p>
+
+            <div class="skill-line">
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- GITHUB -->
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
                 <i class="fa-brands fa-github"></i>
-                <h3>GitHub</h3>
-                <p>Projects & Portfolio</p>
+            </div>
+
+            <h3>GitHub</h3>
+
+            <p>Projects & Portfolio</p>
+
+            <div class="skill-line">
+                <span></span>
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- DATA ANALYSIS -->
-    <section class="section data-analysis" id="data-analysis">
+<!-- =====================================================
+     PROJECTS SECTION
+====================================================== -->
 
-        <div class="section-title reveal">
-
-            <span>DATA SCIENCE</span>
-
-            <h2>
-                Data Analysis &
-                <strong>EDA</strong>
-            </h2>
-
-            <p>
-                My data analysis workflow for turning raw data
-                into useful insights.
-            </p>
-
-        </div>
+<section class="section projects"
+         id="projects">
 
 
-        <div class="analysis-grid">
+    <div class="section-title reveal">
 
-            <div class="analysis-card reveal">
+        <span>MY PROJECTS</span>
 
-                <div class="analysis-icon">
-                    <i class="fa-solid fa-file-csv"></i>
-                </div>
+        <h2>
 
-                <span>01</span>
+            Featured
+            <strong>Projects</strong>
 
-                <h3>Data Collection</h3>
+        </h2>
 
-                <p>
-                    Working with datasets and understanding
-                    the available variables and data structure.
-                </p>
+        <p>
 
-            </div>
+            Practical projects demonstrating my development
+            in programming, data analysis, and artificial intelligence.
 
+        </p>
 
-            <div class="analysis-card reveal">
-
-                <div class="analysis-icon">
-                    <i class="fa-solid fa-broom"></i>
-                </div>
-
-                <span>02</span>
-
-                <h3>Data Cleaning</h3>
-
-                <p>
-                    Handling missing values, duplicates,
-                    incorrect data and inconsistent formats.
-                </p>
-
-            </div>
+    </div>
 
 
-            <div class="analysis-card reveal">
-
-                <div class="analysis-icon">
-                    <i class="fa-solid fa-magnifying-glass-chart"></i>
-                </div>
-
-                <span>03</span>
-
-                <h3>EDA</h3>
-
-                <p>
-                    Exploring distributions, relationships,
-                    patterns and important variables.
-                </p>
-
-            </div>
+    <div class="projects-container">
 
 
-            <div class="analysis-card reveal">
+        <!-- =================================================
+             PROJECT 1
+        ================================================== -->
 
-                <div class="analysis-icon">
+        <article class="project-card reveal">
+
+
+            <div class="project-image">
+
+                <span class="project-number">
+                    01
+                </span>
+
+                <div class="project-icon">
+
                     <i class="fa-solid fa-chart-line"></i>
+
                 </div>
 
-                <span>04</span>
+            </div>
 
-                <h3>Visualization</h3>
+
+            <div class="project-content">
+
+                <span class="project-type">
+                    DATA SCIENCE
+                </span>
+
+
+                <h3>
+                    Employee Productivity Analysis
+                </h3>
+
 
                 <p>
-                    Creating charts using Matplotlib and
-                    other visualization tools.
+
+                    Analyzing employee productivity data,
+                    exploring possible causes of decreased
+                    productivity, and suggesting data-driven
+                    business actions.
+
                 </p>
 
-            </div>
 
+                <div class="tags">
 
-            <div class="analysis-card reveal">
-
-                <div class="analysis-icon">
-                    <i class="fa-solid fa-square-root-variable"></i>
-                </div>
-
-                <span>05</span>
-
-                <h3>Statistics</h3>
-
-                <p>
-                    Using mean, median, standard deviation,
-                    correlation and statistical analysis.
-                </p>
-
-            </div>
-
-
-            <div class="analysis-card reveal">
-
-                <div class="analysis-icon">
-                    <i class="fa-solid fa-lightbulb"></i>
-                </div>
-
-                <span>06</span>
-
-                <h3>Insights</h3>
-
-                <p>
-                    Converting analysis results into clear,
-                    useful and data-driven conclusions.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="analysis-tools reveal">
-
-            <h3>My Data Science Toolkit</h3>
-
-            <div class="tool-list">
-
-                <span>Python</span>
-                <span>NumPy</span>
-                <span>Pandas</span>
-                <span>Matplotlib</span>
-                <span>Seaborn</span>
-                <span>SQL</span>
-                <span>Scikit-learn</span>
-                <span>Jupyter Notebook</span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-
-        <div class="section-title reveal">
-
-            <span>MY PROJECTS</span>
-
-            <h2>
-                Featured
-                <strong>Projects</strong>
-            </h2>
-
-            <p>
-                Practical projects demonstrating my programming,
-                data analysis and AI learning.
-            </p>
-
-        </div>
-
-
-        <div class="projects-grid">
-
-
-            <article class="project-card reveal">
-
-                <div class="project-top">
-                    <span>01</span>
-                    <i class="fa-solid fa-chart-line"></i>
-                </div>
-
-                <div class="project-content">
-
-                    <small>DATA SCIENCE</small>
-
-                    <h3>
-                        Employee Productivity Analysis
-                    </h3>
-
-                    <p>
-                        Analyzing employee productivity data,
-                        cleaning the dataset, performing EDA,
-                        finding patterns and generating
-                        data-driven insights.
-                    </p>
-
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>Pandas</span>
-                        <span>EDA</span>
-                        <span>Statistics</span>
-                    </div>
-
-                    <a
-                        href="https://github.com/Ahmed-Soro"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                        data-analytics="project_employee">
-
-                        View on GitHub
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>EDA</span>
+                    <span>Statistics</span>
 
                 </div>
 
-            </article>
+
+                <!--
+                    Replace this GitHub URL later with the
+                    actual repository URL when you create it.
+                -->
+
+                <a href="https://github.com/Ahmed-Soro"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="project-link"
+                   data-analytics="project_employee">
+
+                    View on GitHub
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
 
 
-            <article class="project-card reveal">
+        <!-- =================================================
+             PROJECT 2
+        ================================================== -->
 
-                <div class="project-top">
-                    <span>02</span>
+        <article class="project-card reveal">
+
+
+            <div class="project-image">
+
+                <span class="project-number">
+                    02
+                </span>
+
+                <div class="project-icon">
+
                     <i class="fa-solid fa-database"></i>
-                </div>
-
-                <div class="project-content">
-
-                    <small>DATA ANALYSIS</small>
-
-                    <h3>
-                        Exploratory Data Analysis
-                    </h3>
-
-                    <p>
-                        Cleaning and exploring datasets using
-                        Python, NumPy, Pandas and visualization
-                        techniques to discover useful patterns.
-                    </p>
-
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>NumPy</span>
-                        <span>Pandas</span>
-                        <span>Matplotlib</span>
-                    </div>
-
-                    <a
-                        href="https://github.com/Ahmed-Soro"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                        data-analytics="project_data_analysis">
-
-                        View on GitHub
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
 
                 </div>
 
-            </article>
+            </div>
 
 
-            <article class="project-card reveal">
+            <div class="project-content">
 
-                <div class="project-top">
-                    <span>03</span>
+                <span class="project-type">
+                    DATA ANALYSIS
+                </span>
+
+
+                <h3>
+                    Data Analysis Project
+                </h3>
+
+
+                <p>
+
+                    Exploring datasets, cleaning data,
+                    performing exploratory analysis, and
+                    generating useful insights through
+                    data-driven techniques.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span>Python</span>
+                    <span>NumPy</span>
+                    <span>Pandas</span>
+                    <span>Matplotlib</span>
+
+                </div>
+
+
+                <a href="https://github.com/Ahmed-Soro"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="project-link"
+                   data-analytics="project_data_analysis">
+
+                    View on GitHub
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PROJECT 3
+        ================================================== -->
+
+        <article class="project-card reveal">
+
+
+            <div class="project-image">
+
+                <span class="project-number">
+                    03
+                </span>
+
+                <div class="project-icon">
+
                     <i class="fa-solid fa-robot"></i>
-                </div>
-
-                <div class="project-content">
-
-                    <small>ARTIFICIAL INTELLIGENCE</small>
-
-                    <h3>
-                        Machine Learning Project
-                    </h3>
-
-                    <p>
-                        Building and evaluating machine learning
-                        models to understand predictive problems
-                        and develop practical AI solutions.
-                    </p>
-
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>Scikit-learn</span>
-                        <span>ML</span>
-                        <span>AI</span>
-                    </div>
-
-                    <a
-                        href="https://github.com/Ahmed-Soro"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                        data-analytics="project_machine_learning">
-
-                        View on GitHub
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- EDUCATION -->
-    <section class="section" id="education">
-
-        <div class="section-title reveal">
-
-            <span>EDUCATION</span>
-
-            <h2>
-                Academic &
-                <strong>Learning Journey</strong>
-            </h2>
-
-        </div>
-
-
-        <div class="timeline">
-
-            <div class="timeline-item reveal">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-content">
-
-                    <span>UNIVERSITY</span>
-
-                    <h3>
-                        Computer Science & Artificial Intelligence
-                    </h3>
-
-                    <h4>
-                        Capital University — AI Major
-                    </h4>
-
-                    <p>
-                        Studying Computer Science and Artificial
-                        Intelligence with a focus on programming,
-                        algorithms, mathematics, statistics and AI.
-                    </p>
 
                 </div>
 
             </div>
 
 
-            <div class="timeline-item reveal">
+            <div class="project-content">
 
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-content">
-
-                    <span>DATA SCIENCE</span>
-
-                    <h3>
-                        Data Science Learning
-                    </h3>
-
-                    <h4>
-                        Self-Directed Learning
-                    </h4>
-
-                    <p>
-                        Developing practical skills in Python,
-                        NumPy, Pandas, SQL, statistics,
-                        visualization, EDA and machine learning.
-                    </p>
-
-                </div>
-
-            </div>
+                <span class="project-type">
+                    ARTIFICIAL INTELLIGENCE
+                </span>
 
 
-            <div class="timeline-item reveal">
+                <h3>
+                    Machine Learning Project
+                </h3>
 
-                <div class="timeline-dot"></div>
 
-                <div class="timeline-content">
+                <p>
 
-                    <span>CAREER GOAL</span>
+                    Building and evaluating machine learning
+                    models to explore predictive problems and
+                    develop practical AI solutions.
 
-                    <h3>
-                        Data Scientist / AI Engineer
-                    </h3>
+                </p>
 
-                    <h4>
-                        Long-Term Goal
-                    </h4>
 
-                    <p>
-                        Building the technical and analytical
-                        skills required to create useful AI
-                        and data-driven solutions.
-                    </p>
+                <div class="tags">
+
+                    <span>Python</span>
+                    <span>Scikit-learn</span>
+                    <span>Machine Learning</span>
+                    <span>AI</span>
 
                 </div>
 
+
+                <a href="https://github.com/Ahmed-Soro"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="project-link"
+                   data-analytics="project_machine_learning">
+
+                    View on GitHub
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EDUCATION SECTION
+====================================================== -->
+
+<section class="section education"
+         id="education">
+
+
+    <div class="section-title reveal">
+
+        <span>EDUCATION</span>
+
+        <h2>
+
+            My Academic &
+            <strong>Learning Journey</strong>
+
+        </h2>
+
+        <p>
+
+            My academic background and continuous technical
+            learning journey.
+
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <!-- UNIVERSITY -->
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <span>UNIVERSITY</span>
+
+                <h3>
+                    Computer Science & Artificial Intelligence
+                </h3>
+
+                <h4>
+                    Capital University — Major: Artificial Intelligence
+                </h4>
+
+                <p>
+
+                    I am studying Computer Science and Artificial
+                    Intelligence at Capital University, majoring in
+                    Artificial Intelligence. I am developing a strong
+                    foundation in programming, algorithms, mathematics,
+                    statistics, and AI.
+
+                </p>
+
             </div>
 
         </div>
 
-    </section>
 
+        <!-- DATA SCIENCE -->
 
-    <!-- GOAL -->
-    <section class="goal" id="goal">
+        <div class="timeline-item reveal">
 
-        <div class="goal-content reveal">
+            <div class="timeline-dot"></div>
 
-            <span>MY CAREER VISION</span>
+            <div class="timeline-content">
 
-            <h2>
-                From AI Student To
-                <strong>Data Scientist & AI Engineer</strong>
-            </h2>
+                <span>DATA SCIENCE</span>
 
-            <p>
-                My goal is to build strong foundations in programming,
-                mathematics, statistics, data analysis, machine learning
-                and artificial intelligence, then use these skills to
-                solve real-world problems.
-            </p>
+                <h3>
+                    Data Science Learning
+                </h3>
 
-            <div class="goal-path">
+                <h4>
+                    Self-Directed Learning
+                </h4>
 
-                <span>Python</span>
-                <i class="fa-solid fa-arrow-right"></i>
+                <p>
 
-                <span>Statistics</span>
-                <i class="fa-solid fa-arrow-right"></i>
+                    I am developing practical skills in Python,
+                    NumPy, Pandas, SQL, statistics, data visualization,
+                    exploratory data analysis, and machine learning.
 
-                <span>Data Analysis</span>
-                <i class="fa-solid fa-arrow-right"></i>
-
-                <span>Machine Learning</span>
-                <i class="fa-solid fa-arrow-right"></i>
-
-                <span>AI</span>
+                </p>
 
             </div>
 
         </div>
 
-    </section>
 
+        <!-- FUTURE -->
 
-    <!-- CONTACT -->
-    <section class="section" id="contact">
+        <div class="timeline-item reveal">
 
-        <div class="section-title reveal">
+            <div class="timeline-dot"></div>
 
-            <span>CONTACT ME</span>
+            <div class="timeline-content">
 
-            <h2>
-                Let's
-                <strong>Connect</strong>
-            </h2>
+                <span>CAREER GOAL</span>
 
-            <p>
-                Feel free to contact me about internships,
-                opportunities, projects or collaborations.
-            </p>
+                <h3>
+                    Future Data Scientist / AI Engineer
+                </h3>
+
+                <h4>
+                    Long-Term Career Goal
+                </h4>
+
+                <p>
+
+                    My long-term goal is to become a professional
+                    Data Scientist and AI Engineer who uses data,
+                    machine learning, and artificial intelligence
+                    to build useful solutions for real-world problems.
+
+                </p>
+
+            </div>
 
         </div>
 
+    </div>
 
-        <div class="contact-grid">
+</section>
 
-            <a
-                href="mailto:sorour802@gmail.com"
-                class="contact-card reveal"
-                data-analytics="email_click">
+
+<!-- =====================================================
+     CAREER GOAL SECTION
+====================================================== -->
+
+<section class="goal"
+         id="goal">
+
+
+    <div class="goal-content reveal">
+
+
+        <span>
+            MY CAREER VISION
+        </span>
+
+
+        <h2>
+
+            From AI Student To
+            <strong>Data Scientist & AI Engineer</strong>
+
+        </h2>
+
+
+        <p>
+
+            My goal is to build strong foundations in programming,
+            mathematics, statistics, data analysis, machine learning,
+            and artificial intelligence, then use these skills to
+            create practical solutions for real-world problems.
+
+        </p>
+
+
+        <div class="goal-path">
+
+            <span>Python</span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+            <span>Statistics</span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+            <span>Data Analysis</span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+            <span>Machine Learning</span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+            <span>AI</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT SECTION
+====================================================== -->
+
+<section class="section contact"
+         id="contact">
+
+
+    <div class="section-title reveal">
+
+        <span>CONTACT ME</span>
+
+        <h2>
+
+            Let's
+            <strong>Connect</strong>
+
+        </h2>
+
+        <p>
+
+            If you have an internship, opportunity, project,
+            collaboration, or simply want to connect, feel free
+            to contact me.
+
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <!-- EMAIL -->
+
+        <a href="mailto:sorour802@gmail.com"
+           class="contact-card"
+           data-analytics="email_click">
+
+            <div class="contact-icon">
 
                 <i class="fa-solid fa-envelope"></i>
 
-                <div>
-                    <span>Email</span>
-                    <strong>sorour802@gmail.com</strong>
-                </div>
+            </div>
 
-                <i class="fa-solid fa-arrow-right"></i>
+            <div>
 
-            </a>
+                <span>Email</span>
+
+                <strong>
+                    sorour802@gmail.com
+                </strong>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right arrow"></i>
+
+        </a>
 
 
-            <a
-                href="https://wa.me/201154929027"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-card reveal"
-                data-analytics="whatsapp_click">
+        <!-- WHATSAPP -->
+
+        <a href="https://wa.me/201154929027"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="contact-card"
+           data-analytics="whatsapp_click">
+
+            <div class="contact-icon">
 
                 <i class="fa-brands fa-whatsapp"></i>
 
-                <div>
-                    <span>WhatsApp</span>
-                    <strong>Contact Me</strong>
-                </div>
+            </div>
 
-                <i class="fa-solid fa-arrow-right"></i>
+            <div>
 
-            </a>
+                <span>WhatsApp</span>
+
+                <strong>
+                    Contact Me
+                </strong>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right arrow"></i>
+
+        </a>
 
 
-            <a
-                href="https://github.com/Ahmed-Soro"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-card reveal"
-                data-analytics="github_click">
+        <!-- GITHUB -->
+
+        <a href="https://github.com/Ahmed-Soro"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="contact-card"
+           data-analytics="github_click">
+
+            <div class="contact-icon">
 
                 <i class="fa-brands fa-github"></i>
 
-                <div>
-                    <span>GitHub</span>
-                    <strong>Ahmed-Soro</strong>
-                </div>
+            </div>
 
-                <i class="fa-solid fa-arrow-right"></i>
+            <div>
 
-            </a>
+                <span>GitHub</span>
+
+                <strong>
+                    My Profile
+                </strong>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right arrow"></i>
+
+        </a>
 
 
-            <a
-                href="https://www.linkedin.com/in/ahmed-sorour-d"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-card reveal"
-                data-analytics="linkedin_click">
+        <!-- LINKEDIN -->
+
+        <a href="https://www.linkedin.com/in/ahmed-sorour-d"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="contact-card"
+           data-analytics="linkedin_click">
+
+            <div class="contact-icon">
 
                 <i class="fa-brands fa-linkedin"></i>
 
-                <div>
-                    <span>LinkedIn</span>
-                    <strong>Connect With Me</strong>
-                </div>
+            </div>
 
-                <i class="fa-solid fa-arrow-right"></i>
+            <div>
 
-            </a>
+                <span>LinkedIn</span>
 
-        </div>
+                <strong>
+                    Connect With Me
+                </strong>
 
-    </section>
+            </div>
+
+            <i class="fa-solid fa-arrow-right arrow"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
 
 </main>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
 <footer>
 
+
     <div class="footer-logo">
+
         <span>&lt;</span>
+
         Ahmed Sorour
+
         <span>/&gt;</span>
+
     </div>
+
 
     <p>
         Computer Science & Artificial Intelligence Student
         | AI Major | Capital University
     </p>
 
+
     <div class="footer-social">
 
+
+        <!-- GITHUB -->
+
         <a href="https://github.com/Ahmed-Soro"
-            target="_blank"
-            rel="noopener noreferrer">
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="GitHub"
+           data-analytics="github_click">
+
             <i class="fa-brands fa-github"></i>
+
         </a>
+
+
+        <!-- LINKEDIN -->
 
         <a href="https://www.linkedin.com/in/ahmed-sorour-d"
-            target="_blank"
-            rel="noopener noreferrer">
-            <i class="fa-brands fa-linkedin"></i>
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="LinkedIn"
+           data-analytics="linkedin_click">
+
+            <i class="fa-brands fa-linkedin-in"></i>
+
         </a>
+
+
+        <!-- WHATSAPP -->
 
         <a href="https://wa.me/201154929027"
-            target="_blank"
-            rel="noopener noreferrer">
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="WhatsApp"
+           data-analytics="whatsapp_click">
+
             <i class="fa-brands fa-whatsapp"></i>
+
         </a>
 
-        <a href="mailto:sorour802@gmail.com">
+
+        <!-- EMAIL -->
+
+        <a href="mailto:sorour802@gmail.com"
+           aria-label="Email"
+           data-analytics="email_click">
+
             <i class="fa-solid fa-envelope"></i>
+
         </a>
 
     </div>
 
+
     <div class="copyright">
+
         © 2026 Ahmed Sorour. All Rights Reserved.
+
     </div>
 
 </footer>
 
 
-<!-- BACK TO TOP -->
-<button
-    class="back-to-top"
-    id="backToTop"
-    type="button"
-    aria-label="Back to top">
+<!-- =====================================================
+     BACK TO TOP
+====================================================== -->
+
+<button class="back-to-top"
+        id="backToTop"
+        type="button"
+        aria-label="Back to top"
+        title="Back to top">
 
     <i class="fa-solid fa-arrow-up"></i>
 
 </button>
 
 
-<!-- JAVASCRIPT -->
-<script src="script.js"></script>
-```
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =================================================
+       ELEMENTS
+    ================================================= */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navbar =
+        document.getElementById("navbar");
+
+    const themeToggle =
+        document.getElementById("themeToggle");
+
+    const preloader =
+        document.getElementById("preloader");
+
+    const backToTop =
+        document.getElementById("backToTop");
+
+    const typingText =
+        document.getElementById("typingText");
+
+
+    /* =================================================
+       TYPING EFFECT
+    ================================================= */
+
+    if (typingText) {
+
+        const words = [
+            "AI Student",
+            "Data Science Learner",
+            "Machine Learning Enthusiast",
+            "AI Enthusiast",
+            "Python Developer"
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        function typeEffect() {
+
+            const currentWord =
+                words[wordIndex];
+
+            if (!deleting) {
+
+                typingText.textContent =
+                    currentWord.substring(
+                        0,
+                        charIndex + 1
+                    );
+
+                charIndex++;
+
+                if (
+                    charIndex ===
+                    currentWord.length
+                ) {
+
+                    deleting = true;
+
+                    setTimeout(
+                        typeEffect,
+                        1800
+                    );
+
+                    return;
+
+                }
+
+            } else {
+
+                typingText.textContent =
+                    currentWord.substring(
+                        0,
+                        charIndex - 1
+                    );
+
+                charIndex--;
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    wordIndex =
+                        (wordIndex + 1) %
+                        words.length;
+
+                }
+
+            }
+
+            setTimeout(
+                typeEffect,
+                deleting ? 60 : 100
+            );
+
+        }
+
+        typeEffect();
+
+    }
+
+
+    /* =================================================
+       MOBILE MENU
+    ================================================= */
+
+    if (menuBtn && navbar) {
+
+        menuBtn.addEventListener(
+            "click",
+            function () {
+
+                navbar.classList.toggle(
+                    "show"
+                );
+
+                const isOpen =
+                    navbar.classList.contains(
+                        "show"
+                    );
+
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+                const icon =
+                    menuBtn.querySelector("i");
+
+                if (icon) {
+
+                    icon.classList.toggle(
+                        "fa-bars",
+                        !isOpen
+                    );
+
+                    icon.classList.toggle(
+                        "fa-xmark",
+                        isOpen
+                    );
+
+                }
+
+                document.body.classList.toggle(
+                    "no-scroll",
+                    isOpen
+                );
+
+            }
+        );
+
+
+        /* CLOSE MOBILE MENU */
+
+        navbar
+            .querySelectorAll("a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navbar.classList.remove(
+                            "show"
+                        );
+
+                        menuBtn.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        const icon =
+                            menuBtn.querySelector("i");
+
+                        if (icon) {
+
+                            icon.classList.remove(
+                                "fa-xmark"
+                            );
+
+                            icon.classList.add(
+                                "fa-bars"
+                            );
+
+                        }
+
+                        document.body.classList.remove(
+                            "no-scroll"
+                        );
+
+                    }
+                );
+
+            });
+
+    }
+
+
+    /* =================================================
+       THEME TOGGLE
+    ================================================= */
+
+    if (themeToggle) {
+
+        function updateThemeIcon() {
+
+            const icon =
+                themeToggle.querySelector("i");
+
+            if (!icon) return;
+
+            const isLight =
+                document.body.classList.contains(
+                    "light"
+                );
+
+            icon.classList.toggle(
+                "fa-moon",
+                !isLight
+            );
+
+            icon.classList.toggle(
+                "fa-sun",
+                isLight
+            );
+
+        }
+
+
+        themeToggle.addEventListener(
+            "click",
+            function () {
+
+                document.body.classList.toggle(
+                    "light"
+                );
+
+                const isLight =
+                    document.body.classList.contains(
+                        "light"
+                    );
+
+                localStorage.setItem(
+                    "portfolio-theme",
+                    isLight
+                        ? "light"
+                        : "dark"
+                );
+
+                updateThemeIcon();
+
+            }
+        );
+
+
+        /* LOAD SAVED THEME */
+
+        const savedTheme =
+            localStorage.getItem(
+                "portfolio-theme"
+            );
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add(
+                "light"
+            );
+
+        }
+
+        updateThemeIcon();
+
+    }
+
+
+    /* =================================================
+       PRELOADER
+    ================================================= */
+
+    window.addEventListener(
+        "load",
+        function () {
+
+            setTimeout(
+                function () {
+
+                    if (preloader) {
+
+                        preloader.classList.add(
+                            "hide"
+                        );
+
+                    }
+
+                },
+                500
+            );
+
+        }
+    );
+
+
+    /* =================================================
+       BACK TO TOP
+    ================================================= */
+
+    function handleBackToTop() {
+
+        if (!backToTop) return;
+
+        if (window.scrollY > 500) {
+
+            backToTop.classList.add(
+                "show"
+            );
+
+        } else {
+
+            backToTop.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        handleBackToTop,
+        { passive: true }
+    );
+
+
+    if (backToTop) {
+
+        backToTop.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       SCROLL REVEAL
+    ================================================= */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".reveal"
+        );
+
+
+    if (
+        "IntersectionObserver" in window
+    ) {
+
+        const revealObserver =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            function (element) {
+
+                revealObserver.observe(
+                    element
+                );
+
+            }
+        );
+
+    } else {
+
+        revealElements.forEach(
+            function (element) {
+
+                element.classList.add(
+                    "visible"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       SKILL ANIMATION
+    ================================================= */
+
+    const skillCards =
+        document.querySelectorAll(
+            ".skill-card"
+        );
+
+
+    if (
+        "IntersectionObserver" in window
+    ) {
+
+        const skillObserver =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                                skillObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.2
+                }
+            );
+
+
+        skillCards.forEach(
+            function (card) {
+
+                skillObserver.observe(
+                    card
+                );
+
+            }
+        );
+
+    } else {
+
+        skillCards.forEach(
+            function (card) {
+
+                card.classList.add(
+                    "visible"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       GOOGLE ANALYTICS EVENTS
+    ================================================= */
+
+    document
+        .querySelectorAll("[data-analytics]")
+        .forEach(function (element) {
+
+            element.addEventListener(
+                "click",
+                function () {
+
+                    const eventName =
+                        element.dataset.analytics;
+
+
+                    if (
+                        typeof gtag === "function"
+                    ) {
+
+                        gtag(
+                            "event",
+                            eventName,
+                            {
+
+                                event_category:
+                                    "engagement",
+
+                                event_label:
+                                    element.getAttribute(
+                                        "href"
+                                    ) ||
+                                    element.textContent
+                                        .trim(),
+
+                                transport_type:
+                                    "beacon"
+
+                            }
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =================================================
+       ACTIVE NAVIGATION
+    ================================================= */
+
+    const sections =
+        document.querySelectorAll(
+            "section[id]"
+        );
+
+    const navLinks =
+        document.querySelectorAll(
+            ".nav-link"
+        );
+
+
+    function updateActiveNavigation() {
+
+        let current = "";
+
+        const scrollPosition =
+            window.scrollY + 180;
+
+
+        sections.forEach(
+            function (section) {
+
+                const sectionTop =
+                    section.offsetTop;
+
+                const sectionBottom =
+                    sectionTop +
+                    section.offsetHeight;
+
+
+                if (
+                    scrollPosition >= sectionTop &&
+                    scrollPosition < sectionBottom
+                ) {
+
+                    current =
+                        section.getAttribute(
+                            "id"
+                        );
+
+                }
+
+            }
+        );
+
+
+        navLinks.forEach(
+            function (link) {
+
+                link.classList.remove(
+                    "active"
+                );
+
+
+                if (
+                    link.getAttribute(
+                        "href"
+                    ) === "#" + current
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNavigation,
+        { passive: true }
+    );
+
+
+    updateActiveNavigation();
+
+
+    /* =================================================
+       ESCAPE KEY
+    ================================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                if (
+                    navbar &&
+                    navbar.classList.contains(
+                        "show"
+                    )
+                ) {
+
+                    navbar.classList.remove(
+                        "show"
+                    );
+
+
+                    if (menuBtn) {
+
+                        menuBtn.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+
+                    const icon =
+                        menuBtn
+                            ? menuBtn.querySelector("i")
+                            : null;
+
+
+                    if (icon) {
+
+                        icon.classList.remove(
+                            "fa-xmark"
+                        );
+
+                        icon.classList.add(
+                            "fa-bars"
+                        );
+
+                    }
+
+
+                    document.body.classList.remove(
+                        "no-scroll"
+                    );
+
+                }
+
+            }
+
+        }
+    );
+
+
+    /* =================================================
+       PREVENT EMPTY / BROKEN INTERNAL LINKS
+    ================================================= */
+
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function (event) {
+
+                    const targetId =
+                        link.getAttribute(
+                            "href"
+                        );
+
+                    if (
+                        targetId === "#"
+                    ) {
+
+                        event.preventDefault();
+
+                        return;
+
+                    }
+
+
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
+
+
+                    if (target) {
+
+                        event.preventDefault();
+
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+
+                    }
+
+                }
+            );
+
+        });
+
+});
+
+</script>
+
 
 </body>
+
 </html>
