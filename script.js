@@ -1,127 +1,174 @@
-```javascript
 /* =========================================================
-   AHMED SOROUR — DATA SCIENCE & AI PORTFOLIO
-   Main JavaScript
+   AHMED SOROUR
+   PORTFOLIO JAVASCRIPT
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+
 
     /* =====================================================
        ELEMENTS
     ===================================================== */
 
-    const body = document.body;
+    const body =
+        document.body;
 
-    const menuBtn = document.getElementById("menuBtn");
-    const navbar = document.getElementById("navbar");
-    const themeToggle = document.getElementById("themeToggle");
-    const preloader = document.getElementById("preloader");
-    const backToTop = document.getElementById("backToTop");
-    const typingText = document.getElementById("typingText");
+    const menuBtn =
+        document.getElementById("menuBtn");
 
-    const navLinks = document.querySelectorAll(".nav-link");
-    const sections = document.querySelectorAll("section[id]");
+    const navbar =
+        document.getElementById("navbar");
 
-    /* =====================================================
-       GOOGLE ANALYTICS HELPER
-    ===================================================== */
+    const navOverlay =
+        document.getElementById("navOverlay");
 
-    function trackEvent(eventName, parameters = {}) {
+    const themeToggle =
+        document.getElementById("themeToggle");
 
-        if (typeof window.gtag === "function") {
+    const backToTop =
+        document.getElementById("backToTop");
 
-            window.gtag("event", eventName, {
-                ...parameters
-            });
+    const preloader =
+        document.getElementById("preloader");
 
-        }
-
-    }
+    const typingText =
+        document.getElementById("typingText");
 
 
     /* =====================================================
-       MOBILE MENU
+       MOBILE NAVIGATION
     ===================================================== */
 
-    function closeMobileMenu() {
+    function openMenu() {
 
-        if (!navbar || !menuBtn) return;
-
-        navbar.classList.remove("show");
-
-        menuBtn.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-        const icon = menuBtn.querySelector("i");
-
-        if (icon) {
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
-        }
-
-        body.classList.remove("no-scroll");
-
-    }
-
-
-    function openMobileMenu() {
-
-        if (!navbar || !menuBtn) return;
+        if (!navbar) return;
 
         navbar.classList.add("show");
 
-        menuBtn.setAttribute(
-            "aria-expanded",
-            "true"
-        );
+        if (navOverlay) {
+            navOverlay.classList.add("show");
+        }
 
-        const icon = menuBtn.querySelector("i");
+        if (menuBtn) {
 
-        if (icon) {
+            menuBtn.setAttribute(
+                "aria-expanded",
+                "true"
+            );
 
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-xmark");
+            const icon =
+                menuBtn.querySelector("i");
+
+            if (icon) {
+
+                icon.classList.remove(
+                    "fa-bars"
+                );
+
+                icon.classList.add(
+                    "fa-xmark"
+                );
+
+            }
 
         }
 
-        body.classList.add("no-scroll");
+        body.classList.add(
+            "no-scroll"
+        );
 
     }
 
 
-    if (menuBtn && navbar) {
+    function closeMenu() {
 
-        menuBtn.addEventListener("click", () => {
+        if (!navbar) return;
 
-            const isOpen =
-                navbar.classList.contains("show");
+        navbar.classList.remove("show");
 
-            if (isOpen) {
+        if (navOverlay) {
+            navOverlay.classList.remove("show");
+        }
 
-                closeMobileMenu();
+        if (menuBtn) {
 
-            } else {
+            menuBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
-                openMobileMenu();
+            const icon =
+                menuBtn.querySelector("i");
+
+            if (icon) {
+
+                icon.classList.remove(
+                    "fa-xmark"
+                );
+
+                icon.classList.add(
+                    "fa-bars"
+                );
 
             }
 
-        });
+        }
+
+        body.classList.remove(
+            "no-scroll"
+        );
+
+    }
 
 
-        navLinks.forEach(link => {
+    if (menuBtn) {
 
-            link.addEventListener("click", () => {
+        menuBtn.addEventListener(
+            "click",
+            () => {
 
-                closeMobileMenu();
+                const isOpen =
+                    navbar &&
+                    navbar.classList.contains("show");
+
+                if (isOpen) {
+
+                    closeMenu();
+
+                } else {
+
+                    openMenu();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    if (navOverlay) {
+
+        navOverlay.addEventListener(
+            "click",
+            closeMenu
+        );
+
+    }
+
+
+    if (navbar) {
+
+        navbar
+            .querySelectorAll("a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    closeMenu
+                );
 
             });
-
-        });
 
     }
 
@@ -130,22 +177,47 @@ document.addEventListener("DOMContentLoaded", () => {
        ESCAPE KEY
     ===================================================== */
 
-    document.addEventListener("keydown", event => {
+    document.addEventListener(
+        "keydown",
+        event => {
 
-        if (event.key === "Escape") {
+            if (
+                event.key === "Escape"
+            ) {
 
-            closeMobileMenu();
+                closeMenu();
+
+            }
 
         }
-
-    });
+    );
 
 
     /* =====================================================
-       THEME SYSTEM
+       CLOSE MENU ON DESKTOP
     ===================================================== */
 
-    function updateThemeIcon(isLight) {
+    window.addEventListener(
+        "resize",
+        () => {
+
+            if (
+                window.innerWidth > 900
+            ) {
+
+                closeMenu();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       THEME
+    ===================================================== */
+
+    function updateThemeIcon() {
 
         if (!themeToggle) return;
 
@@ -154,325 +226,208 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!icon) return;
 
-        if (isLight) {
+        const isLight =
+            body.classList.contains("light");
 
-            icon.classList.remove("fa-moon");
-            icon.classList.add("fa-sun");
+        icon.classList.toggle(
+            "fa-moon",
+            !isLight
+        );
 
-        } else {
+        icon.classList.toggle(
+            "fa-sun",
+            isLight
+        );
 
-            icon.classList.remove("fa-sun");
-            icon.classList.add("fa-moon");
-
-        }
+        themeToggle.setAttribute(
+            "aria-label",
+            isLight
+                ? "Switch to dark mode"
+                : "Switch to light mode"
+        );
 
     }
 
 
-    function applyTheme(theme) {
+    function loadTheme() {
 
-        const isLight = theme === "light";
+        const savedTheme =
+            localStorage.getItem(
+                "portfolio-theme"
+            );
 
-        body.classList.toggle(
-            "light",
-            isLight
-        );
+        if (savedTheme === "light") {
 
-        updateThemeIcon(isLight);
+            body.classList.add(
+                "light"
+            );
 
-        localStorage.setItem(
-            "portfolio-theme",
-            isLight ? "light" : "dark"
-        );
+        }
+
+        updateThemeIcon();
 
     }
 
 
     if (themeToggle) {
 
-        themeToggle.addEventListener("click", () => {
+        themeToggle.addEventListener(
+            "click",
+            () => {
 
-            const isCurrentlyLight =
-                body.classList.contains("light");
+                body.classList.toggle(
+                    "light"
+                );
 
-            const newTheme =
-                isCurrentlyLight
-                    ? "dark"
-                    : "light";
+                const theme =
+                    body.classList.contains("light")
+                        ? "light"
+                        : "dark";
 
-            applyTheme(newTheme);
+                localStorage.setItem(
+                    "portfolio-theme",
+                    theme
+                );
 
-            trackEvent(
-                "theme_toggle",
-                {
-                    event_category: "engagement",
-                    event_label: newTheme
-                }
-            );
+                updateThemeIcon();
 
-        });
+                trackEvent(
+                    "theme_change",
+                    {
+                        theme: theme
+                    }
+                );
 
-    }
-
-
-    /* =====================================================
-       LOAD SAVED THEME
-    ===================================================== */
-
-    const savedTheme =
-        localStorage.getItem(
-            "portfolio-theme"
+            }
         );
 
-
-    if (savedTheme === "light") {
-
-        applyTheme("light");
-
-    } else {
-
-        applyTheme("dark");
-
     }
+
+
+    loadTheme();
 
 
     /* =====================================================
        PRELOADER
     ===================================================== */
 
-    window.addEventListener("load", () => {
+    window.addEventListener(
+        "load",
+        () => {
 
-        setTimeout(() => {
+            window.setTimeout(
+                () => {
 
-            if (preloader) {
+                    if (preloader) {
 
-                preloader.classList.add("hide");
+                        preloader.classList.add(
+                            "hide"
+                        );
 
-            }
+                    }
 
-        }, 500);
+                },
+                450
+            );
 
-    });
+        }
+    );
 
 
     /* =====================================================
-       TYPING ANIMATION
+       TYPING EFFECT
     ===================================================== */
 
-    if (typingText) {
+    const words = [
 
-        const typingWords = [
-            "Data Scientist",
-            "AI Engineer",
-            "Machine Learning Student",
-            "Data Analyst",
-            "Python Developer"
-        ];
+        "Data Scientist",
+        "AI Engineer",
+        "Machine Learning Enthusiast",
+        "Data Analyst",
+        "AI Student"
 
-        let wordIndex = 0;
-        let characterIndex = 0;
-
-        let isDeleting = false;
-
-        const typingSpeed = 100;
-        const deletingSpeed = 60;
-        const pauseAfterWord = 1500;
+    ];
 
 
-        function typeEffect() {
+    let wordIndex = 0;
 
-            const currentWord =
-                typingWords[wordIndex];
+    let characterIndex = 0;
+
+    let deleting = false;
 
 
-            if (!isDeleting) {
+    function typeEffect() {
 
-                characterIndex++;
+        if (!typingText) return;
 
-            } else {
+        const currentWord =
+            words[wordIndex];
 
-                characterIndex--;
-
-            }
-
+        if (!deleting) {
 
             typingText.textContent =
                 currentWord.substring(
                     0,
-                    characterIndex
+                    characterIndex + 1
                 );
 
-
-            let speed =
-                isDeleting
-                    ? deletingSpeed
-                    : typingSpeed;
-
+            characterIndex++;
 
             if (
-                !isDeleting &&
-                characterIndex === currentWord.length
+                characterIndex ===
+                currentWord.length
             ) {
 
-                speed = pauseAfterWord;
+                deleting = true;
 
-                isDeleting = true;
+                setTimeout(
+                    typeEffect,
+                    1600
+                );
 
-            }
-
-
-            else if (
-                isDeleting &&
-                characterIndex === 0
-            ) {
-
-                isDeleting = false;
-
-                wordIndex =
-                    (wordIndex + 1) %
-                    typingWords.length;
-
-                speed = 400;
+                return;
 
             }
-
-
-            setTimeout(
-                typeEffect,
-                speed
-            );
-
-        }
-
-
-        typeEffect();
-
-    }
-
-
-    /* =====================================================
-       BACK TO TOP
-    ===================================================== */
-
-    function handleBackToTop() {
-
-        if (!backToTop) return;
-
-        if (window.scrollY > 500) {
-
-            backToTop.classList.add("show");
 
         } else {
 
-            backToTop.classList.remove("show");
+            typingText.textContent =
+                currentWord.substring(
+                    0,
+                    characterIndex - 1
+                );
+
+            characterIndex--;
+
+            if (
+                characterIndex === 0
+            ) {
+
+                deleting = false;
+
+                wordIndex =
+                    (wordIndex + 1)
+                    % words.length;
+
+            }
 
         }
 
-    }
 
+        const speed =
+            deleting
+                ? 55
+                : 95;
 
-    window.addEventListener(
-        "scroll",
-        handleBackToTop,
-        { passive: true }
-    );
-
-
-    if (backToTop) {
-
-        backToTop.addEventListener("click", () => {
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-            trackEvent(
-                "back_to_top",
-                {
-                    event_category: "navigation"
-                }
-            );
-
-        });
+        setTimeout(
+            typeEffect,
+            speed
+        );
 
     }
 
 
-    /* =====================================================
-       SMOOTH SCROLLING
-    ===================================================== */
-
-    document
-        .querySelectorAll('a[href^="#"]')
-        .forEach(link => {
-
-            link.addEventListener("click", event => {
-
-                const targetId =
-                    link.getAttribute("href");
-
-
-                if (
-                    !targetId ||
-                    targetId === "#"
-                ) {
-
-                    return;
-
-                }
-
-
-                const target =
-                    document.querySelector(
-                        targetId
-                    );
-
-
-                if (!target) return;
-
-
-                event.preventDefault();
-
-
-                const header =
-                    document.querySelector(
-                        ".header"
-                    );
-
-
-                const headerHeight =
-                    header
-                        ? header.offsetHeight
-                        : 0;
-
-
-                const targetPosition =
-                    target.getBoundingClientRect().top +
-                    window.scrollY -
-                    headerHeight;
-
-
-                window.scrollTo({
-
-                    top: targetPosition,
-
-                    behavior: "smooth"
-
-                });
-
-
-                trackEvent(
-                    "navigation_click",
-                    {
-                        event_category: "navigation",
-                        event_label: targetId
-                    }
-                );
-
-            });
-
-        });
+    typeEffect();
 
 
     /* =====================================================
@@ -486,119 +441,127 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     if (
-        "IntersectionObserver" in window &&
-        revealElements.length > 0
+        "IntersectionObserver"
+        in window
     ) {
 
         const revealObserver =
             new IntersectionObserver(
                 entries => {
 
-                    entries.forEach(entry => {
+                    entries.forEach(
+                        entry => {
 
-                        if (
-                            entry.isIntersecting
-                        ) {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                            entry.target.classList.add(
-                                "visible"
-                            );
+                                entry.target.classList.add(
+                                    "visible"
+                                );
 
-                            revealObserver.unobserve(
-                                entry.target
-                            );
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
 
                         }
-
-                    });
+                    );
 
                 },
                 {
-                    threshold: 0.12
+                    threshold: 0.12,
+                    rootMargin:
+                        "0px 0px -40px 0px"
                 }
             );
 
 
-        revealElements.forEach(element => {
+        revealElements.forEach(
+            element => {
 
-            revealObserver.observe(
-                element
-            );
+                revealObserver.observe(
+                    element
+                );
 
-        });
+            }
+        );
 
     } else {
 
-        revealElements.forEach(element => {
+        revealElements.forEach(
+            element => {
 
-            element.classList.add(
-                "visible"
-            );
+                element.classList.add(
+                    "visible"
+                );
 
-        });
+            }
+        );
 
     }
 
 
     /* =====================================================
-       SKILL ANIMATION
+       BACK TO TOP
     ===================================================== */
 
-    const skillCards =
-        document.querySelectorAll(
-            ".skill-card"
+    function handleScroll() {
+
+        if (!backToTop) return;
+
+        if (
+            window.scrollY > 500
+        ) {
+
+            backToTop.classList.add(
+                "show"
+            );
+
+        } else {
+
+            backToTop.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        handleScroll,
+        {
+            passive: true
+        }
+    );
+
+
+    handleScroll();
+
+
+    if (backToTop) {
+
+        backToTop.addEventListener(
+            "click",
+            () => {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+                trackEvent(
+                    "back_to_top"
+                );
+
+            }
         );
-
-
-    if (
-        "IntersectionObserver" in window &&
-        skillCards.length > 0
-    ) {
-
-        const skillObserver =
-            new IntersectionObserver(
-                entries => {
-
-                    entries.forEach(entry => {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            entry.target.classList.add(
-                                "visible"
-                            );
-
-                            skillObserver.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.2
-                }
-            );
-
-
-        skillCards.forEach(card => {
-
-            skillObserver.observe(card);
-
-        });
-
-    } else {
-
-        skillCards.forEach(card => {
-
-            card.classList.add(
-                "visible"
-            );
-
-        });
 
     }
 
@@ -607,125 +570,142 @@ document.addEventListener("DOMContentLoaded", () => {
        ACTIVE NAVIGATION
     ===================================================== */
 
-    function updateActiveNavigation() {
+    const sections =
+        document.querySelectorAll(
+            "main section[id]"
+        );
 
-        let currentSection = "";
+    const navLinks =
+        document.querySelectorAll(
+            ".nav-link"
+        );
+
+
+    function updateActiveNav() {
+
+        let currentSection =
+            "home";
+
 
         const scrollPosition =
             window.scrollY + 180;
 
 
-        sections.forEach(section => {
+        sections.forEach(
+            section => {
 
-            const sectionTop =
-                section.offsetTop;
+                const top =
+                    section.offsetTop;
 
-            const sectionHeight =
-                section.offsetHeight;
+                const height =
+                    section.offsetHeight;
 
+                if (
+                    scrollPosition >= top &&
+                    scrollPosition <
+                    top + height
+                ) {
 
-            if (
-                scrollPosition >= sectionTop &&
-                scrollPosition <
-                sectionTop + sectionHeight
-            ) {
+                    currentSection =
+                        section.id;
 
-                currentSection =
-                    section.getAttribute(
-                        "id"
-                    );
+                }
 
             }
-
-        });
-
-
-        navLinks.forEach(link => {
-
-            link.classList.remove(
-                "active"
-            );
+        );
 
 
-            const linkTarget =
-                link.getAttribute(
-                    "href"
-                );
+        navLinks.forEach(
+            link => {
+
+                const href =
+                    link.getAttribute("href");
 
 
-            if (
-                linkTarget ===
-                "#" + currentSection
-            ) {
-
-                link.classList.add(
-                    "active"
+                link.classList.toggle(
+                    "active",
+                    href ===
+                    `#${currentSection}`
                 );
 
             }
-
-        });
+        );
 
     }
 
 
     window.addEventListener(
         "scroll",
-        updateActiveNavigation,
-        { passive: true }
+        updateActiveNav,
+        {
+            passive: true
+        }
     );
 
 
-    updateActiveNavigation();
+    updateActiveNav();
 
 
     /* =====================================================
-       ANALYTICS TRACKING
+       GOOGLE ANALYTICS
     ===================================================== */
 
-    const analyticsElements =
-        document.querySelectorAll(
+    function trackEvent(
+        eventName,
+        parameters = {}
+    ) {
+
+        if (
+            typeof window.gtag ===
+            "function"
+        ) {
+
+            window.gtag(
+                "event",
+                eventName,
+                {
+                    ...parameters
+                }
+            );
+
+        }
+
+    }
+
+
+    document
+        .querySelectorAll(
             "[data-analytics]"
-        );
+        )
+        .forEach(
+            element => {
+
+                element.addEventListener(
+                    "click",
+                    () => {
+
+                        const eventName =
+                            element.dataset.analytics;
 
 
-    analyticsElements.forEach(element => {
-
-        element.addEventListener(
-            "click",
-            () => {
-
-                const eventName =
-                    element.dataset.analytics;
+                        const href =
+                            element.getAttribute("href");
 
 
-                const href =
-                    element.getAttribute(
-                        "href"
-                    );
+                        trackEvent(
+                            eventName,
+                            {
 
+                                event_category:
+                                    "engagement",
 
-                const label =
-                    element.textContent
-                        .trim()
-                        .replace(/\s+/g, " ");
+                                event_label:
+                                    href ||
+                                    element.textContent
+                                        .trim()
 
-
-                trackEvent(
-                    eventName,
-                    {
-
-                        event_category:
-                            "engagement",
-
-                        event_label:
-                            href || label,
-
-                        link_url:
-                            href || "",
-
-                        transport_type:
-                            "beacon"
+                            }
+                        );
 
                     }
                 );
@@ -733,15 +713,143 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-    });
+
+    /* =====================================================
+       EXTERNAL LINK TRACKING
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            'a[target="_blank"]'
+        )
+        .forEach(
+            link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        const href =
+                            link.href;
+
+
+                        if (
+                            href.includes(
+                                "github.com"
+                            )
+                        ) {
+
+                            trackEvent(
+                                "github_external_click",
+                                {
+                                    link_url: href
+                                }
+                            );
+
+                        }
+
+
+                        if (
+                            href.includes(
+                                "linkedin.com"
+                            )
+                        ) {
+
+                            trackEvent(
+                                "linkedin_external_click",
+                                {
+                                    link_url: href
+                                }
+                            );
+
+                        }
+
+
+                        if (
+                            href.includes(
+                                "drive.google.com"
+                            )
+                        ) {
+
+                            trackEvent(
+                                "cv_external_click",
+                                {
+                                    link_url: href
+                                }
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
 
 
     /* =====================================================
-       SPECIFIC TRACKING
+       EMAIL TRACKING
     ===================================================== */
 
+    document
+        .querySelectorAll(
+            'a[href^="mailto:"]'
+        )
+        .forEach(
+            link => {
 
-    /* CV */
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        trackEvent(
+                            "email_click",
+                            {
+                                email:
+                                    "sorour802@gmail.com"
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+    /* =====================================================
+       WHATSAPP TRACKING
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            'a[href*="wa.me"]'
+        )
+        .forEach(
+            link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        trackEvent(
+                            "whatsapp_click",
+                            {
+                                platform:
+                                    "whatsapp"
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+    /* =====================================================
+       CV TRACKING
+    ===================================================== */
 
     const cvButton =
         document.getElementById(
@@ -758,16 +866,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 trackEvent(
                     "cv_download",
                     {
-
-                        event_category:
-                            "conversion",
-
-                        event_label:
-                            "CV Download",
-
-                        link_url:
-                            cvButton.href
-
+                        file_type: "pdf",
+                        source: "portfolio"
                     }
                 );
 
@@ -778,340 +878,149 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       GITHUB TRACKING
+       SMOOTH INTERNAL LINKS
     ===================================================== */
 
     document
         .querySelectorAll(
-            '[data-analytics="github_click"]'
+            'a[href^="#"]'
         )
-        .forEach(link => {
+        .forEach(
+            link => {
 
-            link.addEventListener(
-                "click",
-                () => {
+                link.addEventListener(
+                    "click",
+                    event => {
 
-                    trackEvent(
-                        "github_click",
-                        {
+                        const targetId =
+                            link
+                                .getAttribute("href");
 
-                            event_category:
-                                "social",
 
-                            event_label:
-                                "GitHub Profile",
+                        if (
+                            targetId === "#"
+                        ) {
 
-                            link_url:
-                                link.href
+                            return;
 
                         }
-                    );
-
-                }
-            );
-
-        });
 
 
-    /* =====================================================
-       LINKEDIN TRACKING
-    ===================================================== */
+                        const target =
+                            document.querySelector(
+                                targetId
+                            );
 
-    document
-        .querySelectorAll(
-            '[data-analytics="linkedin_click"]'
-        )
-        .forEach(link => {
 
-            link.addEventListener(
-                "click",
-                () => {
+                        if (!target) {
 
-                    trackEvent(
-                        "linkedin_click",
-                        {
-
-                            event_category:
-                                "social",
-
-                            event_label:
-                                "LinkedIn Profile",
-
-                            link_url:
-                                link.href
+                            return;
 
                         }
-                    );
-
-                }
-            );
-
-        });
 
 
-    /* =====================================================
-       WHATSAPP TRACKING
-    ===================================================== */
-
-    document
-        .querySelectorAll(
-            '[data-analytics="whatsapp_click"]'
-        )
-        .forEach(link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    trackEvent(
-                        "whatsapp_click",
-                        {
-
-                            event_category:
-                                "contact",
-
-                            event_label:
-                                "WhatsApp Contact",
-
-                            link_url:
-                                link.href
-
-                        }
-                    );
-
-                }
-            );
-
-        });
+                        event.preventDefault();
 
 
-    /* =====================================================
-       EMAIL TRACKING
-    ===================================================== */
-
-    document
-        .querySelectorAll(
-            '[data-analytics="email_click"]'
-        )
-        .forEach(link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    trackEvent(
-                        "email_click",
-                        {
-
-                            event_category:
-                                "contact",
-
-                            event_label:
-                                "Email Contact",
-
-                            link_url:
-                                link.href
-
-                        }
-                    );
-
-                }
-            );
-
-        });
+                        const header =
+                            document.querySelector(
+                                ".header"
+                            );
 
 
-    /* =====================================================
-       PROJECT TRACKING
-    ===================================================== */
-
-    document
-        .querySelectorAll(
-            ".project-link"
-        )
-        .forEach(projectLink => {
-
-            projectLink.addEventListener(
-                "click",
-                () => {
-
-                    const projectCard =
-                        projectLink.closest(
-                            ".project-card"
-                        );
+                        const headerHeight =
+                            header
+                                ? header.offsetHeight
+                                : 0;
 
 
-                    const projectTitle =
-                        projectCard
-                            ? projectCard
-                                .querySelector("h3")
-                                ?.textContent
-                                .trim()
-                            : "Unknown Project";
+                        const targetPosition =
+                            target.offsetTop -
+                            headerHeight;
 
 
-                    trackEvent(
-                        "project_click",
-                        {
+                        window.scrollTo({
 
-                            event_category:
-                                "projects",
+                            top:
+                                targetPosition,
 
-                            event_label:
-                                projectTitle,
+                            behavior:
+                                "smooth"
 
-                            link_url:
-                                projectLink.href
-
-                        }
-                    );
-
-                }
-            );
-
-        });
-
-
-    /* =====================================================
-       EXTERNAL LINK TRACKING
-    ===================================================== */
-
-    document
-        .querySelectorAll(
-            'a[target="_blank"]'
-        )
-        .forEach(link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    const href =
-                        link.getAttribute(
-                            "href"
-                        );
-
-
-                    if (!href) return;
-
-
-                    let destination =
-                        "external_link";
-
-
-                    if (
-                        href.includes(
-                            "github.com"
-                        )
-                    ) {
-
-                        destination =
-                            "github";
+                        });
 
                     }
+                );
 
-                    else if (
-                        href.includes(
-                            "linkedin.com"
-                        )
-                    ) {
-
-                        destination =
-                            "linkedin";
-
-                    }
-
-                    else if (
-                        href.includes(
-                            "wa.me"
-                        )
-                    ) {
-
-                        destination =
-                            "whatsapp";
-
-                    }
-
-                    else if (
-                        href.includes(
-                            "drive.google.com"
-                        )
-                    ) {
-
-                        destination =
-                            "google_drive";
-
-                    }
-
-
-                    trackEvent(
-                        "external_link_click",
-                        {
-
-                            event_category:
-                                "external",
-
-                            event_label:
-                                destination,
-
-                            link_url:
-                                href
-
-                        }
-                    );
-
-                }
-            );
-
-        });
+            }
+        );
 
 
     /* =====================================================
-       PAGE VIEW / PORTFOLIO VISIT
+       IMAGE ERROR HANDLING
     ===================================================== */
 
-    trackEvent(
-        "portfolio_visit",
-        {
+    const heroImage =
+        document.querySelector(
+            ".image-wrapper img"
+        );
 
-            event_category:
-                "engagement",
 
-            event_label:
-                "Ahmed Sorour Portfolio"
+    if (heroImage) {
+
+        heroImage.addEventListener(
+            "error",
+            () => {
+
+                heroImage.style.display =
+                    "none";
+
+                const wrapper =
+                    heroImage.closest(
+                        ".image-wrapper"
+                    );
+
+
+                if (wrapper) {
+
+                    wrapper.classList.add(
+                        "image-error"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       CURRENT YEAR
+    ===================================================== */
+
+    const yearElements =
+        document.querySelectorAll(
+            ".copyright"
+        );
+
+
+    yearElements.forEach(
+        element => {
+
+            const paragraph =
+                element.querySelector("p");
+
+
+            if (paragraph) {
+
+                paragraph.textContent =
+                    `© ${new Date().getFullYear()} Ahmed Sorour. All Rights Reserved.`;
+
+            }
 
         }
     );
 
 
-    /* =====================================================
-       CONSOLE INFORMATION
-    ===================================================== */
-
-    console.log(
-        "%cAhmed Sorour Portfolio",
-        "font-size: 20px; font-weight: bold;"
-    );
-
-    console.log(
-        "Data Science & Artificial Intelligence"
-    );
-
-    console.log(
-        "Capital University — Faculty of Computer Science"
-    );
-
-    console.log(
-        "Major: Artificial Intelligence"
-    );
-
-
-    /* =====================================================
-       INITIALIZATION
-    ===================================================== */
-
-    handleBackToTop();
-    updateActiveNavigation();
-
 });
-```
