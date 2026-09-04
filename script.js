@@ -1,163 +1,122 @@
 /* =========================================================
-AHMED SOROUR
-PORTFOLIO JAVASCRIPT
-PERFORMANCE OPTIMIZED
+   AHMED SOROUR
+   PORTFOLIO JAVASCRIPT
+   PERFORMANCE OPTIMIZED
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    "use strict";
 
-"use strict";
+    /* =========================================================
+       DOM ELEMENTS
+    ========================================================= */
 
+    const body = document.body;
 
-/* =====================================================
-   ELEMENTS
-===================================================== */
+    const menuBtn = document.getElementById("menuBtn");
+    const navbar = document.getElementById("navbar");
+    const navOverlay = document.getElementById("navOverlay");
 
-const body =
-    document.body;
+    const themeToggle = document.getElementById("themeToggle");
+    const backToTop = document.getElementById("backToTop");
 
-const menuBtn =
-    document.getElementById("menuBtn");
+    const preloader = document.getElementById("preloader");
+    const typingText = document.getElementById("typingText");
 
-const navbar =
-    document.getElementById("navbar");
+    const header = document.querySelector(".header");
 
-const navOverlay =
-    document.getElementById("navOverlay");
-
-const themeToggle =
-    document.getElementById("themeToggle");
-
-const backToTop =
-    document.getElementById("backToTop");
-
-const preloader =
-    document.getElementById("preloader");
-
-const typingText =
-    document.getElementById("typingText");
+    let scrollTicking = false;
 
 
-/* =====================================================
-   STATE
-===================================================== */
+    /* =========================================================
+       ANALYTICS
+    ========================================================= */
 
-let scrollTicking = false;
+    function trackEvent(eventName, parameters = {}) {
 
-let activeNavPending = false;
+        if (typeof window.gtag === "function") {
 
-
-/* =====================================================
-   GOOGLE ANALYTICS
-===================================================== */
-
-function trackEvent(
-    eventName,
-    parameters = {}
-) {
-
-    if (
-        typeof window.gtag ===
-        "function"
-    ) {
-
-        window.gtag(
-            "event",
-            eventName,
-            {
+            window.gtag("event", eventName, {
                 ...parameters
-            }
+            });
+
+        }
+
+    }
+
+
+    /* =========================================================
+       MOBILE NAVIGATION
+    ========================================================= */
+
+    function openMenu() {
+
+        if (!navbar) return;
+
+        navbar.classList.add("show");
+
+        navOverlay?.classList.add("show");
+
+        body.classList.add("no-scroll");
+
+        menuBtn?.setAttribute(
+            "aria-expanded",
+            "true"
         );
 
-    }
+        if (menuBtn) {
 
-}
+            const icon = menuBtn.querySelector("i");
 
+            if (icon) {
 
-/* =====================================================
-   MOBILE NAVIGATION
-===================================================== */
+                icon.classList.remove("fa-bars");
 
-function openMenu() {
+                icon.classList.add("fa-xmark");
 
-    if (!navbar) return;
-
-    navbar.classList.add("show");
-
-    navOverlay?.classList.add("show");
-
-    body.classList.add("no-scroll");
-
-    menuBtn?.setAttribute(
-        "aria-expanded",
-        "true"
-    );
-
-    if (menuBtn) {
-
-        const icon =
-            menuBtn.querySelector("i");
-
-        if (icon) {
-
-            icon.classList.remove(
-                "fa-bars"
-            );
-
-            icon.classList.add(
-                "fa-xmark"
-            );
+            }
 
         }
 
     }
 
-}
 
+    function closeMenu() {
 
-function closeMenu() {
+        if (!navbar) return;
 
-    if (!navbar) return;
+        navbar.classList.remove("show");
 
-    navbar.classList.remove("show");
+        navOverlay?.classList.remove("show");
 
-    navOverlay?.classList.remove("show");
+        body.classList.remove("no-scroll");
 
-    body.classList.remove("no-scroll");
+        menuBtn?.setAttribute(
+            "aria-expanded",
+            "false"
+        );
 
-    menuBtn?.setAttribute(
-        "aria-expanded",
-        "false"
-    );
+        if (menuBtn) {
 
-    if (menuBtn) {
+            const icon = menuBtn.querySelector("i");
 
-        const icon =
-            menuBtn.querySelector("i");
+            if (icon) {
 
-        if (icon) {
+                icon.classList.remove("fa-xmark");
 
-            icon.classList.remove(
-                "fa-xmark"
-            );
+                icon.classList.add("fa-bars");
 
-            icon.classList.add(
-                "fa-bars"
-            );
+            }
 
         }
 
     }
 
-}
 
+    if (menuBtn) {
 
-if (menuBtn) {
-
-    menuBtn.addEventListener(
-        "click",
-        () => {
+        menuBtn.addEventListener("click", () => {
 
             const isOpen =
                 navbar?.classList.contains("show");
@@ -172,20 +131,18 @@ if (menuBtn) {
 
             }
 
-        }
+        });
+
+    }
+
+
+    navOverlay?.addEventListener(
+        "click",
+        closeMenu
     );
 
-}
 
-
-navOverlay?.addEventListener(
-    "click",
-    closeMenu
-);
-
-
-navbar?.querySelectorAll("a")
-    .forEach(link => {
+    navbar?.querySelectorAll("a").forEach(link => {
 
         link.addEventListener(
             "click",
@@ -195,13 +152,7 @@ navbar?.querySelectorAll("a")
     });
 
 
-/* =====================================================
-   ESCAPE KEY
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    event => {
+    document.addEventListener("keydown", event => {
 
         if (
             event.key === "Escape" &&
@@ -212,567 +163,569 @@ document.addEventListener(
 
         }
 
-    }
-);
+    });
 
 
-/* =====================================================
-   CLOSE MENU ON DESKTOP
-===================================================== */
-
-window.addEventListener(
-    "resize",
-    () => {
-
-        if (
-            window.innerWidth > 900 &&
-            navbar?.classList.contains("show")
-        ) {
-
-            closeMenu();
-
-        }
-
-    },
-    {
-        passive: true
-    }
-);
-
-
-/* =====================================================
-   THEME
-===================================================== */
-
-function updateThemeIcon() {
-
-    if (!themeToggle) return;
-
-    const icon =
-        themeToggle.querySelector("i");
-
-    if (!icon) return;
-
-    const isLight =
-        body.classList.contains("light");
-
-    icon.classList.toggle(
-        "fa-moon",
-        !isLight
-    );
-
-    icon.classList.toggle(
-        "fa-sun",
-        isLight
-    );
-
-    themeToggle.setAttribute(
-        "aria-label",
-        isLight
-            ? "Switch to dark mode"
-            : "Switch to light mode"
-    );
-
-}
-
-
-function loadTheme() {
-
-    let savedTheme = null;
-
-    try {
-
-        savedTheme =
-            localStorage.getItem(
-                "portfolio-theme"
-            );
-
-    } catch (error) {
-
-        savedTheme = null;
-
-    }
-
-
-    if (savedTheme === "light") {
-
-        body.classList.add(
-            "light"
-        );
-
-    }
-
-    updateThemeIcon();
-
-}
-
-
-if (themeToggle) {
-
-    themeToggle.addEventListener(
-        "click",
+    window.addEventListener(
+        "resize",
         () => {
 
-            body.classList.toggle(
-                "light"
-            );
+            if (
+                window.innerWidth > 900 &&
+                navbar?.classList.contains("show")
+            ) {
 
-            const theme =
-                body.classList.contains("light")
-                    ? "light"
-                    : "dark";
-
-
-            try {
-
-                localStorage.setItem(
-                    "portfolio-theme",
-                    theme
-                );
-
-            } catch (error) {
-
-                /* Ignore storage errors. */
+                closeMenu();
 
             }
 
-
-            updateThemeIcon();
-
-
-            trackEvent(
-                "theme_change",
-                {
-                    theme: theme
-                }
-            );
-
+        },
+        {
+            passive: true
         }
     );
 
-}
+
+    /* =========================================================
+       THEME
+    ========================================================= */
+
+    function updateThemeIcon() {
+
+        if (!themeToggle) return;
+
+        const icon =
+            themeToggle.querySelector("i");
+
+        if (!icon) return;
+
+        const isLight =
+            body.classList.contains("light");
 
 
-loadTheme();
+        icon.classList.toggle(
+            "fa-moon",
+            !isLight
+        );
+
+        icon.classList.toggle(
+            "fa-sun",
+            isLight
+        );
 
 
-/* =====================================================
-   PRELOADER
-===================================================== */
+        themeToggle.setAttribute(
+            "aria-label",
+            isLight
+                ? "Switch to dark mode"
+                : "Switch to light mode"
+        );
 
-window.addEventListener(
-    "load",
-    () => {
+    }
 
-        window.setTimeout(
+
+    function loadTheme() {
+
+        let savedTheme = null;
+
+        try {
+
+            savedTheme =
+                localStorage.getItem(
+                    "portfolio-theme"
+                );
+
+        } catch (error) {
+
+            savedTheme = null;
+
+        }
+
+
+        if (savedTheme === "light") {
+
+            body.classList.add("light");
+
+        }
+
+
+        updateThemeIcon();
+
+    }
+
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener(
+            "click",
             () => {
 
-                preloader?.classList.add(
-                    "hide"
-                );
+                body.classList.toggle("light");
 
-            },
-            300
-        );
 
-    },
-    {
-        once: true
-    }
-);
+                const theme =
+                    body.classList.contains("light")
+                        ? "light"
+                        : "dark";
 
 
-/* =====================================================
-   TYPING EFFECT
-===================================================== */
+                try {
 
-const words = [
+                    localStorage.setItem(
+                        "portfolio-theme",
+                        theme
+                    );
 
-    "Data Scientist",
+                } catch (error) {
 
-    "AI Engineer",
+                    // Ignore storage errors
 
-    "Machine Learning Enthusiast",
+                }
 
-    "Data Analyst",
 
-    "AI Student"
+                updateThemeIcon();
 
-];
 
-
-let wordIndex = 0;
-
-let characterIndex = 0;
-
-let deleting = false;
-
-let typingTimer = null;
-
-
-function typeEffect() {
-
-    if (!typingText) return;
-
-    const currentWord =
-        words[wordIndex];
-
-
-    if (!deleting) {
-
-        typingText.textContent =
-            currentWord.substring(
-                0,
-                characterIndex + 1
-            );
-
-        characterIndex++;
-
-
-        if (
-            characterIndex ===
-            currentWord.length
-        ) {
-
-            deleting = true;
-
-            typingTimer =
-                window.setTimeout(
-                    typeEffect,
-                    1600
-                );
-
-            return;
-
-        }
-
-    } else {
-
-        typingText.textContent =
-            currentWord.substring(
-                0,
-                characterIndex - 1
-            );
-
-        characterIndex--;
-
-
-        if (
-            characterIndex === 0
-        ) {
-
-            deleting = false;
-
-            wordIndex =
-                (wordIndex + 1)
-                % words.length;
-
-        }
-
-    }
-
-
-    const speed =
-        deleting
-            ? 55
-            : 95;
-
-
-    typingTimer =
-        window.setTimeout(
-            typeEffect,
-            speed
-        );
-
-}
-
-
-if (
-    typingText &&
-    !window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches
-) {
-
-    typeEffect();
-
-} else if (typingText) {
-
-    typingText.textContent =
-        words[0];
-
-}
-
-
-/* =====================================================
-   SCROLL REVEAL
-===================================================== */
-
-const revealElements =
-    document.querySelectorAll(
-        ".reveal"
-    );
-
-
-const reducedMotion =
-    window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-
-if (
-    reducedMotion
-) {
-
-    revealElements.forEach(
-        element => {
-
-            element.classList.add(
-                "visible"
-            );
-
-        }
-    );
-
-} else if (
-    "IntersectionObserver"
-    in window
-) {
-
-    const revealObserver =
-        new IntersectionObserver(
-            entries => {
-
-                entries.forEach(
-                    entry => {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            entry.target.classList.add(
-                                "visible"
-                            );
-
-                            revealObserver.unobserve(
-                                entry.target
-                            );
-
-                        }
-
+                trackEvent(
+                    "theme_change",
+                    {
+                        theme: theme
                     }
                 );
 
-            },
-            {
-                threshold: 0.08,
+            }
+        );
 
-                rootMargin:
-                    "0px 0px -30px 0px"
+    }
+
+
+    loadTheme();
+
+
+    /* =========================================================
+       PRELOADER
+    ========================================================= */
+
+    window.addEventListener(
+        "load",
+        () => {
+
+            window.setTimeout(
+                () => {
+
+                    preloader?.classList.add(
+                        "hide"
+                    );
+
+                },
+                300
+            );
+
+        },
+        {
+            once: true
+        }
+    );
+
+
+    /* =========================================================
+       TYPING EFFECT
+    ========================================================= */
+
+    const words = [
+
+        "Data Scientist",
+
+        "AI Engineer",
+
+        "Machine Learning Enthusiast",
+
+        "Data Analyst",
+
+        "AI Student"
+
+    ];
+
+
+    let wordIndex = 0;
+
+    let characterIndex = 0;
+
+    let deleting = false;
+
+    let typingTimer = null;
+
+
+    function typeEffect() {
+
+        if (!typingText) return;
+
+
+        const currentWord =
+            words[wordIndex];
+
+
+        if (!deleting) {
+
+            typingText.textContent =
+                currentWord.substring(
+                    0,
+                    characterIndex + 1
+                );
+
+
+            characterIndex++;
+
+
+            if (
+                characterIndex ===
+                currentWord.length
+            ) {
+
+                deleting = true;
+
+
+                typingTimer =
+                    window.setTimeout(
+                        typeEffect,
+                        1600
+                    );
+
+
+                return;
+
+            }
+
+        } else {
+
+            typingText.textContent =
+                currentWord.substring(
+                    0,
+                    characterIndex - 1
+                );
+
+
+            characterIndex--;
+
+
+            if (characterIndex === 0) {
+
+                deleting = false;
+
+
+                wordIndex =
+                    (wordIndex + 1) %
+                    words.length;
+
+            }
+
+        }
+
+
+        const speed =
+            deleting
+                ? 55
+                : 95;
+
+
+        typingTimer =
+            window.setTimeout(
+                typeEffect,
+                speed
+            );
+
+    }
+
+
+    const reducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+
+    if (
+        typingText &&
+        !reducedMotion
+    ) {
+
+        typeEffect();
+
+    } else if (typingText) {
+
+        typingText.textContent =
+            words[0];
+
+    }
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".reveal"
+        );
+
+
+    if (reducedMotion) {
+
+        revealElements.forEach(
+            element => {
+
+                element.classList.add(
+                    "visible"
+                );
+
+            }
+        );
+
+    } else if (
+        "IntersectionObserver" in window
+    ) {
+
+        const revealObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(
+                        entry => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+
+                    threshold: 0.08,
+
+                    rootMargin:
+                        "0px 0px -30px 0px"
+
+                }
+            );
+
+
+        revealElements.forEach(
+            element => {
+
+                revealObserver.observe(
+                    element
+                );
+
+            }
+        );
+
+    } else {
+
+        revealElements.forEach(
+            element => {
+
+                element.classList.add(
+                    "visible"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       BACK TO TOP
+    ========================================================= */
+
+    function handleScrollUI() {
+
+        if (!backToTop) return;
+
+
+        const shouldShow =
+            window.scrollY > 500;
+
+
+        backToTop.classList.toggle(
+            "show",
+            shouldShow
+        );
+
+    }
+
+
+    /* =========================================================
+       ACTIVE NAVIGATION
+    ========================================================= */
+
+    const sections =
+        document.querySelectorAll(
+            "main section[id]"
+        );
+
+
+    const navLinks =
+        document.querySelectorAll(
+            ".nav-link"
+        );
+
+
+    function updateActiveNav() {
+
+        if (!sections.length) return;
+
+
+        let currentSection =
+            "home";
+
+
+        const scrollPosition =
+            window.scrollY + 180;
+
+
+        sections.forEach(
+            section => {
+
+                const top =
+                    section.offsetTop;
+
+
+                const height =
+                    section.offsetHeight;
+
+
+                if (
+                    scrollPosition >= top &&
+                    scrollPosition <
+                    top + height
+                ) {
+
+                    currentSection =
+                        section.id;
+
+                }
+
             }
         );
 
 
-    revealElements.forEach(
-        element => {
+        navLinks.forEach(
+            link => {
 
-            revealObserver.observe(
-                element
-            );
-
-        }
-    );
-
-} else {
-
-    revealElements.forEach(
-        element => {
-
-            element.classList.add(
-                "visible"
-            );
-
-        }
-    );
-
-}
+                const href =
+                    link.getAttribute(
+                        "href"
+                    );
 
 
-/* =====================================================
-   BACK TO TOP
-===================================================== */
-
-function handleScrollUI() {
-
-    if (!backToTop) return;
-
-    const shouldShow =
-        window.scrollY > 500;
-
-
-    backToTop.classList.toggle(
-        "show",
-        shouldShow
-    );
-
-}
-
-
-/* =====================================================
-   ACTIVE NAVIGATION
-===================================================== */
-
-const sections =
-    document.querySelectorAll(
-        "main section[id]"
-    );
-
-const navLinks =
-    document.querySelectorAll(
-        ".nav-link"
-    );
-
-
-function updateActiveNav() {
-
-    if (!sections.length) return;
-
-    let currentSection =
-        "home";
-
-
-    const scrollPosition =
-        window.scrollY + 180;
-
-
-    sections.forEach(
-        section => {
-
-            const top =
-                section.offsetTop;
-
-            const height =
-                section.offsetHeight;
-
-
-            if (
-                scrollPosition >= top &&
-                scrollPosition <
-                top + height
-            ) {
-
-                currentSection =
-                    section.id;
-
-            }
-
-        }
-    );
-
-
-    navLinks.forEach(
-        link => {
-
-            const href =
-                link.getAttribute(
-                    "href"
+                link.classList.toggle(
+                    "active",
+                    href ===
+                    `#${currentSection}`
                 );
 
+            }
+        );
 
-            link.classList.toggle(
-                "active",
-                href ===
-                `#${currentSection}`
-            );
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   OPTIMIZED SCROLL HANDLER
-===================================================== */
-
-function requestScrollUpdate() {
-
-    if (scrollTicking) return;
-
-    scrollTicking = true;
-
-
-    window.requestAnimationFrame(
-        () => {
-
-            handleScrollUI();
-
-            updateActiveNav();
-
-            scrollTicking = false;
-
-        }
-    );
-
-}
-
-
-window.addEventListener(
-    "scroll",
-    requestScrollUpdate,
-    {
-        passive: true
     }
-);
 
 
-handleScrollUI();
+    /* =========================================================
+       OPTIMIZED SCROLL
+    ========================================================= */
 
-updateActiveNav();
+    function requestScrollUpdate() {
 
-
-/* =====================================================
-   BACK TO TOP CLICK
-===================================================== */
-
-if (backToTop) {
-
-    backToTop.addEventListener(
-        "click",
-        () => {
-
-            window.scrollTo({
-
-                top: 0,
-
-                behavior:
-                    reducedMotion
-                        ? "auto"
-                        : "smooth"
-
-            });
+        if (scrollTicking) return;
 
 
-            trackEvent(
-                "back_to_top"
-            );
+        scrollTicking = true;
 
+
+        window.requestAnimationFrame(
+            () => {
+
+                handleScrollUI();
+
+                updateActiveNav();
+
+
+                scrollTicking = false;
+
+            }
+        );
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        requestScrollUpdate,
+        {
+            passive: true
         }
     );
 
-}
+
+    handleScrollUI();
+
+    updateActiveNav();
 
 
-/* =====================================================
-   ANALYTICS — DATA ATTRIBUTES
-===================================================== */
+    /* =========================================================
+       BACK TO TOP CLICK
+    ========================================================= */
 
-document
-    .querySelectorAll(
-        "[data-analytics]"
-    )
-    .forEach(
-        element => {
+    if (backToTop) {
+
+        backToTop.addEventListener(
+            "click",
+            () => {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior:
+                        reducedMotion
+                            ? "auto"
+                            : "smooth"
+
+                });
+
+
+                trackEvent(
+                    "back_to_top"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       ANALYTICS DATA ATTRIBUTES
+    ========================================================= */
+
+    document
+        .querySelectorAll(
+            "[data-analytics]"
+        )
+        .forEach(element => {
 
             element.addEventListener(
                 "click",
@@ -797,8 +750,7 @@ document
 
                             event_label:
                                 href ||
-                                element.textContent
-                                    .trim()
+                                element.textContent.trim()
 
                         }
                     );
@@ -806,20 +758,18 @@ document
                 }
             );
 
-        }
-    );
+        });
 
 
-/* =====================================================
-   EXTERNAL LINK TRACKING
-===================================================== */
+    /* =========================================================
+       EXTERNAL LINK TRACKING
+    ========================================================= */
 
-document
-    .querySelectorAll(
-        'a[target="_blank"]'
-    )
-    .forEach(
-        link => {
+    document
+        .querySelectorAll(
+            'a[target="_blank"]'
+        )
+        .forEach(link => {
 
             link.addEventListener(
                 "click",
@@ -838,8 +788,7 @@ document
                         trackEvent(
                             "github_external_click",
                             {
-                                link_url:
-                                    href
+                                link_url: href
                             }
                         );
 
@@ -855,8 +804,7 @@ document
                         trackEvent(
                             "linkedin_external_click",
                             {
-                                link_url:
-                                    href
+                                link_url: href
                             }
                         );
 
@@ -872,8 +820,7 @@ document
                         trackEvent(
                             "cv_external_click",
                             {
-                                link_url:
-                                    href
+                                link_url: href
                             }
                         );
 
@@ -882,20 +829,18 @@ document
                 }
             );
 
-        }
-    );
+        });
 
 
-/* =====================================================
-   EMAIL TRACKING
-===================================================== */
+    /* =========================================================
+       EMAIL TRACKING
+    ========================================================= */
 
-document
-    .querySelectorAll(
-        'a[href^="mailto:"]'
-    )
-    .forEach(
-        link => {
+    document
+        .querySelectorAll(
+            'a[href^="mailto:"]'
+        )
+        .forEach(link => {
 
             link.addEventListener(
                 "click",
@@ -912,20 +857,18 @@ document
                 }
             );
 
-        }
-    );
+        });
 
 
-/* =====================================================
-   WHATSAPP TRACKING
-===================================================== */
+    /* =========================================================
+       WHATSAPP TRACKING
+    ========================================================= */
 
-document
-    .querySelectorAll(
-        'a[href*="wa.me"]'
-    )
-    .forEach(
-        link => {
+    document
+        .querySelectorAll(
+            'a[href*="wa.me"]'
+        )
+        .forEach(link => {
 
             link.addEventListener(
                 "click",
@@ -942,53 +885,51 @@ document
                 }
             );
 
-        }
-    );
+        });
 
 
-/* =====================================================
-   CV TRACKING
-===================================================== */
+    /* =========================================================
+       CV TRACKING
+    ========================================================= */
 
-const cvButton =
-    document.getElementById(
-        "cvButton"
-    );
-
-
-if (cvButton) {
-
-    cvButton.addEventListener(
-        "click",
-        () => {
-
-            trackEvent(
-                "cv_download",
-                {
-                    file_type:
-                        "pdf",
-
-                    source:
-                        "portfolio"
-                }
-            );
-
-        }
-    );
-
-}
+    const cvButton =
+        document.getElementById(
+            "cvButton"
+        );
 
 
-/* =====================================================
-   SMOOTH INTERNAL LINKS
-===================================================== */
+    if (cvButton) {
 
-document
-    .querySelectorAll(
-        'a[href^="#"]'
-    )
-    .forEach(
-        link => {
+        cvButton.addEventListener(
+            "click",
+            () => {
+
+                trackEvent(
+                    "cv_download",
+                    {
+
+                        file_type: "pdf",
+
+                        source: "portfolio"
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       SMOOTH INTERNAL LINKS
+    ========================================================= */
+
+    document
+        .querySelectorAll(
+            'a[href^="#"]'
+        )
+        .forEach(link => {
 
             link.addEventListener(
                 "click",
@@ -1016,20 +957,10 @@ document
                         );
 
 
-                    if (!target) {
-
-                        return;
-
-                    }
+                    if (!target) return;
 
 
                     event.preventDefault();
-
-
-                    const header =
-                        document.querySelector(
-                            ".header"
-                        );
 
 
                     const headerHeight =
@@ -1060,40 +991,98 @@ document
                 }
             );
 
+        });
+
+
+    /* =========================================================
+       HERO IMAGE ERROR
+    ========================================================= */
+
+    const heroImage =
+        document.querySelector(
+            ".image-wrapper img"
+        );
+
+
+    if (heroImage) {
+
+        heroImage.addEventListener(
+            "error",
+            () => {
+
+                heroImage.style.display =
+                    "none";
+
+
+                const wrapper =
+                    heroImage.closest(
+                        ".image-wrapper"
+                    );
+
+
+                if (wrapper) {
+
+                    wrapper.classList.add(
+                        "image-error"
+                    );
+
+                }
+
+            },
+            {
+                once: true
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       CURRENT YEAR
+    ========================================================= */
+
+    const yearElements =
+        document.querySelectorAll(
+            ".copyright"
+        );
+
+
+    const currentYear =
+        new Date().getFullYear();
+
+
+    yearElements.forEach(
+        element => {
+
+            const paragraph =
+                element.querySelector(
+                    "p"
+                );
+
+
+            if (paragraph) {
+
+                paragraph.textContent =
+                    `© ${currentYear} Ahmed Sorour. All Rights Reserved.`;
+
+            }
+
         }
     );
 
 
-/* =====================================================
-   IMAGE ERROR HANDLING
-===================================================== */
+    /* =========================================================
+       CLEANUP
+    ========================================================= */
 
-const heroImage =
-    document.querySelector(
-        ".image-wrapper img"
-    );
-
-
-if (heroImage) {
-
-    heroImage.addEventListener(
-        "error",
+    window.addEventListener(
+        "pagehide",
         () => {
 
-            heroImage.style.display =
-                "none";
+            if (typingTimer) {
 
-
-            const wrapper =
-                heroImage.closest(
-                    ".image-wrapper"
-                );
-
-
-            if (wrapper) {
-
-                wrapper.classList.add(
-                    "image-error"
+                window.clearTimeout(
+                    typingTimer
                 );
 
             }
@@ -1103,66 +1092,5 @@ if (heroImage) {
             once: true
         }
     );
-
-}
-
-
-/* =====================================================
-   CURRENT YEAR
-===================================================== */
-
-const yearElements =
-    document.querySelectorAll(
-        ".copyright"
-    );
-
-
-const currentYear =
-    new Date().getFullYear();
-
-
-yearElements.forEach(
-    element => {
-
-        const paragraph =
-            element.querySelector(
-                "p"
-            );
-
-
-        if (paragraph) {
-
-            paragraph.textContent =
-                `© ${currentYear} Ahmed Sorour. All Rights Reserved.`;
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   CLEANUP
-   Keep timer reference available if needed.
-===================================================== */
-
-window.addEventListener(
-    "pagehide",
-    () => {
-
-        if (typingTimer) {
-
-            window.clearTimeout(
-                typingTimer
-            );
-
-        }
-
-    },
-    {
-        once: true
-    }
-);
-
 
 });
