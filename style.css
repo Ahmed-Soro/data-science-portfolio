@@ -11,7 +11,7 @@ PERFORMANCE OPTIMIZED RESPONSIVE STYLESHEET
 
 :root {
 
-```
+
 --bg: #070b14;
 --bg-secondary: #0b1120;
 --bg-tertiary: #111827;
@@ -2773,13 +2773,13 @@ border-color:
 
 transform:
     translate3d(0, -3px, 0);
-```
+
 
 }
 
 .copyright {
 
-```
+
 grid-column: 1 / -1;
 
 padding-top: 22px;
@@ -2798,16 +2798,15 @@ border-top:
 color: var(--text-muted);
 
 font-size: 0.62rem;
-```
+
 
 }
 
 .copyright span {
 
-```
+
 color:
     rgba(148,163,184,0.65);
-```
 
 }
 
@@ -2858,29 +2857,28 @@ transition:
     visibility var(--transition),
     transform var(--transition),
     border-color var(--transition);
-```
 
 }
 
 .back-to-top.show {
 
-```
+
 opacity: 1;
 
 visibility: visible;
 
 transform:
     translate3d(0, 0, 0);
-```
+
 
 }
 
 .back-to-top:hover {
 
-```
+
 border-color:
     var(--border-hover);
-```
+
 
 }
 
@@ -2890,7 +2888,7 @@ border-color:
 
 .reveal {
 
-```
+
 opacity: 0;
 
 transform:
@@ -2899,18 +2897,18 @@ transform:
 transition:
     opacity 0.45s ease,
     transform 0.45s ease;
-```
+
 
 }
 
 .reveal.visible {
 
-```
+
 opacity: 1;
 
 transform:
     translate3d(0, 0, 0);
-```
+
 
 }
 
@@ -2921,7 +2919,7 @@ Prevent expensive hover transforms on phones/tablets
 
 @media (hover: none) and (pointer: coarse) {
 
-```
+
 .icon-btn:hover,
 .cv-btn:hover,
 .primary-btn:hover,
@@ -2945,7 +2943,7 @@ Prevent expensive hover transforms on phones/tablets
     transform: none;
 
 }
-```
+
 
 }
 
@@ -2955,7 +2953,7 @@ Prevent expensive hover transforms on phones/tablets
 
 @media (max-width: 1100px) {
 
-```
+
 .navbar {
     gap: 0;
 }
@@ -3002,7 +3000,7 @@ Prevent expensive hover transforms on phones/tablets
     grid-template-columns:
         repeat(4, 1fr);
 }
-```
+
 
 }
 
@@ -3012,7 +3010,7 @@ Prevent expensive hover transforms on phones/tablets
 
 @media (max-width: 900px) {
 
-```
+
 :root {
     --header-height: 70px;
 }
@@ -3298,7 +3296,7 @@ Prevent expensive hover transforms on phones/tablets
     animation-duration: 36s;
 
 }
-```
+
 
 }
 
@@ -3308,7 +3306,7 @@ Prevent expensive hover transforms on phones/tablets
 
 @media (max-width: 600px) {
 
-```
+
 .container {
 
     width:
@@ -3866,7 +3864,7 @@ footer {
     height: 40px;
 
 }
-```
+
 
 }
 
@@ -3962,7 +3960,7 @@ footer {
 .skill-card p {
     min-height: 34px;
 }
-```
+
 
 }
 
@@ -3972,7 +3970,7 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
 
-```
+
 html {
     scroll-behavior: auto;
 }
@@ -4000,6 +3998,6 @@ html {
     transform: none;
 
 }
-```
+
 
 }
