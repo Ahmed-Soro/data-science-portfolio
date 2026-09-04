@@ -4153,3 +4153,330 @@ footer {
         will-change: auto;
     }
 }
+/* =========================================================
+   PROFESSIONAL MOBILE HEADER
+   Logo + Theme + CV + Menu
+   Desktop design remains unchanged
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .header-container {
+        width: calc(100% - 24px);
+        max-width: none;
+
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+
+        overflow: visible;
+    }
+
+
+    /* =========================
+       LOGO
+    ========================= */
+
+    .logo {
+        flex: 1 1 auto;
+
+        min-width: 0;
+
+        max-width: 100%;
+
+        font-size: clamp(
+            0.90rem,
+            3.8vw,
+            1.05rem
+        );
+
+        gap: 3px;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+
+    /* =========================
+       RIGHT ACTIONS
+    ========================= */
+
+    .nav-actions {
+
+        flex: 0 0 auto;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-end;
+
+        gap: clamp(5px, 1.8vw, 8px);
+
+        margin-left: auto;
+
+        min-width: max-content;
+    }
+
+
+    /* =========================
+       THEME + MENU
+    ========================= */
+
+    .icon-btn {
+
+        width: clamp(36px, 10vw, 42px);
+
+        height: clamp(36px, 10vw, 42px);
+
+        min-width: clamp(36px, 10vw, 42px);
+
+        flex: 0 0 auto;
+
+        padding: 0;
+
+        border-radius: 12px;
+
+        display: grid;
+
+        place-items: center;
+
+        transform: none !important;
+
+        transition:
+            border-color 0.2s ease,
+            background 0.2s ease;
+    }
+
+
+    .icon-btn i {
+
+        font-size: clamp(
+            17px,
+            4.8vw,
+            21px
+        );
+    }
+
+
+    /* =========================
+       CV BUTTON
+    ========================= */
+
+    .cv-btn {
+
+        width: clamp(36px, 10vw, 42px);
+
+        height: clamp(36px, 10vw, 42px);
+
+        min-width: clamp(36px, 10vw, 42px);
+
+        padding: 0 !important;
+
+        flex: 0 0 auto;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 0;
+
+        border-radius: 12px;
+
+        box-shadow:
+            0 6px 18px
+            rgba(56, 189, 248, 0.15);
+
+        transform: none !important;
+    }
+
+
+    .cv-btn span {
+
+        display: none !important;
+    }
+
+
+    .cv-btn i {
+
+        font-size: clamp(
+            17px,
+            4.8vw,
+            21px
+        );
+    }
+
+
+    /* =========================
+       REMOVE HOVER MOVEMENT
+       ON TOUCH DEVICES
+    ========================= */
+
+    .icon-btn:hover,
+    .cv-btn:hover {
+
+        transform: none !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   400px and below
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .header-container {
+
+        width: calc(100% - 18px);
+
+        gap: 7px;
+    }
+
+
+    .logo {
+
+        font-size: 0.88rem;
+
+        letter-spacing: -0.7px;
+
+        gap: 2px;
+    }
+
+
+    .nav-actions {
+
+        gap: 4px;
+    }
+
+
+    .icon-btn,
+    .cv-btn {
+
+        width: 36px;
+
+        height: 36px;
+
+        min-width: 36px;
+
+        border-radius: 10px;
+    }
+
+
+    .icon-btn i,
+    .cv-btn i {
+
+        font-size: 17px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   360px and below
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .header-container {
+
+        width: calc(100% - 14px);
+
+        gap: 5px;
+    }
+
+
+    .logo {
+
+        font-size: 0.82rem;
+
+        letter-spacing: -0.8px;
+    }
+
+
+    .nav-actions {
+
+        gap: 3px;
+    }
+
+
+    .icon-btn,
+    .cv-btn {
+
+        width: 34px;
+
+        height: 34px;
+
+        min-width: 34px;
+
+        border-radius: 9px;
+    }
+
+
+    .icon-btn i,
+    .cv-btn i {
+
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   320px and below
+========================================================= */
+
+@media (max-width: 320px) {
+
+    .header-container {
+
+        width: calc(100% - 10px);
+
+        gap: 4px;
+    }
+
+
+    .logo {
+
+        font-size: 0.76rem;
+
+        letter-spacing: -0.9px;
+    }
+
+
+    .nav-actions {
+
+        gap: 2px;
+    }
+
+
+    .icon-btn,
+    .cv-btn {
+
+        width: 32px;
+
+        height: 32px;
+
+        min-width: 32px;
+
+        border-radius: 8px;
+    }
+
+
+    .icon-btn i,
+    .cv-btn i {
+
+        font-size: 15px;
+    }
+
+}
